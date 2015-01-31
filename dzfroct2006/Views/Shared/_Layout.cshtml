@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>@ViewBag.Title</title>
+        
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="~/Content/bootstrapHelpers/dist/css/bootstrap-formhelpers.min.css" />
+        <link rel="stylesheet" href="~/Content/home.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+         <script src="~/Content/bootstrapHelpers/dist/js/bootstrap-formhelpers.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+    </head>
+
+
+    <body class="full">
+        <header>
+             <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/home/index">HotelAlgerie</a>
+                </div>
+                <div class="collapse navbar-collapse" id="Navbar">
+                  <ul class="nav navbar-nav">
+                    <li><a href="/home/index">@Resources.Labels.Home</a></li>
+                    <li><a href="#">@Resources.Labels.Contact</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> @Resources.Labels.SignUp</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>  @Resources.Labels.Login</a></li>
+                    <li id="liFrLangue" style="display:none"><a href="/home/ChangeLanguage?culture=fr"><span class="bfh-languages"  data-language="fr_FR" data-flags="true">FR</span></a></li>
+                    <li id="liEnLangue" style="display:none"><a href="/home/ChangeLanguage?culture=en"><span class="bfh-languages"  data-language="en_US" data-flags="true">EN</span></a></li>
+                  </ul>
+                </div>
+            </nav>
+        </header>
+        <div id="body" class="container-fluid">
+            
+             @RenderBody()
+
+       </div>
+        <footer></footer>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                
+                var CookieParser = document.cookie.split('=') ;
+                var currLanguage = CookieParser[CookieParser.length - 1];
+                if (currLanguage == "fr") {
+                    $("#liFrLangue").hide();
+                    $("#liEnLangue").show();
+                }
+                else {
+                    $("#liFrLangue").show();
+                    $("#liEnLangue").hide();
+                }
+
+
+            });
+
+
+        </script>
+    </body>
+</html>

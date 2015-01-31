@@ -1,0 +1,140 @@
+﻿@model dzfroct2006.Models.Hotels
+
+@{
+    ViewBag.Title = "Contact2";
+    Layout = "~/Views/Shared/_Layoutpages.cshtml";
+}
+
+<h2>Contact2</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Hotels</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhoneNumber1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PhoneNumber1)
+            @Html.ValidationMessageFor(model => model.PhoneNumber1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhoneNumber2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PhoneNumber2)
+            @Html.ValidationMessageFor(model => model.PhoneNumber2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhoneNumber3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PhoneNumber3)
+            @Html.ValidationMessageFor(model => model.PhoneNumber3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FaxNumber1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FaxNumber1)
+            @Html.ValidationMessageFor(model => model.FaxNumber1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FaxNumber2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FaxNumber2)
+            @Html.ValidationMessageFor(model => model.FaxNumber2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FaxNumber3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FaxNumber3)
+            @Html.ValidationMessageFor(model => model.FaxNumber3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email1)
+            @Html.ValidationMessageFor(model => model.Email1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email2)
+            @Html.ValidationMessageFor(model => model.Email2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Town)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Town)
+            @Html.ValidationMessageFor(model => model.Town)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Wilaya)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Wilaya)
+            @Html.ValidationMessageFor(model => model.Wilaya)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AddressDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AddressDescription)
+            @Html.ValidationMessageFor(model => model.AddressDescription)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

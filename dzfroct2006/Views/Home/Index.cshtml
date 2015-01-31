@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = Resources.Labels.HomePageTitle;
+}
+
+
+<div id="Main" class="full row" style="margin-top:10%;">
+    <div class="col-xs-12 col-sm-10 col-md-6 col-md-offset-4">
+        <h1 style="color:white"> @Resources.Labels.WelcomToAlgeria  </h1>
+        <h1> <small> @Resources.Labels.ChooseHotelSubTitle</small></h1>
+    </div>
+    <div class="col-xs-12 col-sm-10 col-md-6 col-md-offset-3">
+        <form role="form" class="form-inline" action="/Home/index" method="post">
+            <div class="form-group">
+                <input type="text" name="City" value="" placeholder="@Resources.Labels.TownWaterMark" class="form-control" />
+                <input type="text" name="StartDate" class="SearchDate form-control" placeholder="@Resources.Labels.ArriveDateWaterMark"/>
+                <input type="text" name="EndDate" class="SearchDate form-control" placeholder="@Resources.Labels.LeaveDateWaterMark"/>
+
+                <button type="submit" class="btn btn-success btn-lg"> @Resources.Labels.Search </button>
+            </div>
+            <div class="form-group">
+                <label> @Resources.Labels.NbPersonnes </label>
+                <input type="text" name="NbPersonnes" class="form-control" value="2"/>
+                
+            </div>
+            <div class="form-group">
+                <label> @Resources.Labels.NbRooms </label>
+                <input type="text" name="NbRooms" class="form-control" value="1"/>
+            </div>
+        </form>    
+    </div>
+</div> 
+
+<script type="text/javascript">
+    $('.SearchDate').datepicker({
+        startDate: '-3d'
+        //add more options for language
+    })
+</script>
+

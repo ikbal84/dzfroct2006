@@ -1,0 +1,129 @@
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.csprojResolveAssemblyReference.cache
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\dzfroct2006.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\dzfroct2006.pdb
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\Antlr3.Runtime.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.AspNet.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.Core.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OAuth.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OpenId.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\EntityFramework.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\EntityFramework.SqlServer.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\Microsoft.Web.Infrastructure.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\Moq.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\Newtonsoft.Json.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\nunit.framework.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Net.Http.Formatting.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.Helpers.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.Http.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.Http.WebHost.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.Mvc.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.Optimization.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.Razor.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.Deployment.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.Razor.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\WebGrease.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\WebMatrix.Data.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\WebMatrix.WebData.dll
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\EntityFramework.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\EntityFramework.SqlServer.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\Moq.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\nunit.framework.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\Newtonsoft.Json.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Net.Http.Formatting.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.Helpers.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.Http.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.Http.WebHost.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.Mvc.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.Razor.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.Deployment.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.Razor.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\WebMatrix.Data.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\WebMatrix.WebData.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.AspNet.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.Core.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OAuth.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OpenId.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Users\azebiri\EnvDev\visualstudio2012\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.pdb
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\dzfroct2006.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\dzfroct2006.pdb
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\Antlr3.Runtime.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.Core.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\EntityFramework.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\EntityFramework.SqlServer.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\Moq.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\Newtonsoft.Json.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\nunit.framework.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.Helpers.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.Mvc.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.Optimization.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.Razor.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.Razor.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\WebGrease.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\WebMatrix.Data.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\WebMatrix.WebData.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\EntityFramework.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\EntityFramework.SqlServer.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\Moq.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\nunit.framework.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\Newtonsoft.Json.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.Helpers.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.Mvc.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.Razor.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.Razor.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\WebMatrix.Data.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\WebMatrix.WebData.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.Core.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.csprojResolveAssemblyReference.cache
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.pdb
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\dzfroct2006.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\dzfroct2006.pdb
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\System.Web.Helpers.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\System.Web.Razor.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.Razor.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\WebMatrix.Data.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\WebMatrix.WebData.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\System.Web.Helpers.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\System.Web.Razor.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\System.Web.WebPages.Razor.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\WebMatrix.Data.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\WebMatrix.WebData.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.pdb
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.csprojResolveAssemblyReference.cache
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\Content\slider\jquery.bxslider.css
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\Content\slider\jquery.bxslider.min.js

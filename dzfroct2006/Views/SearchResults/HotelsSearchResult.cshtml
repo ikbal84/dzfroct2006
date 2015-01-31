@@ -1,0 +1,78 @@
+﻿@model dzfroct2006.BLL.HotelsQuery
+
+@{
+    ViewBag.Title = "HotelsSearchResult";
+    Layout = "~/Views/Shared/_Layoutpages.cshtml";
+}
+
+@{
+    
+    var DefaultImage = new dzfroct2006.Models.HotelImages()
+    {
+        Name = @Resources.Labels.DefaultImageNameValue,
+        FilePath = "../Images/NoImage.jpg"
+    };
+
+}
+
+<div id="filters" class="col-xs-12 col-sm-10 col-md-7">
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+        foreach (var feature in Model.Features)
+        {
+            <div class="col-xs-12 col-sm-6  col-md-4">
+                <input type="checkbox" name="@feature.SearchFeatureName" @feature.SearchFeatureValue/> @feature.SearchFeatureName
+            </div>
+        }
+        <div class="row">
+            <input type="submit" value="@Resources.Labels.Filter" />
+        </div>
+    }
+</div>
+
+<div class="col-md-7">
+
+    @foreach (var item in Model.ResultHotels) {
+      <div class="row">
+          <div class="col-xs-0 col-sm-10 col-md-4" >
+              @if(item.HotelImages != null && item.HotelImages.Count > 0)
+              {
+                  var Image = @item.HotelImages.Where(img => img.isHeader).First();
+                  Image = Image != null ? Image : DefaultImage;
+                                                                                    
+                  <img src="@Image.FilePath" title="@Image.Name" />
+              }
+              else{
+                     <img src="@DefaultImage.FilePath" title="@DefaultImage.Name" />
+              }
+          </div>
+          <div class="col-xs-12 col-sm-10 col-md-8">
+              <div class="row">
+                  <div class="col-md-7">
+                      <h1> @Html.DisplayFor(modelItem => item.Name)  </h1>  <!-- @Html.ActionLink("Edit", "Edit", new { id=item.HotelID }) --> 
+                  </div>
+                  <div class="col-md-5 HotelStars" >
+                      @{
+                          var StarsImgPath = "/Images/stars_" + @item.NbStars + ".jpg";  
+                      }      
+                      <img src="@StarsImgPath" />
+                </div>
+              </div>
+              
+              <div class="row">
+                  <div class ="col-xs-12 col-sm-10 col-md-4">
+                      <span> @Html.DisplayFor(modelItem => item.Town) @Html.DisplayFor(modelItem => item.Wilaya) </span>
+                  </div>
+
+              </div>
+              <div class="row well">
+                   @Html.DisplayFor(modelItem => item.Description)
+              </div>
+         
+          </div>
+
+      </div>
+    }
+
+</div>
+

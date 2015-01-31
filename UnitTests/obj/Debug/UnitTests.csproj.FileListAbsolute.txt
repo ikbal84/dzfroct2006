@@ -1,0 +1,9 @@
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\UnitTests\bin\Debug\Moq.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\UnitTests\bin\Debug\Moq.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\UnitTests\obj\Debug\UnitTests.pdb
