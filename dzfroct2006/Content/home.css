@@ -1,10 +1,14 @@
 ﻿
 .full {
-background: url(../Images/Backgrounds/setif1.jpg) no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+    background: url(../Images/Backgrounds/setif1.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.SearchResult {
+    border-bottom:1px solid black;
+
 }
 
 .title {

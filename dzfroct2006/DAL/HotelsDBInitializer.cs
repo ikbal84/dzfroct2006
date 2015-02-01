@@ -26,7 +26,8 @@ namespace dzfroct2006.DAL
 
             // Hotel 1 
             #region Hotel_Anissov
-            var hotel = new Hotels() { Name = "Hotel Anissov", Description = "Un simple hotel de test", FaxNumber1 = "0021321659878", NbStars = 3 };
+            var hotel = new Hotels() { Name = "Hotel Anissov", Description = "Un simple hotel de test", FaxNumber1 = "0021321659878", NbStars = 3,
+                                        Town="Aintork", Wilaya="Oran"};
 
             var Room = new HotelRooms() { RoomType = "Double", Description = "chambre hayla", Hotel = hotel, NbPersonnes = 2, NbRooms = 5 };
 
@@ -42,7 +43,8 @@ namespace dzfroct2006.DAL
 
             //Hotel 2
             #region Hotel_Nadirov
-            var hotel2 = new Hotels() { Name = "Hotel Nadirov", Description = "Un simple hotel de test", FaxNumber1 = "0021321659878", NbStars = 1 };
+            var hotel2 = new Hotels() { Name = "Hotel Nadirov", Description = "Un simple hotel de test", FaxNumber1 = "0021321659878", NbStars = 1,
+                                        Town = "Ain touta", Wilaya = "Batna"};
 
             var Room2 = new HotelRooms() { RoomType = "GuissGuiss", Description = "chambre hayla", Hotel = hotel2, NbPersonnes = 4, NbRooms = 5 };
 
@@ -57,7 +59,8 @@ namespace dzfroct2006.DAL
 
             //Hotel3
             #region Hotel_Ikbal
-            var hotel3 = new Hotels() { Name = "Hotel Ikbal", Description = "Un simple hotel de test", FaxNumber1 = "0021321659878", NbStars = 5 };
+            var hotel3 = new Hotels() { Name = "Hotel Ikbal", Description = "Un simple hotel de test", FaxNumber1 = "0021321659878", NbStars = 5, 
+                                        Town = "Dar el Beida", Wilaya= "Alger"};
 
             var Room3 = new HotelRooms() { RoomType = "Luxe", Description = "chambre Extra", Hotel = hotel3, NbPersonnes = 4, NbRooms = 5 };
 
@@ -73,6 +76,7 @@ namespace dzfroct2006.DAL
             context.HotelFeatures.Add(HotelFeatures3_2);
             context.HotelFeatures.Add(HotelFeatures3_3);
             #endregion
+            
             base.Seed(context);
         }
     }

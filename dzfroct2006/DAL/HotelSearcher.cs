@@ -27,7 +27,8 @@ namespace dzfroct2006.DAL
             IQueryable<Hotels> HotelsQuery = context.Hotels;
             if (!String.IsNullOrEmpty(SearchedCity))
             {
-                HotelsQuery = HotelsQuery.Where(h => h.Town.ToLower().Contains(SearchedCity.ToLower()));
+                HotelsQuery = HotelsQuery.Where(h => h.Town.ToLower().Contains(SearchedCity.ToLower()) 
+                                                    | h.Wilaya.ToLower().Contains(SearchedCity.ToLower()));
             }
 
             if (SearchedNbPersonnes != 0)
@@ -52,7 +53,8 @@ namespace dzfroct2006.DAL
             IQueryable<Hotels> HotelsQuery = context.Hotels;
             if (!String.IsNullOrEmpty(SearchedCity))
             {
-                HotelsQuery = HotelsQuery.Where( h => h.Town.ToLower().Contains(SearchedCity.ToLower()));
+                HotelsQuery = HotelsQuery.Where( h => h.Town.ToLower().Contains(SearchedCity.ToLower()) 
+                                                | h.Town.ToLower().Contains(SearchedCity.ToLower()));
             }
             
             if (SearchedNbPersonnes != 0)
