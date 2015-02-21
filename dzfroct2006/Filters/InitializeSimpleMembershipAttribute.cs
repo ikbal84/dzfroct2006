@@ -5,6 +5,7 @@ using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 using dzfroct2006.Models;
+using dzfroct2006.DAL;
 
 namespace dzfroct2006.Filters
 {
@@ -29,7 +30,7 @@ namespace dzfroct2006.Filters
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new HotelsDBContext())
                     {
                         if (!context.Database.Exists())
                         {
@@ -38,7 +39,7 @@ namespace dzfroct2006.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("HotelsDB", "UserProfiles", "UserId", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

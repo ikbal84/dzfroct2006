@@ -19,9 +19,12 @@ namespace dzfroct2006.DAL
 
             var Features3 = new Features() { FeatureName = "Télé", FeatureDescription = "Télévision avec 150 chaines" };
 
+            var Features4 = new Features() { FeatureName = "Parking", FeatureDescription = "570 places" };
+
             context.Features.Add(Features1);
             context.Features.Add(Features2);
             context.Features.Add(Features3);
+            context.Features.Add(Features4);
             #endregion
 
             // Hotel 1 

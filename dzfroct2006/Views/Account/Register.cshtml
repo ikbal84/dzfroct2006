@@ -1,4 +1,8 @@
-﻿@model dzfroct2006.Models.RegisterModel
+﻿@{
+    Layout = "~/Views/Shared/_Layoutpages.cshtml";
+}
+
+@model dzfroct2006.Models.RegisterModel
 @{
     ViewBag.Title = "Register";
 }
@@ -27,11 +31,13 @@
                 @Html.LabelFor(m => m.ConfirmPassword)
                 @Html.PasswordFor(m => m.ConfirmPassword)
             </li>
+            <li>
+                @Html.LabelFor(m => m.eMail)
+                @Html.TextBoxFor(m => m.eMail)
+            </li>
         </ol>
         <input type="submit" value="Register" />
     </fieldset>
 }
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+

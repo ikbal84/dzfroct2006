@@ -102,6 +102,8 @@ C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfro
 C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.csprojResolveAssemblyReference.cache
 C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.dll
 C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.pdb
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\Content\slider\jquery.bxslider.css
+C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\Content\slider\jquery.bxslider.min.js
 C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\dzfroct2006.dll
 C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\dzfroct2006.pdb
 C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\Microsoft.Web.Infrastructure.dll
@@ -125,5 +127,3 @@ C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\W
 C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.dll
 C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.pdb
 C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\obj\Debug\dzfroct2006.csprojResolveAssemblyReference.cache
-C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\Content\slider\jquery.bxslider.css
-C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\bin\Content\slider\jquery.bxslider.min.js

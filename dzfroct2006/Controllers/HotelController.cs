@@ -52,7 +52,7 @@ namespace dzfroct2006.Controllers
         // POST: /Hotel/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Hotels CreatedHotel)
         {
             try
             {

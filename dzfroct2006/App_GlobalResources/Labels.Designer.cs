@@ -61,6 +61,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adresse.
+        /// </summary>
+        internal static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information sur l&apos;adresse.
+        /// </summary>
+        internal static string AddressDescription {
+            get {
+                return ResourceManager.GetString("AddressDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date d&apos;arrivée.
         /// </summary>
         internal static string ArriveDateWaterMark {
@@ -115,6 +133,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Créer un nouvel hôtel.
+        /// </summary>
+        internal static string CreateHotel {
+            get {
+                return ResourceManager.GetString("CreateHotel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pas d&apos;image.
         /// </summary>
         internal static string DefaultImageNameValue {
@@ -133,11 +160,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to E-mail.
+        /// </summary>
+        internal static string email {
+            get {
+                return ResourceManager.GetString("email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Filtrer.
         /// </summary>
         internal static string Filter {
             get {
                 return ResourceManager.GetString("Filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bonjour.
+        /// </summary>
+        internal static string HelloUser {
+            get {
+                return ResourceManager.GetString("HelloUser", resourceCulture);
             }
         }
         
@@ -165,6 +210,15 @@ namespace Resources {
         internal static string HotelDiscription {
             get {
                 return ResourceManager.GetString("HotelDiscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fax.
+        /// </summary>
+        internal static string HotelFax {
+            get {
+                return ResourceManager.GetString("HotelFax", resourceCulture);
             }
         }
         
@@ -255,6 +309,24 @@ namespace Resources {
         internal static string NbRooms {
             get {
                 return ResourceManager.GetString("NbRooms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Etoiles.
+        /// </summary>
+        internal static string NbStars {
+            get {
+                return ResourceManager.GetString("NbStars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nouveau hôtel.
+        /// </summary>
+        internal static string NewHotel {
+            get {
+                return ResourceManager.GetString("NewHotel", resourceCulture);
             }
         }
         
@@ -385,11 +457,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Déconnecter.
+        /// </summary>
+        internal static string SignOut {
+            get {
+                return ResourceManager.GetString("SignOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Créer un compte.
         /// </summary>
         internal static string SignUp {
             get {
                 return ResourceManager.GetString("SignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ville.
+        /// </summary>
+        internal static string Town {
+            get {
+                return ResourceManager.GetString("Town", resourceCulture);
             }
         }
         
@@ -417,6 +507,15 @@ namespace Resources {
         internal static string WelcomToAlgeria1 {
             get {
                 return ResourceManager.GetString("WelcomToAlgeria1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wilaya.
+        /// </summary>
+        internal static string Wilaya {
+            get {
+                return ResourceManager.GetString("Wilaya", resourceCulture);
             }
         }
     }

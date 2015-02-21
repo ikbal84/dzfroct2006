@@ -38,8 +38,7 @@ namespace dzfroct2006.Controllers
             int NbPersonnes= Int32.Parse(HttpUtility.HtmlDecode(FormValues["NbPersonnes"]));
             int NbRooms = Int32.Parse(HttpUtility.HtmlDecode(FormValues["NbRooms"]));
 
-                        
-            HotelsQuery query = new HotelsQuery() { 
+            var query = new HotelsQuery() { 
                                 City = City, 
                                 StartDate = StartDate, 
                                 EndDate = EndDate, 

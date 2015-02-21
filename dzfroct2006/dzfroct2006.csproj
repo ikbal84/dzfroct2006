@@ -186,6 +186,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="Controllers\OwnerSpaceController.cs" />
     <Compile Include="Controllers\SearchResultsController.cs" />
     <Compile Include="DAL\HotelsDBContext.cs" />
     <Compile Include="DAL\HotelsDBInitializer.cs" />
@@ -355,6 +356,10 @@
     <Content Include="Views\Home\Contact2.cshtml" />
     <Content Include="Views\SearchResults\HotelsSearchResult.cshtml" />
     <Content Include="Views\Shared\_LayoutSearch.cshtml" />
+    <Content Include="Views\Shared\_NavBarPartial.cshtml" />
+    <Content Include="Views\OwnerSpace\CreateHotel.cshtml" />
+    <Content Include="Views\OwnerSpace\HotelOwnerSpace.cshtml" />
+    <Content Include="Views\Hotel\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

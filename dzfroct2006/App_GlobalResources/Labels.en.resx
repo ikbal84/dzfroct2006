@@ -228,4 +228,37 @@
   <data name="WelcomToAlgeria" xml:space="preserve">
     <value>Welcom to Algeria...</value>
   </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Disconnecte</value>
+  </data>
+  <data name="HelloUser" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="CreateHotel" xml:space="preserve">
+    <value>Create new hotel</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="AddressDescription" xml:space="preserve">
+    <value>Address addition information</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="HotelFax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="NbStars" xml:space="preserve">
+    <value>Stars</value>
+  </data>
+  <data name="NewHotel" xml:space="preserve">
+    <value>New hotel</value>
+  </data>
+  <data name="Town" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Wilaya" xml:space="preserve">
+    <value>Wilaya</value>
+  </data>
 </root>

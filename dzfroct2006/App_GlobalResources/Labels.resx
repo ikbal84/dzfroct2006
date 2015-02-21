@@ -237,4 +237,37 @@
   <data name="WelcomToAlgeria1" xml:space="preserve">
     <value>Bienvenu en Algèrie...</value>
   </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Déconnecter</value>
+  </data>
+  <data name="HelloUser" xml:space="preserve">
+    <value>Bonjour</value>
+  </data>
+  <data name="CreateHotel" xml:space="preserve">
+    <value>Créer un nouvel hôtel</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="AddressDescription" xml:space="preserve">
+    <value>Information sur l'adresse</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="HotelFax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="NbStars" xml:space="preserve">
+    <value>Etoiles</value>
+  </data>
+  <data name="NewHotel" xml:space="preserve">
+    <value>Nouveau hôtel</value>
+  </data>
+  <data name="Town" xml:space="preserve">
+    <value>Ville</value>
+  </data>
+  <data name="Wilaya" xml:space="preserve">
+    <value>Wilaya</value>
+  </data>
 </root>

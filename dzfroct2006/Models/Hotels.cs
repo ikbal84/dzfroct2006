@@ -22,7 +22,9 @@ namespace dzfroct2006.Models
         public String Description {get; set;}
 
         [DefaultValue(1)]
+        
         public int NbStars { get; set; }
+
 
         public String PhoneNumber1 {get; set;}
         public String PhoneNumber2 { get; set; }
