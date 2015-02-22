@@ -87,15 +87,18 @@ namespace dzfroct2006.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateRooms(HotelRooms room, String hotelId)
+        public ActionResult CreateRooms(HotelRooms room, String hotelId, String isLast)
         {
             try
             {
                 var HotelDAO = new HotelDAO();
 
                 HotelDAO.CreateRoom(hotelId, room);
-
-                return RedirectToAction("CreateImage", new { hotelId });
+                
+                if (isLast.Equals("0"))
+                    return RedirectToAction("CreateRooms", new { hotelId });
+                else 
+                    return RedirectToAction("CreateImage", new { hotelId });
             }
             catch (Exception ex)
             {

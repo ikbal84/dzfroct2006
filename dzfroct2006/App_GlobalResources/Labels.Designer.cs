@@ -331,7 +331,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Etape suivante.
+        ///   Looks up a localized string similar to Terminer.
         /// </summary>
         internal static string Next {
             get {
@@ -435,6 +435,15 @@ namespace Resources {
         internal static string RoomType {
             get {
                 return ResourceManager.GetString("RoomType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enregistrer et ajouter.
+        /// </summary>
+        internal static string SaveRoom {
+            get {
+                return ResourceManager.GetString("SaveRoom", resourceCulture);
             }
         }
         

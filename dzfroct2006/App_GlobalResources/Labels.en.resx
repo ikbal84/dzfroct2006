@@ -265,6 +265,9 @@
     <value>Phone</value>
   </data>
   <data name="Next" xml:space="preserve">
-    <value>Next Step</value>
+    <value>End</value>
+  </data>
+  <data name="SaveRoom" xml:space="preserve">
+    <value>Save and add</value>
   </data>
 </root>

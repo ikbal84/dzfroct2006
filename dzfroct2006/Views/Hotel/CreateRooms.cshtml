@@ -11,7 +11,7 @@
 {
     @Html.ValidationSummary(true)
          <input type="text" value="@ViewBag.hotelId" Name="hotelId" style="display:none" />
-    
+          <input type="text" value="0" id="isLast" Name="isLast" style="display:none" />
     
         <div class="form-group">
             <label class="control-label col-md-4" for="RoomType"> @Resources.Labels.RoomType </label>
@@ -55,9 +55,18 @@
 
         <div class="form-group">
             <div class="col-md-offset-7 col-md-2">
-                <button type="submit" class="btn btn-success">@Resources.Labels.Next</button>
+                <button type="submit" id="saveBack" class="btn btn-info">@Resources.Labels.SaveRoom</button>
+                <button type="button" id="saveNext" onClick="return changeIsLast()" class="btn btn-success">@Resources.Labels.Next</button> 
+            @Html.
             </div>
         </div>
 }
 
+<script type="text/javascript">
+    function changeIsLast() {
+        alert('yooo');
+        $("#isLast").val("1");
+        $("form").submit();
+    };
 
+</script>

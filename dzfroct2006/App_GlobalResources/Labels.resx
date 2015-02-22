@@ -271,6 +271,9 @@
     <value>Wilaya</value>
   </data>
   <data name="Next" xml:space="preserve">
-    <value>Etape suivante</value>
+    <value>Terminer</value>
+  </data>
+  <data name="SaveRoom" xml:space="preserve">
+    <value>Enregistrer et ajouter</value>
   </data>
 </root>
