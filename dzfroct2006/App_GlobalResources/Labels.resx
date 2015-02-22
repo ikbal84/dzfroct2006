@@ -157,7 +157,7 @@
     <value>Nom Hotel</value>
   </data>
   <data name="HotelPhoneNumber" xml:space="preserve">
-    <value>Numéro téléphone</value>
+    <value>Téléphone</value>
   </data>
   <data name="InternetWifi" xml:space="preserve">
     <value>Internet-Wifi</value>
@@ -269,5 +269,8 @@
   </data>
   <data name="Wilaya" xml:space="preserve">
     <value>Wilaya</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Etape suivante</value>
   </data>
 </root>

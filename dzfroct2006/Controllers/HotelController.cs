@@ -1,8 +1,10 @@
-﻿using dzfroct2006.Models;
+﻿using dzfroct2006.DAL;
+using dzfroct2006.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace dzfroct2006.Controllers
@@ -48,17 +50,29 @@ namespace dzfroct2006.Controllers
             return View();
         }
 
-        //
-        // POST: /Hotel/Create
+  /// <summary>
+  /// Step 1 of creation
+  /// </summary>
+  /// <param name="CreatedHotel"></param>
+  /// <returns></returns>
 
         [HttpPost]
         public ActionResult Create(Hotels CreatedHotel)
         {
             try
             {
-                // TODO: Add insert logic here
+                var HotelDAO = new HotelDAO();
 
-                return RedirectToAction("Index");
+                if (HotelDAO.CreateHotel(CreatedHotel))
+                {
+                    return RedirectToAction("CreateRooms", new { CreatedHotel.HotelID });
+                }
+                else
+                {
+                    //do someting..
+                    return View();
+                }
+
             }
             catch
             {
@@ -66,56 +80,60 @@ namespace dzfroct2006.Controllers
             }
         }
 
-        //
-        // GET: /Hotel/Edit/5
-
-        public ActionResult Edit(int id)
+        public ActionResult CreateRooms(String HotelID)
         {
+            ViewBag.hotelId = HotelID;
             return View();
         }
 
-        //
-        // POST: /Hotel/Edit/5
-
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult CreateRooms(HotelRooms room, String hotelId)
         {
             try
             {
-                // TODO: Add update logic here
+                var HotelDAO = new HotelDAO();
 
-                return RedirectToAction("Index");
+                HotelDAO.CreateRoom(hotelId, room);
+
+                return RedirectToAction("CreateImage", new { hotelId });
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
         }
 
-        //
-        // GET: /Hotel/Delete/5
 
-        public ActionResult Delete(int id)
+        public ActionResult CreateImage(String HotelID)
         {
+            ViewBag.hotelId = HotelID;
             return View();
         }
-
-        //
-        // POST: /Hotel/Delete/5
-
+        
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult CreateImage(HotelImages ImageObject, String hotelId, HttpPostedFileBase Image)
         {
             try
             {
-                // TODO: Add delete logic here
+                //Getting the file
+                string pic = System.IO.Path.GetFileName(ImageObject.Name + "_" + hotelId);
+                ImageObject.FilePath = System.IO.Path.Combine(
+                                       Server.MapPath("~/Images"), pic);
+                // file is uploaded
+                Image.SaveAs(ImageObject.FilePath);
 
-                return RedirectToAction("Index");
+                //saving the file on the disk
+
+                var HotelDAO = new HotelDAO();
+                HotelDAO.CreateImage(hotelId, ImageObject);
+
+                return RedirectToAction("CreateImage", new { hotelId });
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
         }
+        
     }
 }

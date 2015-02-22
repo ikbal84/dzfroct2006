@@ -1,0 +1,63 @@
+﻿@model dzfroct2006.Models.HotelRooms
+
+@{
+    ViewBag.Title = "Create Rooms";
+    Layout = "~/Views/Shared/_Layoutpages.cshtml";
+}
+
+<h2>Step2</h2>
+
+@using (Html.BeginForm("CreateRooms", "Hotel", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary(true)
+         <input type="text" value="@ViewBag.hotelId" Name="hotelId" style="display:none" />
+    
+    
+        <div class="form-group">
+            <label class="control-label col-md-4" for="RoomType"> @Resources.Labels.RoomType </label>
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.RoomType, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.RoomType)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4" for="Description"> @Resources.Labels.Description </label>
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Description, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4" for="NbPersonnes"> @Resources.Labels.NbPersonnes </label>
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.NbPersonnes, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.NbPersonnes)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4" for="NbRooms"> @Resources.Labels.NbRooms </label>
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.NbRooms, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.NbRooms)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-4" for="Price"> @Resources.Labels.Price </label>
+            <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Price, new { @class="form-control"})
+            @Html.ValidationMessageFor(model => model.Price)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-7 col-md-2">
+                <button type="submit" class="btn btn-success">@Resources.Labels.Next</button>
+            </div>
+        </div>
+}
+
+

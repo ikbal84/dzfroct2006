@@ -1,0 +1,61 @@
+﻿@model dzfroct2006.Models.HotelImages
+
+@{
+    ViewBag.Title = "CreateImage";
+    Layout = "~/Views/Shared/_Layoutpages.cshtml";
+}
+
+<h2>CreateImage</h2>
+
+@using (Html.BeginForm("CreateImage", "Hotel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <input type="text" value="@ViewBag.hotelId" Name="hotelId" style="display:none" />
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FilePath)
+        </div>
+        <div class="editor-field">
+           <input type="file" name="Image" />
+             @Html.EditorFor(model => model.FilePath, "File")
+            @Html.ValidationMessageFor(model => model.FilePath)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.isMignature)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.isMignature)
+            @Html.ValidationMessageFor(model => model.isMignature)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.isHeader)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.isHeader)
+            @Html.ValidationMessageFor(model => model.isHeader)
+        </div>
+    
+        <div class="form-group">
+            <div class="col-md-offset-7 col-md-2">
+                <button type="submit" class="btn btn-success">@Resources.Labels.Next</button>
+            </div>
+        </div>
+}

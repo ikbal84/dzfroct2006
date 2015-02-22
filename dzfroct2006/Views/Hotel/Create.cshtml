@@ -10,119 +10,144 @@
 @using (Html.BeginForm("Create", "Hotel", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend></legend>
-        
-        <div class="form-group form-group">
-            <label class="control-label col-sm-2" for="Name"> @Resources.Labels.HotelName </label>
-          
-            @Html.TextBoxFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
+       
+        <div class="form-group">
+            <label class="control-label col-md-4" for="Name"> @Resources.Labels.HotelName </label>
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Name, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label class="control-label col-md-4" for="Description"> @Resources.Labels.HotelDiscription </label>
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Description, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="Description"> @Resources.Labels.HotelDiscription </label>
-
-            @Html.TextBoxFor(model => model.Description)
-            @Html.ValidationMessageFor(model => model.Description)
+            <label class="control-label col-md-4" for="NbStars"> @Resources.Labels.NbStars </label>
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.NbStars, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.NbStars)
+            </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="NbStars"> @Resources.Labels.NbStars </label>
-
-            @Html.TextBoxFor(model => model.NbStars)
-            @Html.ValidationMessageFor(model => model.NbStars)
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="PhoneNumber1"> @Resources.Labels.HotelPhoneNumber</label>
-
-            @Html.TextBoxFor(model => model.PhoneNumber1)
+            <label class="control-label col-md-4" for="PhoneNumber1"> @Resources.Labels.HotelPhoneNumber</label>
+            <div class="col-md-4">
+            @Html.TextBoxFor(model => model.PhoneNumber1, new { @class="form-control"})
             @Html.ValidationMessageFor(model => model.PhoneNumber1)
+                </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="PhoneNumber2"> @Resources.Labels.HotelPhoneNumber</label>
+            <label class="control-label col-md-4" for="PhoneNumber2"> @Resources.Labels.HotelPhoneNumber</label>
 
-            @Html.TextBoxFor(model => model.PhoneNumber2)
+            <div class="col-md-4">
+            @Html.TextBoxFor(model => model.PhoneNumber2, new { @class="form-control"})
             @Html.ValidationMessageFor(model => model.PhoneNumber2)
+                </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="PhoneNumber3"> @Resources.Labels.HotelPhoneNumber</label>
+            <label class="control-label col-md-4" for="PhoneNumber3"> @Resources.Labels.HotelPhoneNumber</label>
 
-            @Html.TextBoxFor(model => model.PhoneNumber3)
+            <div class="col-md-4">
+            @Html.TextBoxFor(model => model.PhoneNumber3, new { @class="form-control"})
             @Html.ValidationMessageFor(model => model.PhoneNumber3)
+                </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="FaxNumber1"> @Resources.Labels.HotelFax</label>
-
-            @Html.TextBoxFor(model => model.FaxNumber1)
+            <label class="control-label col-md-4" for="FaxNumber1"> @Resources.Labels.HotelFax</label>
+            <div class="col-md-4">
+            @Html.TextBoxFor(model => model.FaxNumber1, new { @class="form-control"})
             @Html.ValidationMessageFor(model => model.FaxNumber1)
+                </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="FaxNumber2"> @Resources.Labels.HotelFax</label>
+            <label class="control-label col-md-4" for="FaxNumber2"> @Resources.Labels.HotelFax</label>
 
-            @Html.TextBoxFor(model => model.FaxNumber2)
+            <div class="col-md-4">
+            @Html.TextBoxFor(model => model.FaxNumber2, new { @class="form-control"})
             @Html.ValidationMessageFor(model => model.FaxNumber2)
+                </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="FaxNumber3"> @Resources.Labels.HotelFax</label>
+            <label class="control-label col-md-4" for="FaxNumber3"> @Resources.Labels.HotelFax</label>
 
-            @Html.TextBoxFor(model => model.FaxNumber3)
+            <div class="col-md-4">
+            @Html.TextBoxFor(model => model.FaxNumber3, new { @class="form-control"})
             @Html.ValidationMessageFor(model => model.FaxNumber3)
+                </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="Email1"> @Resources.Labels.email</label>
+            <label class="control-label col-md-4" for="Email1"> @Resources.Labels.email</label>
 
-            @Html.TextBoxFor(model => model.Email1)
+            <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Email1, new { @class="form-control"})
             @Html.ValidationMessageFor(model => model.Email1)
+                </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="Email2"> @Resources.Labels.email</label>
+            <label class="control-label col-md-4" for="Email2"> @Resources.Labels.email</label>
 
-            @Html.TextBoxFor(model => model.Email2)
+            <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Email2, new { @class="form-control"})
             @Html.ValidationMessageFor(model => model.Email2)
+                </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="Address"> @Resources.Labels.Address</label>
+            <label class="control-label col-md-4" for="Address"> @Resources.Labels.Address</label>
 
-            @Html.TextAreaFor(model => model.Address)
+            <div class="col-md-4">
+            @Html.TextAreaFor(model => model.Address, new { @class="form-control"})
             @Html.ValidationMessageFor(model => model.Address)
+                </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="Town"> @Resources.Labels.Town</label>
+            <label class="control-label col-md-4" for="Town"> @Resources.Labels.Town</label>
 
-            @Html.TextBoxFor(model => model.Town)
+            <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Town, new { @class="form-control"})
             @Html.ValidationMessageFor(model => model.Town)
+                </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="Wilaya"> @Resources.Labels.Wilaya</label>
+            <label class="control-label col-md-4" for="Wilaya"> @Resources.Labels.Wilaya</label>
 
-            @Html.TextBoxFor(model => model.Wilaya)
+            <div class="col-md-4">
+            @Html.TextBoxFor(model => model.Wilaya, new { @class="form-control"})
             @Html.ValidationMessageFor(model => model.Wilaya)
+                </div>
         </div>
 
         <div class="form-group">
-            <label class="control-label col-sm-2" for="AddressDescription"> @Resources.Labels.AddressDescription</label>
+            <label class="control-label col-md-4" for="AddressDescription"> @Resources.Labels.AddressDescription</label>
+            
+            <div class="col-md-4">
+                @Html.TextAreaFor(model => model.AddressDescription, new { @class="form-control"})
+                @Html.ValidationMessageFor(model => model.AddressDescription)
+            </div>
 
-            @Html.TextAreaFor(model => model.AddressDescription)
-            @Html.ValidationMessageFor(model => model.AddressDescription)
         </div>
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+        <div class="form-group">
+        <div class="col-md-offset-7 col-md-2">
+            <button type="submit" class="btn btn-success">@Resources.Labels.Next</button>
+        </div>
+        </div>
+    
 }
 
 

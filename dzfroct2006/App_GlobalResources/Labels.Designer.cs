@@ -232,7 +232,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Numéro téléphone.
+        ///   Looks up a localized string similar to Téléphone.
         /// </summary>
         internal static string HotelPhoneNumber {
             get {
@@ -327,6 +327,15 @@ namespace Resources {
         internal static string NewHotel {
             get {
                 return ResourceManager.GetString("NewHotel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Etape suivante.
+        /// </summary>
+        internal static string Next {
+            get {
+                return ResourceManager.GetString("Next", resourceCulture);
             }
         }
         

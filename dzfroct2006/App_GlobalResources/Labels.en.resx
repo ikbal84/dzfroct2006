@@ -261,4 +261,10 @@
   <data name="Wilaya" xml:space="preserve">
     <value>Wilaya</value>
   </data>
+  <data name="HotelPhoneNumber" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next Step</value>
+  </data>
 </root>

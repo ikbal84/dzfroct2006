@@ -188,6 +188,7 @@
     <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\OwnerSpaceController.cs" />
     <Compile Include="Controllers\SearchResultsController.cs" />
+    <Compile Include="DAL\HotelDAO.cs" />
     <Compile Include="DAL\HotelsDBContext.cs" />
     <Compile Include="DAL\HotelsDBInitializer.cs" />
     <Compile Include="DAL\HotelSearcher.cs" />
@@ -360,6 +361,8 @@
     <Content Include="Views\OwnerSpace\CreateHotel.cshtml" />
     <Content Include="Views\OwnerSpace\HotelOwnerSpace.cshtml" />
     <Content Include="Views\Hotel\Create.cshtml" />
+    <Content Include="Views\Hotel\CreateRooms.cshtml" />
+    <Content Include="Views\Hotel\CreateImage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
