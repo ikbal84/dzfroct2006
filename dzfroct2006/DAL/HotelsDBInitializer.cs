@@ -11,6 +11,11 @@ namespace dzfroct2006.DAL
     {
         protected override void Seed(HotelsDBContext context)
         {
+            // Initialiser chargement codes communes 
+            CitiesDAO cities = new CitiesDAO();
+            cities.insertCitiesDB();
+
+
             //Features : global for all hotels
             #region Features_declaration
             var Features1 = new Features() { FeatureName = "Wifi", FeatureDescription = "Wifi dans la chambre" };
