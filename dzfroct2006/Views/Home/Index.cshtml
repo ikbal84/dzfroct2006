@@ -58,9 +58,6 @@
                     $.ajax({
                         url: "http://localhost:61371/cities/search",
                         dataType: 'jsonp',
-                        jsonp: false,
-                        traditional: true,
-                        jsonpCallback: 'callback123',
                         data: {
                           textSerched: request.term
                         },
