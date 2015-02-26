@@ -24,5 +24,6 @@ namespace dzfroct2006.DAL
         public DbSet<Features> Features { get; set; }
         public DbSet<HotelFeatures> HotelFeatures { get; set; }
         public DbSet<HotelImages> HotelImages { get; set; }
+        public DbSet<City> City { get; set; }
     }
 }
