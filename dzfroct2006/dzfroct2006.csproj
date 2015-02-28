@@ -180,14 +180,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BLL\CitiesQuery.cs" />
     <Compile Include="BLL\IHotelsQuery.cs" />
     <Compile Include="BLL\HotelsQuery.cs" />
     <Compile Include="BLL\SearchFeatures.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\OwnerSpaceController.cs" />
     <Compile Include="Controllers\SearchResultsController.cs" />
+    <Compile Include="DAL\CitiesDAO.cs" />
     <Compile Include="DAL\HotelDAO.cs" />
     <Compile Include="DAL\HotelsDBContext.cs" />
     <Compile Include="DAL\HotelsDBInitializer.cs" />
@@ -198,6 +201,7 @@
     </Compile>
     <Compile Include="Filters\LanguageFilter.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\City.cs" />
     <Compile Include="Models\Features.cs" />
     <Compile Include="Models\HotelFeatures.cs" />
     <Compile Include="Models\HotelImages.cs" />
@@ -278,6 +282,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="App_GlobalResources\codes_communes.csv" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\Backgrounds\oran1.jpg" />
     <Content Include="Images\Backgrounds\setif1.jpg" />
@@ -363,6 +368,7 @@
     <Content Include="Views\Hotel\Create.cshtml" />
     <Content Include="Views\Hotel\CreateRooms.cshtml" />
     <Content Include="Views\Hotel\CreateImage.cshtml" />
+    <Content Include="Views\Cities\search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

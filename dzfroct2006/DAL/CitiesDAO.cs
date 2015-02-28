@@ -14,14 +14,12 @@ namespace dzfroct2006.DAL
       {
 
           var context = new HotelsDBContext();
-
-         
          
             string line;
 
             // Read the file and display it line by line.
             System.IO.StreamReader file =
-                new System.IO.StreamReader(@"d:\projets\2015\HotelOnLineAlgeria\dzfroct2006\dzfroct2006\App_GlobalResources\codes_communes.csv");
+                new System.IO.StreamReader(@"C:\Users\Moh\Documents\Visual Studio 2012\Projects\dzfroct2006\dzfroct2006\App_GlobalResources\codes_communes.csv");
             while ((line = file.ReadLine()) != null)
             {
                 string[] words = line.Split(';');
@@ -34,21 +32,25 @@ namespace dzfroct2006.DAL
             context.SaveChanges();
         }
 
-      public List<string> citiesStartWith(string searchedCity)
+
+      public List<City> getAllCities()
+      {
+          var context = new HotelsDBContext();
+          return context.City.OrderBy(c => c.Commune).ToList();
+      }
+
+
+      public List<City> citiesStartWith(string searchedCity)
       {
           var context = new HotelsDBContext();
           IQueryable<City> citiesQuery = context.City;
           if (!String.IsNullOrEmpty(searchedCity))
           {
-              citiesQuery = citiesQuery.Where(c => c.Commune.ToLower().Contains(searchedCity.ToLower())
-                                                  | c.Wilaya.ToLower().Contains(searchedCity.ToLower()));
+              citiesQuery = citiesQuery.Where(c => c.Commune.ToLower().StartsWith(searchedCity.ToLower())
+                                                  | c.Wilaya.ToLower().StartsWith(searchedCity.ToLower()));
           }
 
-
-         return citiesQuery.Select(c => c.Commune).ToList();
-          //return citiesQuery.ToList();
-
-         
+          return citiesQuery.OrderBy(c => c.Commune).ToList();
       }
     }    
 }

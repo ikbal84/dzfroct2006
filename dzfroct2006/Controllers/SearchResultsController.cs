@@ -23,7 +23,7 @@ namespace dzfroct2006.Controllers
 
                 ViewBag.dateDebut = SearchQuery.StartDate;
                 ViewBag.dateFin = SearchQuery.EndDate;
-                ViewBag.ville = SearchQuery.City;
+                ViewBag.ville = SearchQuery.Town + ", " + SearchQuery.Wilaya;
  
                 return View(SearchQuery.getHotelsFromHome());
             }

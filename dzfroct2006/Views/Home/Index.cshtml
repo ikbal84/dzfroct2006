@@ -1,20 +1,4 @@
-﻿<style>
-        .ui-autocomplete {
-            max-height: 100px;
-            overflow-y: auto;
-            /* prevent horizontal scrollbar */
-            overflow-x: hidden;
-        }
-        /* IE 6 doesn't support max-height
-    * we use height instead, but this forces the menu to always be this tall
-    */
-        * html .ui-autocomplete {
-            height: 100px;
-        }
-</style>
-
-
-    @{
+﻿    @{
         ViewBag.Title = Resources.Labels.HomePageTitle;
     }
 
@@ -27,7 +11,13 @@
         <div class="col-xs-12 col-sm-10 col-md-6 col-md-offset-3">
             <form role="form" class="form-inline" action="/Home/index" method="post">
                 <div class="form-group">
-                    <input type="text" name="City" value="" id="tags" placeholder="@Resources.Labels.TownWaterMark" class="form-control" />
+                    
+                    <input type="text" name="City" value="" id="City" placeholder="@Resources.Labels.TownWaterMark" class="form-control" />
+                    
+                    <ul style="display: none; top: 39px; left: 16px; width: 279px; height: 200px; overflow:scroll" id="AutoCompleteResults" class="ui-autocomplete ui-menu ui-widget ui-widget-content">
+                    </ul>
+                    
+                    
                     <input type="text" name="StartDate" class="SearchDate form-control" placeholder="@Resources.Labels.ArriveDateWaterMark" />
                     <input type="text" name="EndDate" class="SearchDate form-control" placeholder="@Resources.Labels.LeaveDateWaterMark" />
 
@@ -50,51 +40,78 @@
         $('.SearchDate').datepicker({
             startDate: '-3d'
             //add more options for language
-        })
-        
-        $(function () {
-            $("#tags").autocomplete({
-                source: function (request, response) {
-                    $.ajax({
-                        url: "http://localhost:61371/cities/search",
-                        dataType: 'jsonp',
-                        data: {
-                          textSerched: request.term
-                        },
-                        success: function (data, textStatus) {
-                            alert('json : ' + json);
-                            alert('data : ' + data);
-                            response(data);
-                        },
-
-                        error: function (data) {
-                       
-                            alert('json : ' + json);
-                            alert('data : ' + data);
-                            response(data);
-                        },
-
-                        error: function(xhr, ajaxOptions, thrownError) {
-                            alert('failed....');
-                        }
-                    });
-                },
-
-
-                minLength: 3,
-                select: function (event, ui) {
-                    log(ui.item ?
-                    "Selected: " + ui.item.label :
-                    "Nothing selected, input was " + this.value);
-                },
-                open: function () {
-                    $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
-                },
-                close: function () {
-                    $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
-                }
-            });
         });
 
+        $("#City").keyup(function () {
+            if ($(this).val().length >= 2){
+
+                $.ajax({
+
+                    url: "http://localhost:61371/cities/search",
+                    data: {
+                        term: $(this).val()
+                    },
+                    success: function (data) {
+
+                        var List = data.split(';');
+                        $("#AutoCompleteResults").html("");
+                        $("#AutoCompleteResults").css("display", "");
+
+                        for (i = 0; i < List.length; i++) {
+                            var liItem = '<li id="Item_'+i+'" class="ui-menu-item">' + List[i] + "</li>";
+                            $("#AutoCompleteResults").append(liItem);
+                        }
+
+                        $(".ui-menu-item").click(function () {
+                            var item = $(this);
+                            $("#City").val(item.text());
+
+                        });
+                    },
+                    error: function () { }
+                });
+            }
+        });
+
+        $("#City").dblclick(function () {
+
+            $.ajax({
+
+                url: "http://localhost:61371/cities/search",
+                data: {
+                    term: ''
+                },
+                success: function (data) {
+
+                    var List = data.split(';');
+                    $("#AutoCompleteResults").html("");
+                    $("#AutoCompleteResults").css("display", "");
+
+                    for (i = 0; i < List.length; i++) {
+                        var liItem = '<li id="Item_' + i + '" class="ui-menu-item">' + List[i] + "</li>";
+                        $("#AutoCompleteResults").append(liItem);
+                    }
+
+                    $(".ui-menu-item").click(function () {
+                        var item = $(this);
+                        $("#City").val(item.text());
+
+                    });
+                },
+                error: function () { }
+            });
+
+        });
+       
+        $(document).mouseup(function (e) {
+            var container = $("#AutoCompleteResults");
+
+            if (!container.is(e.target)
+                && container.has(e.target).length === 0);
+            {
+                container.hide();
+            }
+        });
+        
     </script>
 

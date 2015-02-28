@@ -1,11 +1,13 @@
 ﻿using dzfroct2006.BLL;
 using dzfroct2006.Models;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace dzfroct2006.Controllers
 {
@@ -13,18 +15,18 @@ namespace dzfroct2006.Controllers
     {
         //
         // GET: /Cities/
-
-        public ActionResult search(string textSerched)
+        
+        public ActionResult search(string term)
         {
-            Dictionary<string, string> udemy = new Dictionary<string, string>();
             var citiesQuery = new CitiesQuery();
-            List<string> cities = citiesQuery.getListCities(textSerched, null);
+            String cyties = citiesQuery.getListCities(term);
 
-            string js = JsonConvert.SerializeObject(cities);
-            return Json(js, JsonRequestBehavior.AllowGet);      
-          
+            ViewBag.Cyties = cyties;
+            
+            return View();
+
         }
-
+        
         //
         // GET: /Cities/Details/5
 

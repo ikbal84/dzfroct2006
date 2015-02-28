@@ -3,6 +3,7 @@ using dzfroct2006.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace dzfroct2006.BLL
@@ -11,10 +12,39 @@ namespace dzfroct2006.BLL
     {
 
 
-        public List<string> getListCities(String SearchName, String SearchCodeValue)
+        public String getListCities(String SearchName)
         {
-            CitiesDAO city = new CitiesDAO();
-            return city.citiesStartWith(SearchName); ;
-        }       
+            CitiesDAO cityDAO = new CitiesDAO();
+            List<City> Cities = null;
+
+            if (String.IsNullOrEmpty(SearchName))
+            {
+                Cities = cityDAO.getAllCities();
+            }
+            else
+            {
+                Cities = cityDAO.citiesStartWith(SearchName);
+            }
+
+            return ConvertCitiesListtoString(Cities);
+        }
+
+
+        private String ConvertCitiesListtoString(List<City> Cities)
+        {
+            StringBuilder Result = new StringBuilder();
+
+            foreach (var city in Cities)
+            {
+                if (Result.Length > 1)
+                {
+                    Result.Append(";");
+                }
+
+                Result.Append(city.Commune.Trim() +", " + city.Wilaya.Trim() +", "+ city.CodePostal);
+            }
+
+            return Result.ToString();
+        }
     }
 }

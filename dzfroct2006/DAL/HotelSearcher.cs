@@ -21,14 +21,17 @@ namespace dzfroct2006.DAL
         /// <param name="SearchedCity"></param>
         /// <param name="SearchedNbPersonnes"></param>
         /// <returns></returns>
-        public List<Hotels> Search(String SearchedCity, int SearchedNbPersonnes = 0)
+        public List<Hotels> Search(String SearchedTown, String SearchedWilaya, int SearchedNbPersonnes = 0)
         {
             //seraching for City and NbPersonnes
             IQueryable<Hotels> HotelsQuery = context.Hotels;
-            if (!String.IsNullOrEmpty(SearchedCity))
+            if (!String.IsNullOrEmpty(SearchedTown))
             {
-                HotelsQuery = HotelsQuery.Where(h => h.Town.ToLower().Contains(SearchedCity.ToLower()) 
-                                                    | h.Wilaya.ToLower().Contains(SearchedCity.ToLower()));
+                HotelsQuery = HotelsQuery.Where(h => h.Town.ToLower().Contains(SearchedTown.ToLower())
+                                                    | h.Wilaya.ToLower().Contains(SearchedWilaya.ToLower())
+                                                    | SearchedTown.ToLower().Contains(h.Town.ToLower())
+                                                    | SearchedWilaya.ToLower().Contains(h.Wilaya.ToLower())
+                                                    );
             }
 
             if (SearchedNbPersonnes != 0)
@@ -46,15 +49,18 @@ namespace dzfroct2006.DAL
         /// <param name="SearchedFeatures"></param>
         /// <param name="SearchedNbPersonnes"></param>
         /// <returns></returns>
-        public List<Hotels> Search(String SearchedCity, List<String> SearchedFeatures, int SearchedNbPersonnes = 0)
+        public List<Hotels> Search(String SearchedTown, String SearchedWilaya, List<String> SearchedFeatures, int SearchedNbPersonnes = 0)
         {
             //seraching for City and NbPersonnes
             var hotlemmm = context.Hotels.ToList();
             IQueryable<Hotels> HotelsQuery = context.Hotels;
-            if (!String.IsNullOrEmpty(SearchedCity))
+            if (!String.IsNullOrEmpty(SearchedTown))
             {
-                HotelsQuery = HotelsQuery.Where( h => h.Town.ToLower().Contains(SearchedCity.ToLower()) 
-                                                | h.Town.ToLower().Contains(SearchedCity.ToLower()));
+                HotelsQuery = HotelsQuery.Where(h => h.Town.ToLower().Contains(SearchedTown.ToLower())
+                                                    | h.Wilaya.ToLower().Contains(SearchedWilaya.ToLower())
+                                                    | SearchedTown.ToLower().Contains(h.Town.ToLower())
+                                                    | SearchedWilaya.ToLower().Contains(h.Wilaya.ToLower())
+                                                    );
             }
             
             if (SearchedNbPersonnes != 0)

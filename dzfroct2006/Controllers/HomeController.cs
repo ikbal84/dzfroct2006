@@ -39,7 +39,8 @@ namespace dzfroct2006.Controllers
             int NbRooms = Int32.Parse(HttpUtility.HtmlDecode(FormValues["NbRooms"]));
 
             var query = new HotelsQuery() { 
-                                City = City, 
+                                Town = City.Contains(',')? City.Split(',')[0]: City,
+                                Wilaya = City.Contains(',')? City.Split(',')[1]: City,
                                 StartDate = StartDate, 
                                 EndDate = EndDate, 
                                 NbPersonnes = NbPersonnes,
