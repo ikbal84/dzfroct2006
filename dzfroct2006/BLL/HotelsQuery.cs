@@ -139,5 +139,11 @@ namespace dzfroct2006.BLL
             this.Features = SearchFeatures;
         }
 
+        //detail horal
+        public Hotels getHotel(long idHotel) {
+          var  HotelQuery = from entity in context.Hotels where entity.HotelID == idHotel select entity;
+          return HotelQuery.Single();
+        }
+
     } 
 }

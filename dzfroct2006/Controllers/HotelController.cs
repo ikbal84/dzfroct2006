@@ -14,23 +14,13 @@ namespace dzfroct2006.Controllers
         //
         // GET: /Hotel/
 
-        public ActionResult Hotel()
+        public ActionResult Hotel(String id)
         {
             ViewBag.dateDebut = new DateTime(2014, 12, 26).Date;
             ViewBag.dateFin = new DateTime(2015, 12, 26).Date;
             ViewBag.ville = "Oran";
-
-
-            HotelImages hotelImages = new HotelImages { IdImage = 11, Name = "hotelTest1", FilePath = "../Images/HotelsImages/HotelTest/hotelTest2.png" };
-
-            List<HotelImages> listHotelImages = new List<HotelImages>();
-            listHotelImages.Add(hotelImages);
-
-            HotelRooms room1 = new HotelRooms { RoomType = "Double", Description = "Chambre double Luxe", NbRooms = 5, NbPersonnes = 2, Price = "5000DA" };
-            List<HotelRooms> listRoom = new List<HotelRooms>();
-            listRoom.Add(room1);
-            var hotel = new Hotels() { Name = "TestHotel", Description = "Un simple hotel de test", PhoneNumber1 = "002130000001", FaxNumber1 = "0021321659878", Address = "01 rue des tests oran", HotelImages = listHotelImages, Rooms = listRoom };
-
+            var hotelDao = new HotelDAO();
+            Hotels hotel = hotelDao.SelectHotls(Int32.Parse(id));
             return View(hotel);
         }
 
