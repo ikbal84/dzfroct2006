@@ -8,7 +8,7 @@ using System.Web;
 namespace dzfroct2006.BLL
 {
     public class HotelsQuery
-    {      
+    {         
         public String City { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
