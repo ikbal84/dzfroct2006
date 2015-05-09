@@ -8,9 +8,14 @@ using System.Web;
 namespace dzfroct2006.BLL
 {
     public class HotelsQuery
+<<<<<<< HEAD
     {
         public String Town { get; set; }
         public String Wilaya { get; set; }
+=======
+    {         
+        public String City { get; set; }
+>>>>>>> 7774f532c09ee5046e172ff015fc84abd9dbb377
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int NbPersonnes { get; set; }
@@ -98,6 +103,12 @@ namespace dzfroct2006.BLL
             }
 
             this.Features = SearchFeatures;
+        }
+
+        //detail horal
+        public Hotels getHotel(long idHotel) {
+          var  HotelQuery = from entity in context.Hotels where entity.HotelID == idHotel select entity;
+          return HotelQuery.Single();
         }
 
     } 
