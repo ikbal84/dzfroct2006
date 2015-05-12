@@ -1,4 +1,39 @@
-﻿@model dzfroct2006.BLL.HotelsQuery
+﻿<script src="https://maps.googleapis.com/maps/api/js?libraries=visualization">
+</script>
+<script>
+    var map;
+
+    function initialize() {
+        map = new google.maps.Map(document.getElementById('map-canvas'), {
+            zoom: 2,
+            center: new google.maps.LatLng(2.8, -187.3),
+            mapTypeId: google.maps.MapTypeId.TERRAIN
+        });
+
+        // Create a <script> tag and set the USGS URL as the source.
+        var script = document.createElement('script');
+        // (In this example we use a locally stored copy instead.)
+        // script.src = 'http://earthquake.usgs.gov/earthquakes/feed/geojsonp/2.5/week';
+        script.src = 'earthquake_GeoJSONP';
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
+
+    // Loop through the results array and place a marker for each
+    // set of coordinates.
+    window.eqfeed_callback = function (results) {
+        for (var i = 0; i < results.features.length; i++) {
+            var coords = results.features[i].geometry.coordinates;
+            var latLng = new google.maps.LatLng(coords[1], coords[0]);
+            var marker = new google.maps.Marker({
+                position: latLng,
+                map: map
+            });
+        }
+    }
+    google.maps.event.addDomListener(window, 'load', initialize)
+</script>
+
+@model dzfroct2006.BLL.HotelsQuery
 
 @{
     ViewBag.Title = "HotelsSearchResult";
@@ -30,8 +65,8 @@
     }
 </div>
 
-<div class="col-md-7">
 
+<div class="col-md-7">
     @foreach (var item in Model.ResultHotels) {
       <div class="row SearchResult">
           <div class="col-xs-0 col-sm-10 col-md-4" >
@@ -73,6 +108,10 @@
 
       </div>
     }
+
+</div>
+<div id="map-canvas"  class="col-xs-0 col-sm-10 col-md-5 HotelsMap">
+    
 
 </div>
 

@@ -84,3 +84,10 @@ list-style-image: url(../Images/icones/resto.jpg);
     text-align: right;
     padding-top: 5%;
 }
+
+.HotelsMap {
+    width: 500px;
+    height: 400px;
+    margin-left : 35px;
+
+  }
