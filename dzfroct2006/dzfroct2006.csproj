@@ -203,6 +203,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Features.cs" />
+    <Compile Include="Models\GeoHotel.cs" />
     <Compile Include="Models\HotelFeatures.cs" />
     <Compile Include="Models\HotelImages.cs" />
     <Compile Include="Models\HotelOwners.cs" />

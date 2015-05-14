@@ -50,6 +50,7 @@ namespace dzfroct2006.Models
 
         public virtual List<HotelImages> HotelImages { get; set; }
 
- 
+        public virtual GeoHotel GeoHotel { get; set; }
+
      }
 }

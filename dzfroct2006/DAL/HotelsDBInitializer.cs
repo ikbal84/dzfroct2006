@@ -15,6 +15,14 @@ namespace dzfroct2006.DAL
             CitiesDAO cities = new CitiesDAO();
             cities.insertCitiesDB();
 
+            /*
+             *  
+             * ['Bondi Beach', -33.890542, 151.274856, 4],
+             * ['Coogee Beach', -33.923036, 151.259052, 5],
+             * ['Cronulla Beach', -34.028249, 151.157507, 3],
+             * ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+             * ['Maroubra Beach', -33.950198, 151.259302, 1]
+             */
 
             //Features : global for all hotels
             #region Features_declaration
@@ -34,9 +42,19 @@ namespace dzfroct2006.DAL
 
             // Hotel 1 
             #region Hotel_Anissov
-            var hotel = new Hotels() { Name = "Hotel Anissov", Description = "Un simple hotel de test", FaxNumber1 = "0021321659878", NbStars = 3,
-                                        Town="Aintork", Wilaya="Oran"};
-
+             var hotel = new Hotels()
+            {
+                Name = "Hotel Anissov",
+                Description = "Un simple hotel de test",
+                FaxNumber1 = "0021321659878",
+                NbStars = 3,
+                Town = "Aintork",
+                Wilaya = "Oran",
+                GeoHotel = new GeoHotel { InfoMapHotel = "Wahran Hotel", LatitudeHotel = 35.702441, LongitudeHotel = -0.646563, AltitudeHotel = 1 },
+                
+            };
+             
+            
             var Room = new HotelRooms() { RoomType = "Double", Description = "chambre hayla", Hotel = hotel, NbPersonnes = 2, NbRooms = 5 };
 
             var HotelFeatures1 = new HotelFeatures() { Feature = Features1, Hotel = hotel, Price = 1 };
@@ -51,8 +69,14 @@ namespace dzfroct2006.DAL
 
             //Hotel 2
             #region Hotel_Nadirov
-            var hotel2 = new Hotels() { Name = "Hotel Nadirov", Description = "Un simple hotel de test", FaxNumber1 = "0021321659878", NbStars = 1,
-                                        Town = "Ain touta", Wilaya = "Batna"};
+            var hotel2 = new Hotels() { 
+                Name = "Hotel Nadirov",
+                Description = "Un simple hotel de test", 
+                FaxNumber1 = "0021321659878", 
+                NbStars = 1,
+                Town = "Ain touta", Wilaya = "Batna",
+                GeoHotel = new GeoHotel { InfoMapHotel = "Batna Hotel", LatitudeHotel = 35.551357, LongitudeHotel = 6.178383, AltitudeHotel = 1 },
+                };
 
             var Room2 = new HotelRooms() { RoomType = "GuissGuiss", Description = "chambre hayla", Hotel = hotel2, NbPersonnes = 4, NbRooms = 5 };
 
@@ -67,8 +91,15 @@ namespace dzfroct2006.DAL
 
             //Hotel3
             #region Hotel_Ikbal
-            var hotel3 = new Hotels() { Name = "Hotel Ikbal", Description = "Un simple hotel de test", FaxNumber1 = "0021321659878", NbStars = 5, 
-                                        Town = "Dar el Beida", Wilaya= "Alger"};
+            var hotel3 = new Hotels() { 
+                Name = "Hotel Ikbal",
+                Description = "Un simple hotel de test", 
+                FaxNumber1 = "0021321659878", 
+                NbStars = 5, 
+                Town = "Dar el Beida", 
+                Wilaya= "Alger",
+                GeoHotel = new GeoHotel { InfoMapHotel = "Alger Hotel", LatitudeHotel = 36.709825, LongitudeHotel = 3.210534, AltitudeHotel = 1 },
+            };
 
             var Room3 = new HotelRooms() { RoomType = "Luxe", Description = "chambre Extra", Hotel = hotel3, NbPersonnes = 4, NbRooms = 5 };
 
