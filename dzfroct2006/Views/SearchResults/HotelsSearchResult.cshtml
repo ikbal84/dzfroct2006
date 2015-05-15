@@ -18,7 +18,9 @@
 
 }
 
-<script> var locations = "";</script>
+<script type="text/javascript">
+    var locations = [];
+</script>
 
 <div id="filters" class="col-xs-12 col-sm-10 col-md-7">
     @using (Html.BeginForm()) {
@@ -53,8 +55,12 @@
 
                 @if (item.GeoHotel != null )
                 {   
-                    <script>
-                        locations[locations.length]=(@item.GeoHotel.InfoMapHotel, @item.GeoHotel.LatitudeHotel, @item.GeoHotel.LongitudeHotel, @item.GeoHotel.AltitudeHotel);
+                    <script type="text/javascript">
+                        var hotel = ["@item.GeoHotel.InfoMapHotel", "@item.GeoHotel.LatitudeHotel.ToString(System.Globalization.CultureInfo.InvariantCulture)",
+                                                                    "@item.GeoHotel.LongitudeHotel.ToString(System.Globalization.CultureInfo.InvariantCulture)",
+                                                                    "@item.GeoHotel.AltitudeHotel.ToString(System.Globalization.CultureInfo.InvariantCulture)"];
+                        locations.push(hotel);
+
                     </script>                      
                 }  
               
@@ -100,12 +106,10 @@
 
     var infowindow = new google.maps.InfoWindow();
 
-    var marker, i;
 
-     
-    for (i = 0; i < locations.length; i++) {
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+    for (var i = 0; i < locations.length; i++) {
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(parseFloat(locations[i][1]), parseFloat(locations[i][2])),
             map: map
         });
 
