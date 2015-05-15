@@ -8,7 +8,7 @@ import java.util.Random;
 public class GenerateurHotelRoomsInsert {
 
 	public static String generateurInsert() {
-		String[] listeRoom = {"Simple","Double","Double Lixe","Double Supreme","Triple","Swite","Swite Luxe"};
+		String[] listeRoom = {"Simple","Double","Double Luxe","Double Supreme","Triple","Suite","Suite Luxe", "Sultan", "Extra", "Mono"};
 		Random random = new Random();
 		StringBuilder insertReq = new StringBuilder();
 		

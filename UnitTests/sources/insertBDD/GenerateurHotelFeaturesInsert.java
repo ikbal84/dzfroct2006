@@ -21,8 +21,8 @@ public class GenerateurHotelFeaturesInsert {
 				);
 		insertReq.append(" VALUES "
 				+ " ( '"+random.nextInt(3000)+"'"
-				+ ",'"+random.nextInt(9)+"'"
-				+ ",'"+random.nextInt(30)+"'"
+				+ ",'"+random.nextInt(11)+"'"
+				+ ",'"+random.nextInt(1000)+"'"
 				+")\n");
         }
 		insertReq.append("GO");

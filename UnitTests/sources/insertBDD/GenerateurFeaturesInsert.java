@@ -8,13 +8,13 @@ import java.util.Random;
 public class GenerateurFeaturesInsert {
 	
 		public static String generateurInsert() {
-			String[] listeFeature = {"WIFI","Parking","Cafeteria","Restorant","TV","Sonat","Petit dejeuner", "Reveil", "Laverie"};
+			String[] listeFeature = {"WiFi","Parking","Cafeteria","Restaurant","TV","Sauna","Petit dejeuner", "Reveil", "Laverie", "Piscine", "Salle de sport"};
 			Random random = new Random();
 			StringBuilder insertReq = new StringBuilder();
 			
 			insertReq.append("USE [HotelsDB]\n");
 	        insertReq.append("GO\n");
-	        for (int i=0; i < 9; i++ ) {
+	        for (int i=0; i < 11; i++ ) {
 			insertReq.append("INSERT INTO [dbo].[Features] ("
 					+ "[FeatureName])"
 					);
