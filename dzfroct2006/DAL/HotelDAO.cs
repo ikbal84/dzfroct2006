@@ -4,11 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using dzfroct2006.BLL;
 
 namespace dzfroct2006.DAL
 {
-    public class HotelDAO
+    public class HotelDAO : IHotelDAO
     {
         public bool CreateHotel(Hotels hotel)
         {
@@ -79,14 +78,6 @@ namespace dzfroct2006.DAL
                 return false;
             }
 
-        }
-
-        public Hotels SelectHotls(long hotelId)
-        {
-            var hotelsQuery = new HotelsQuery();
-            Hotels hotels = hotelsQuery.getHotel(hotelId);
-
-            return hotels;
         }
 
     }

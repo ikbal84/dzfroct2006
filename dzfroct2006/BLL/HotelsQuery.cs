@@ -4,35 +4,40 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 
 namespace dzfroct2006.BLL
 {
-    public class HotelsQuery
-{
+    public class HotelsQuery : IDisposable
+    {
         public String Town { get; set; }
         public String Wilaya { get; set; }
-      
-        public String City { get; set; }
-
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int NbPersonnes { get; set; }
         public int NbRooms { get; set; }
-
+        public String SortProperty { get; set; }
+        public String SortType { get; set; }
+        public int Page { get; set; }
+        public int PageSize { get; set; }
+        public int TotalResultCount { get; set; }
+        public bool PaginationEnabled { get; set; }
+        
         public List<SearchFeatures> Features { get; set; }
 
         public List<Hotels> ResultHotels { get; set; }
         
         private HotelsDBContext context;
 
-        public HotelsQuery() {
+        public HotelsQuery() 
+        {
+
             this.context = new HotelsDBContext();
             this.ResultHotels = new List<Hotels>();
             this.Features = new List<SearchFeatures>();
-            
+            this.PageSize = Int32.Parse(WebConfigurationManager.AppSettings["PageSize"].ToString());
             this.IntiFeatures();
         }
-
 
         /// <summary>
         /// 
@@ -42,8 +47,12 @@ namespace dzfroct2006.BLL
         {
             HotelSearcher HotelSearcher = new HotelSearcher();
 
-            this.ResultHotels = HotelSearcher.Search(this.Town, this.Wilaya, this.NbPersonnes);
+            Tuple<List<Hotels>, int> Result = HotelSearcher.Search(this.Town, this.Wilaya, this.NbPersonnes);
 
+            this.ResultHotels = Result.Item1;
+            
+            UpdatePagination(Result.Item2);
+            
             return this;
         }
 
@@ -59,7 +68,28 @@ namespace dzfroct2006.BLL
 
             HotelSearcher HotelSearcher = new HotelSearcher();
 
-            this.ResultHotels = HotelSearcher.Search(this.Town, this.Wilaya, FilteredFeatures, this.NbPersonnes);
+            Tuple<List<Hotels>, int> Result = HotelSearcher.Search(this.Town, this.Wilaya, FilteredFeatures, this.NbPersonnes);
+
+            this.ResultHotels = Result.Item1;
+            
+            UpdatePagination(Result.Item2);
+
+            return this;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public HotelsQuery SortResults()
+        {
+            this.ResultHotels = new List<Hotels>();
+            HotelSearcher HotelSearcher = new HotelSearcher();
+            Tuple<List<Hotels>, int> SortResult =  HotelSearcher.Search(this.Town, this.Wilaya, this.NbPersonnes, this.SortProperty, this.SortType);
+
+            this.ResultHotels = SortResult.Item1;
+            UpdatePagination(SortResult.Item2);
 
             return this;
         }
@@ -95,7 +125,8 @@ namespace dzfroct2006.BLL
                 SearchFeatures.Add(new SearchFeatures() 
                                             { 
                                                SearchFeatureName = feature.FeatureName, 
-                                               SearchFeatureValue = String.Empty 
+                                               SearchFeatureValue = String.Empty ,
+                                               isPrincipale = feature.isPrincipale
                                             });
 
             }
@@ -103,11 +134,30 @@ namespace dzfroct2006.BLL
             this.Features = SearchFeatures;
         }
 
-        //detail horal
-        public Hotels getHotel(long idHotel) {
-          var  HotelQuery = from entity in context.Hotels where entity.HotelID == idHotel select entity;
-          return HotelQuery.Single();
+        public HotelsQuery GetPage(int PageNumber)
+        {
+            this.Page = PageNumber;
+
+            this.ResultHotels = new List<Hotels>();
+            HotelSearcher HotelSearcher = new HotelSearcher();
+            Tuple<List<Hotels>, int> Result = HotelSearcher.Search(this.Town, this.Wilaya, this.NbPersonnes, this.SortProperty, this.SortType, this.Page);
+
+            this.ResultHotels = Result.Item1;
+            
+            UpdatePagination(Result.Item2);
+            return this;
+
         }
 
+        private void UpdatePagination(int TotalCount)
+        {
+            this.TotalResultCount = TotalCount;
+            this.PaginationEnabled = ((float)this.TotalResultCount / this.PageSize > 1) ? true : false;
+        }
+
+        public void Dispose()
+        {
+            this.Dispose();
+        }
     } 
 }

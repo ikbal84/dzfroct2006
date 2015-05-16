@@ -7,7 +7,7 @@ using System.Web;
 
 namespace dzfroct2006.DAL
 {
-    public class HotelsDBInitializer: DropCreateDatabaseAlways<HotelsDBContext> //DropCreateDatabaseIfModelChanges<HotelsDBContext>
+    public class HotelsDBInitializer : DropCreateDatabaseAlways<HotelsDBContext> //DropCreateDatabaseIfModelChanges<HotelsDBContext>
     {
         protected override void Seed(HotelsDBContext context)
         {
@@ -26,23 +26,26 @@ namespace dzfroct2006.DAL
 
             //Features : global for all hotels
             #region Features_declaration
-            var Features1 = new Features() { FeatureName = "Wifi", FeatureDescription = "Wifi dans la chambre" };
+            var Features1 = new Features() { FeatureName = "Wifi", FeatureDescription = "Wifi dans la chambre", isPrincipale = true };
 
-            var Features2 = new Features() { FeatureName = "Petit déjeuné", FeatureDescription = "Petit déjeuné en salle" };
+            var Features2 = new Features() { FeatureName = "Petit déjeuné", FeatureDescription = "Petit déjeuné en salle", isPrincipale = true };
 
-            var Features3 = new Features() { FeatureName = "Télé", FeatureDescription = "Télévision avec 150 chaines" };
+            var Features3 = new Features() { FeatureName = "Télé", FeatureDescription = "Télévision avec 150 chaines", isPrincipale = true };
 
-            var Features4 = new Features() { FeatureName = "Parking", FeatureDescription = "570 places" };
+            var Features4 = new Features() { FeatureName = "Parking", FeatureDescription = "570 places", isPrincipale = false };
+
+            var Features5 = new Features() { FeatureName = "Piscine", FeatureDescription = "Superbe piscine", isPrincipale = false };
 
             context.Features.Add(Features1);
             context.Features.Add(Features2);
             context.Features.Add(Features3);
             context.Features.Add(Features4);
+            context.Features.Add(Features5);
             #endregion
 
             // Hotel 1 
             #region Hotel_Anissov
-             var hotel = new Hotels()
+            var hotel = new Hotels()
             {
                 Name = "Hotel Anissov",
                 Description = "Un simple hotel de test",
@@ -51,10 +54,10 @@ namespace dzfroct2006.DAL
                 Town = "Aintork",
                 Wilaya = "Oran",
                 GeoHotel = new GeoHotel { InfoMapHotel = "Wahran Hotel", LatitudeHotel = 35.702441, LongitudeHotel = -0.646563, AltitudeHotel = 1 },
-                
+
             };
-             
-            
+
+
             var Room = new HotelRooms() { RoomType = "Double", Description = "chambre hayla", Hotel = hotel, NbPersonnes = 2, NbRooms = 5 };
 
             var HotelFeatures1 = new HotelFeatures() { Feature = Features1, Hotel = hotel, Price = 1 };
@@ -69,14 +72,16 @@ namespace dzfroct2006.DAL
 
             //Hotel 2
             #region Hotel_Nadirov
-            var hotel2 = new Hotels() { 
+            var hotel2 = new Hotels()
+            {
                 Name = "Hotel Nadirov",
-                Description = "Un simple hotel de test", 
-                FaxNumber1 = "0021321659878", 
+                Description = "Un simple hotel de test",
+                FaxNumber1 = "0021321659878",
                 NbStars = 1,
-                Town = "Ain touta", Wilaya = "Batna",
+                Town = "Ain touta",
+                Wilaya = "Batna",
                 GeoHotel = new GeoHotel { InfoMapHotel = "Batna Hotel", LatitudeHotel = 35.551357, LongitudeHotel = 6.178383, AltitudeHotel = 1 },
-                };
+            };
 
             var Room2 = new HotelRooms() { RoomType = "GuissGuiss", Description = "chambre hayla", Hotel = hotel2, NbPersonnes = 4, NbRooms = 5 };
 
@@ -91,13 +96,14 @@ namespace dzfroct2006.DAL
 
             //Hotel3
             #region Hotel_Ikbal
-            var hotel3 = new Hotels() { 
+            var hotel3 = new Hotels()
+            {
                 Name = "Hotel Ikbal",
-                Description = "Un simple hotel de test", 
-                FaxNumber1 = "0021321659878", 
-                NbStars = 5, 
-                Town = "Dar el Beida", 
-                Wilaya= "Alger",
+                Description = "Un simple hotel de test",
+                FaxNumber1 = "0021321659878",
+                NbStars = 5,
+                Town = "Dar el Beida",
+                Wilaya = "Alger",
                 GeoHotel = new GeoHotel { InfoMapHotel = "Alger Hotel", LatitudeHotel = 36.709825, LongitudeHotel = 3.210534, AltitudeHotel = 1 },
             };
 
@@ -115,7 +121,7 @@ namespace dzfroct2006.DAL
             context.HotelFeatures.Add(HotelFeatures3_2);
             context.HotelFeatures.Add(HotelFeatures3_3);
             #endregion
-            
+
             base.Seed(context);
         }
     }

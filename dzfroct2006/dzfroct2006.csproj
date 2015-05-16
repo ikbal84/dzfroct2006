@@ -20,6 +20,10 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,6 +59,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -195,6 +200,8 @@
     <Compile Include="DAL\HotelsDBContext.cs" />
     <Compile Include="DAL\HotelsDBInitializer.cs" />
     <Compile Include="DAL\HotelSearcher.cs" />
+    <Compile Include="DAL\ICitiesDAO.cs" />
+    <Compile Include="DAL\IHotelDAO.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -202,8 +209,8 @@
     <Compile Include="Filters\LanguageFilter.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\City.cs" />
-    <Compile Include="Models\Features.cs" />
     <Compile Include="Models\GeoHotel.cs" />
+    <Compile Include="Models\Features.cs" />
     <Compile Include="Models\HotelFeatures.cs" />
     <Compile Include="Models\HotelImages.cs" />
     <Compile Include="Models\HotelOwners.cs" />
@@ -370,6 +377,7 @@
     <Content Include="Views\Hotel\CreateRooms.cshtml" />
     <Content Include="Views\Hotel\CreateImage.cshtml" />
     <Content Include="Views\Cities\search.cshtml" />
+    <Content Include="Views\Shared\SearchPanel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

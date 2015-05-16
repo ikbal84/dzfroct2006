@@ -1,5 +1,4 @@
-﻿<script src="http://maps.google.com/maps/api/js?sensor=false"
-        type="text/javascript"></script>
+﻿
 
 @model dzfroct2006.BLL.HotelsQuery
 
@@ -18,86 +17,182 @@
 
 }
 
+<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+
 <script type="text/javascript">
     var locations = [];
 </script>
 
-<div id="filters" class="col-xs-12 col-sm-10 col-md-7">
-    @using (Html.BeginForm()) {
-        @Html.ValidationSummary(true)
-        foreach (var feature in Model.Features)
-        {
-            <div class="col-xs-12 col-sm-6  col-md-4">
-                <input type="checkbox" name="@feature.SearchFeatureName" @feature.SearchFeatureValue/> @feature.SearchFeatureName
+<div class="col-xs-12 col-sm-10 col-md-7">
+    
+    @Html.Partial("SearchPanel", Model)
+
+    <div class="row">
+        <div id="filters" class="marginBottom">
+            @using (Html.BeginForm("HotelsSearchResult", "SearchResults", FormMethod.Post))
+            {
+                @Html.ValidationSummary(true)
+
+                <div class="row">
+                    @foreach (var Principalefeature in Model.Features.Where(f => f.isPrincipale))
+                    {
+                        <div class=" col-xs-12 col-sm-6 col-md-4">
+                            <input type="checkbox" name="@Principalefeature.SearchFeatureName" @Principalefeature.SearchFeatureValue /> @Principalefeature.SearchFeatureName
+                        </div>
+                    }
+
+                    <div id="nonPrincipaleFeatures" style="display:none;">
+                        @foreach (var feature in Model.Features.Where(f => !f.isPrincipale))
+                        {
+                            <div class=" col-xs-12 col-sm-6 col-md-4">
+                                <input type="checkbox" name="@feature.SearchFeatureName" @feature.SearchFeatureValue /> @feature.SearchFeatureName
+                            </div>
+                        }
+                    </div>
+                    <div class="pull-right">
+                        <input type="submit" class="btn btn-info" value="@Resources.Labels.Filter" />
+                    </div>
+
+                    <button type="button" class="Collapsed CollExpand btn-block" id="expandFeatures"> @Resources.Labels.Expand </button>
+                </div>
+
+            }
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div id="Sort" class="marginBottom">
+            @using (Html.BeginForm("SortHotelsSearchResult", "SearchResults", FormMethod.Post, new { @class = "form-inline pull-right" }))
+            {
+                @Html.ValidationSummary(true)
+                <div class="row">
+                    <div class="form-group">
+                        <span> @Resources.Labels.SortBy</span>
+                        <select name="SortProperty" class="form-control">
+
+                            <option name="name" value="name" @((Model.SortProperty.Equals("name") ? "selected" : ""))>
+                                @Resources.Labels.HotelName
+                            </option>
+                            <option name="stars" value="stars" @((Model.SortProperty.Equals("stars") ? "selected" : ""))>
+                                @Resources.Labels.NbStars
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="SortType" class="form-control">
+                            <option name="asc" value="asc" @((Model.SortType.Equals("asc") ? "selected" : ""))> Asc </option>
+                            <option name="desc" value="desc" @((Model.SortType.Equals("desc") ? "selected" : ""))> Desc </option>
+                        </select>
+                    </div>
+                    <div class="form-group  pull-right">
+                        <input type="submit" value="@Resources.Labels.Sort" class="btn btn-info" />
+                    </div>
+
+                </div>
+
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+
+            @foreach (var item in Model.ResultHotels)
+            {
+                <div class="row SearchResult">
+                    <div class="col-xs-0 col-sm-10 col-md-4">
+                        @if (item.HotelImages != null && item.HotelImages.Count > 0)
+                        {
+                            var Image = @item.HotelImages.Where(img => img.isHeader).First();
+                            Image = Image != null ? Image : DefaultImage;
+
+                            <img src="@Image.FilePath" title="@Image.Name" />
+                        }
+                        else
+                        {
+                            <img src="@DefaultImage.FilePath" title="@DefaultImage.Name" />
+                        }
+
+                        @if (item.GeoHotel != null)
+                        {
+                            <script type="text/javascript">
+                                var hotel = ["@item.GeoHotel.InfoMapHotel", "@item.GeoHotel.LatitudeHotel.ToString(System.Globalization.CultureInfo.InvariantCulture)",
+                                                                            "@item.GeoHotel.LongitudeHotel.ToString(System.Globalization.CultureInfo.InvariantCulture)",
+                                                                            "@item.GeoHotel.AltitudeHotel.ToString(System.Globalization.CultureInfo.InvariantCulture)"];
+                                locations.push(hotel);
+
+                            </script>
+                        }
+                    </div>
+                    <div class="col-xs-12 col-sm-10 col-md-8">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h1>@Html.ActionLink(item.Name, "Hotel", "Hotel", new { id = item.HotelID }, new { @Style = "text-decoration: initial; color: #565A5C" })</h1>
+                            </div>
+                            <div class="col-md-5 HotelStars">
+                                @{
+                var StarsImgPath = "/Images/stars_" + @item.NbStars + ".jpg";
+                                }
+                                <img src="@StarsImgPath" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-10 col-md-4">
+                                <span> @Html.DisplayFor(modelItem => item.Town) @Html.DisplayFor(modelItem => item.Wilaya) </span>
+                            </div>
+
+                        </div>
+                        <div class="row well">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+
+
+    </div>
+
+
+
+
+    @if (Model.PaginationEnabled)
+    {
+        <div class="row">
+            <div>
+                <ul class="pagination pagination-sm pull-right">
+                    <li>@Html.ActionLink(Resources.Labels.First, "GoToPage", new { pageNumber = 1 })</li>
+                    <li>@Html.ActionLink(Resources.Labels.Previous, "GoToPage", new { pageNumber = Model.Page - 1 })</li>
+                    @for (int i = Math.Max(Model.Page - 5, 0);
+                    i < Math.Min(Math.Ceiling((double)Model.TotalResultCount / Model.PageSize), Model.Page + 5); i++)
+                    {
+                        if (Model.Page == i + 1)
+                        {
+                            <li class="active"> @Html.ActionLink((i + 1).ToString(), "GoToPage", new { pageNumber = i + 1 })</li>
+                        }
+                        else
+                        {
+                            <li> @Html.ActionLink((i + 1).ToString(), "GoToPage", new { pageNumber = i + 1 })</li>
+                        }
+                    }
+                    <li>@Html.ActionLink(Resources.Labels.NextPage, "GoToPage", new { pageNumber = Model.Page + 1 })</li>
+                    <li>@Html.ActionLink(Resources.Labels.Last, "GoToPage", new { pageNumber = -1 })</li>
+                </ul>
             </div>
-        }
-        <div class="row pull-right" >
-            <input type="submit" class="btn btn-info" value="@Resources.Labels.Filter" />
         </div>
     }
+
 </div>
 
-<div class="col-md-7">
-  
-    @foreach (var item in Model.ResultHotels) {
-        <div class="row SearchResult">
-            <div class="col-xs-0 col-sm-10 col-md-4" >
-                @if(item.HotelImages != null && item.HotelImages.Count > 0)
-                {
-                    var Image = @item.HotelImages.Where(img => img.isHeader).First();
-                    Image = Image != null ? Image : DefaultImage;
-                                                                                    
-                    <img src="@Image.FilePath" title="@Image.Name" />
-                }
-                else{
-                        <img src="@DefaultImage.FilePath" title="@DefaultImage.Name" />
-                }
-
-                @if (item.GeoHotel != null )
-                {   
-                    <script type="text/javascript">
-                        var hotel = ["@item.GeoHotel.InfoMapHotel", "@item.GeoHotel.LatitudeHotel.ToString(System.Globalization.CultureInfo.InvariantCulture)",
-                                                                    "@item.GeoHotel.LongitudeHotel.ToString(System.Globalization.CultureInfo.InvariantCulture)",
-                                                                    "@item.GeoHotel.AltitudeHotel.ToString(System.Globalization.CultureInfo.InvariantCulture)"];
-                        locations.push(hotel);
-
-                    </script>                      
-                }  
-              
-            </div>
-            <div class="col-xs-12 col-sm-10 col-md-8">
-                <div class="row">
-                    <div class="col-md-7">
-                        <h1>@Html.ActionLink(item.Name,  "Hotel",  "Hotel",  new{ id = item.HotelID }, new{@Style="text-decoration: initial; color: #565A5C"} )</h1>  
-                    </div>
-                    <div class="col-md-5 HotelStars" >
-                        @{
-                            var StarsImgPath = "/Images/stars_" + @item.NbStars + ".jpg";  
-                        }      
-                        <img src="@StarsImgPath" />
-                </div>
-                </div>
-              
-                <div class="row">
-                    <div class ="col-xs-12 col-sm-10 col-md-4">
-                        <span> @Html.DisplayFor(modelItem => item.Town) @Html.DisplayFor(modelItem => item.Wilaya) </span>
-                    </div>
-
-                </div>
-                <div class="row well">
-                    @Html.DisplayFor(modelItem => item.Description)
-                </div>
-         
-            </div>
-
-        </div>    
-    }
-    
-</div>
- 
 <div id="map" class="col-xs-0 col-sm-10 col-md-5 HotelsMap"></div>
 
 <script type="text/javascript">
+
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: new google.maps.LatLng(36.709825, 3.210534),
@@ -120,4 +215,26 @@
             }
         })(marker, i));
     }
+
+    $("#expandFeatures").click(function () {
+
+        if ($(this).hasClass("Collapsed"))
+        {
+            $("#nonPrincipaleFeatures").css("display", "");
+            $(this).removeClass("Collapsed");
+            $(this).addClass("Expended");
+            $(this).html("@Resources.Labels.Collapse");
+        }
+        else {
+            $("#nonPrincipaleFeatures").css("display", "none");
+            $(this).removeClass("Expended");
+            $(this).addClass("Collapsed");
+            $(this).html("@Resources.Labels.Expand");
+
+        }
+
+
+    });
 </script>
+
+

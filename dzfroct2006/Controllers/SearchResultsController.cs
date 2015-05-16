@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 
 namespace dzfroct2006.Controllers
@@ -65,6 +66,41 @@ namespace dzfroct2006.Controllers
 
             Session["Query"] = SearchQuery.makeNewSearch();
             return View((HotelsQuery)Session["Query"]);
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult SortHotelsSearchResult(FormCollection SortQueryForm)
+        {
+            var SearchQuery = (HotelsQuery)Session["Query"];
+
+            if (SortQueryForm.Count > 0)
+            {
+                SearchQuery.SortProperty = SortQueryForm["SortProperty"];
+                SearchQuery.SortType = SortQueryForm["SortType"];
+            }
+
+            Session["Query"] = SearchQuery.SortResults();
+            
+            
+            return View("HotelsSearchResult",(HotelsQuery)Session["Query"]);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageNumber">If -1 thengo to last page</param>
+        /// <returns></returns>
+        public ActionResult GoToPage(int pageNumber)
+        {
+            var SearchQuery = (HotelsQuery)Session["Query"];
+            int pageSize = Int32.Parse(WebConfigurationManager.AppSettings["PageSize"].ToString());
+            int TargetPage = (pageNumber == -1) ?
+                                (Int32)Math.Ceiling((double)SearchQuery.TotalResultCount / pageSize) 
+                                : pageNumber;
+
+            Session["Query"] = SearchQuery.GetPage(TargetPage);
+
+            return View("HotelsSearchResult", (HotelsQuery)Session["Query"]);
         }
 
     }

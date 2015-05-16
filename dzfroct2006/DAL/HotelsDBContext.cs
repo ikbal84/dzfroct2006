@@ -15,15 +15,16 @@ namespace dzfroct2006.DAL
             //Database.SetInitializer<HotelsDBContext>(new CreateDatabaseIfNotExists<HotelsDBContext>());      
             //Database.SetInitializer<HotelsDBContext>(new DropCreateDatabaseIfModelChanges<HotelsDBContext>());
             //Database.SetInitializer<HotelsDBContext>(new DropCreateDatabaseAlways<HotelsDBContext>());
-            Database.SetInitializer<HotelsDBContext>(new HotelsDBInitializer());
+           Database.SetInitializer<HotelsDBContext>(new HotelsDBInitializer());
         }
 
-        public DbSet<Hotels> Hotels { get; set; }
-        public DbSet<HotelOwners> Owner { get; set; }
-        public DbSet<HotelRooms> Rooms { get; set; }
-        public DbSet<Features> Features { get; set; }
-        public DbSet<HotelFeatures> HotelFeatures { get; set; }
-        public DbSet<HotelImages> HotelImages { get; set; }
-        public DbSet<City> City { get; set; }
+        public virtual DbSet<Hotels> Hotels { get; set; }
+        public virtual DbSet<HotelOwners> Owner { get; set; }
+        public virtual DbSet<HotelRooms> Rooms { get; set; }
+        public virtual DbSet<Features> Features { get; set; }
+        public virtual DbSet<HotelFeatures> HotelFeatures { get; set; }
+        public virtual DbSet<HotelImages> HotelImages { get; set; }
+        public virtual DbSet<City> City { get; set; }
+        public virtual DbSet<GeoHotel> GeoHotel { get; set; }
     }
 }

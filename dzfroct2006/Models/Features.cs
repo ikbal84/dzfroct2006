@@ -17,5 +17,7 @@ namespace dzfroct2006.Models
         public String FeatureName { get; set; }
 
         public String FeatureDescription { get; set; }
+
+        public bool isPrincipale { get; set; } 
     }
 }

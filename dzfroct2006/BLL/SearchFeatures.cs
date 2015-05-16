@@ -10,6 +10,7 @@ namespace dzfroct2006.BLL
     {
         public String SearchFeatureName;
         public String SearchFeatureValue;
+        public bool isPrincipale;
 
         public SearchFeatures()
         {

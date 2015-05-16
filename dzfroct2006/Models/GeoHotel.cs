@@ -13,6 +13,6 @@ namespace dzfroct2006.Models
         public string InfoMapHotel { get; set; }
         public double LongitudeHotel { get; set; }
         public double LatitudeHotel { get; set; }
-        public double AltitudeHotel { get; set; }    
+        public double AltitudeHotel { get; set; }
     }
 }

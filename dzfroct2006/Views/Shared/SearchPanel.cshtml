@@ -1,0 +1,135 @@
+﻿@model dzfroct2006.BLL.HotelsQuery
+<div class="row">
+    <div id="SearchPannel" class=" marginBottom">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-inline" }))
+        {
+            <div class="row">
+                <table style="width:100%;">
+                    <tr>
+                        <td>
+                            <label> @Resources.Labels.TownWaterMark </label>
+                        </td>
+                        <td>
+                            <label> @Resources.Labels.ArriveDateWaterMark</label>
+                        </td>
+                        <td>
+                            <label> @Resources.Labels.LeaveDateWaterMark</label>
+                        </td>
+                        <td>
+                            <label> @Resources.Labels.NbPersonnes </label>
+                        </td>
+                        <td>
+                            <label> @Resources.Labels.NbRooms</label>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="City" id="City" placeholder="@Resources.Labels.TownWaterMark" class="form-control"
+                                   value="@(String.IsNullOrEmpty(Model.Town) ? "" : Model.Town + "," + Model.Wilaya)" />
+                            <ul style="z-index:99; display: none; top: 58px; left: 1px; width: 279px; height: 200px; overflow:scroll" id="AutoCompleteResults" class="ui-autocomplete ui-menu ui-widget ui-widget-content"></ul>
+                        </td>
+                        <td>
+                            <input type="text" name="StartDate" class="SearchDate form-control" placeholder="@Resources.Labels.ArriveDateWaterMark" value="@Model.StartDate.ToString("d")" />
+                        </td>
+                        <td>
+                            <input type="text" name="EndDate" class="SearchDate form-control" placeholder="@Resources.Labels.LeaveDateWaterMark" value="@Model.EndDate.ToString("d")" />
+                        </td>
+                        <td>
+                            <input type="text" name="NbPersonnes" class="form-control" placeholder="2" style="width:70px;" value="@Model.NbPersonnes" />
+                        </td>
+                        <td>
+                            <input type="text" name="NbRooms" class="form-control" placeholder="1" style="width:70px;" value="@Model.NbRooms" />
+                        </td>
+                        <td>
+                            <button type="submit" class="btn btn-success pull-right"> @Resources.Labels.Search </button>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        }
+    </div>
+</div>
+
+
+<script type="text/javascript">
+        $('.SearchDate').datepicker({
+            startDate: '-3d'
+            //add more options for language
+        });
+
+        $("#City").keyup(function () {
+            if ($(this).val().length >= 2){
+
+                $.ajax({
+
+                    url: "http://localhost:61371/cities/search",
+                    data: {
+                        term: $(this).val()
+                    },
+                    success: function (data) {
+
+                        var List = data.split(';');
+                        $("#AutoCompleteResults").html("");
+                        $("#AutoCompleteResults").css("display", "");
+
+                        for (i = 0; i < List.length; i++) {
+                            var liItem = '<li id="Item_'+i+'" class="ui-menu-item">' + List[i] + "</li>";
+                            $("#AutoCompleteResults").append(liItem);
+                        }
+
+                        $(".ui-menu-item").click(function () {
+                            var item = $(this);
+                            $("#City").val(item.text());
+
+                        });
+                    },
+                    error: function () { }
+                });
+            }
+        });
+
+        $("#City").dblclick(function () {
+
+            $.ajax({
+
+                url: "http://localhost:61371/cities/search",
+                data: {
+                    term: ''
+                },
+                success: function (data) {
+
+                    var List = data.split(';');
+                    $("#AutoCompleteResults").html("");
+                    $("#AutoCompleteResults").css("display", "");
+
+                    for (i = 0; i < List.length; i++) {
+                        var liItem = '<li id="Item_' + i + '" class="ui-menu-item">' + List[i] + "</li>";
+                        $("#AutoCompleteResults").append(liItem);
+                    }
+
+                    $(".ui-menu-item").click(function () {
+                        var item = $(this);
+                        $("#City").val(item.text());
+
+                    });
+                },
+                error: function () { }
+            });
+
+        });
+
+        $(document).mouseup(function (e) {
+            var container = $("#AutoCompleteResults");
+
+            if (!container.is(e.target)
+                && container.has(e.target).length === 0)
+            {
+                container.hide();
+            }
+        });
+
+</script>

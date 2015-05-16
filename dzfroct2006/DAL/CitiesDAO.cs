@@ -6,20 +6,28 @@ using System.Web;
 
 namespace dzfroct2006.DAL
 {
-    public class CitiesDAO
+    public class CitiesDAO : ICitiesDAO, IDisposable
     {
+        public HotelsDBContext context;
+        
+        public CitiesDAO(){
+           this.context = new HotelsDBContext();
+        }
 
-      public void insertCitiesDB()
+        public CitiesDAO(HotelsDBContext _dbContext)
+        {
+            this.context = _dbContext;
+        }
+
+      public void insertCitiesDB() 
+       {
           
-      {
 
-          var context = new HotelsDBContext();
-         
             string line;
 
             // Read the file and display it line by line.
             System.IO.StreamReader file =
-                new System.IO.StreamReader(@"C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\App_GlobalResources\codes_communes.csv");
+                new System.IO.StreamReader(@"C:\Users\Moh\Documents\Visual Studio 2013\Projects\dzfroct2006\dzfroct2006\App_GlobalResources\codes_communes.csv");
             while ((line = file.ReadLine()) != null)
             {
                 string[] words = line.Split(';');
@@ -35,22 +43,35 @@ namespace dzfroct2006.DAL
 
       public List<City> getAllCities()
       {
-          var context = new HotelsDBContext();
-          return context.City.OrderBy(c => c.Commune).ToList();
+          if (context.City != null)
+              return context.City.OrderBy(c => c.Commune).ToList();
+          else 
+              return new List<City>();
       }
 
 
       public List<City> citiesStartWith(string searchedCity)
       {
-          var context = new HotelsDBContext();
-          IQueryable<City> citiesQuery = context.City;
+
+
           if (!String.IsNullOrEmpty(searchedCity))
           {
+              IQueryable<City> citiesQuery = context.City;
               citiesQuery = citiesQuery.Where(c => c.Commune.ToLower().StartsWith(searchedCity.ToLower())
-                                                  | c.Wilaya.ToLower().StartsWith(searchedCity.ToLower()));
-          }
+                                                   || c.Wilaya.ToLower().StartsWith(searchedCity.ToLower()));
+              return citiesQuery.OrderBy(c => c.Commune).ToList();
 
-          return citiesQuery.OrderBy(c => c.Commune).ToList();
+          }
+          else
+              return new List<City>();
+
+
+
+      }
+
+      public void Dispose()
+      {
+          this.Dispose();
       }
     }    
 }

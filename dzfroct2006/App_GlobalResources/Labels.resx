@@ -276,4 +276,28 @@
   <data name="SaveRoom" xml:space="preserve">
     <value>Enregistrer et ajouter</value>
   </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Filtrer par</value>
+  </data>
+  <data name="Sort" xml:space="preserve">
+    <value>Trier</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>Début</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="NextPage" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Précédant</value>
+  </data>
+  <data name="Collapse" xml:space="preserve">
+    <value>Moins de filtres</value>
+  </data>
+  <data name="Expand" xml:space="preserve">
+    <value>Plus de filtres</value>
+  </data>
 </root>

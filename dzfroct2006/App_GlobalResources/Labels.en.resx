@@ -270,4 +270,28 @@
   <data name="SaveRoom" xml:space="preserve">
     <value>Save and add</value>
   </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sort by</value>
+  </data>
+  <data name="Sort" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="NextPage" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Collapse" xml:space="preserve">
+    <value>Less filters</value>
+  </data>
+  <data name="Expand" xml:space="preserve">
+    <value>More filters</value>
+  </data>
 </root>

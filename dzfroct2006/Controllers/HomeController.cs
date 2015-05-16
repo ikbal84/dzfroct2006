@@ -19,7 +19,7 @@ namespace dzfroct2006.Controllers
         
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
@@ -44,7 +44,10 @@ namespace dzfroct2006.Controllers
                                 StartDate = StartDate, 
                                 EndDate = EndDate, 
                                 NbPersonnes = NbPersonnes,
-                                NbRooms = NbRooms 
+                                NbRooms = NbRooms,
+                                SortProperty = "",
+                                SortType = ""
+            
                             };
             Session["Query"] = query;
 
