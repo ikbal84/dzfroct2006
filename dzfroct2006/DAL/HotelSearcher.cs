@@ -27,7 +27,7 @@ namespace dzfroct2006.DAL
                                                 int PageSize = -1)
         {
             
-            PageSize = (PageSize == -1) ? Int32.Parse(WebConfigurationManager.AppSettings["PageSize"].ToString()) : PageSize;
+            int DeterminedPageSize = (PageSize == -1) ? Int32.Parse(WebConfigurationManager.AppSettings["PageSize"].ToString()) : PageSize;
             
             //seraching for City and NbPersonnes
             IQueryable<Hotels> HotelsQuery = context.Hotels;
@@ -51,26 +51,28 @@ namespace dzfroct2006.DAL
             HotelsQuery = Sort(HotelsQuery, SortProperty, SortType);
             
             //paginating
-            HotelsQuery = HotelsQuery.Skip((PageNumber - 1) * PageSize).Take(PageSize);
+            HotelsQuery = HotelsQuery.Skip((PageNumber - 1) * DeterminedPageSize).Take(DeterminedPageSize);
 
             return Tuple.Create(HotelsQuery.ToList(),countAllResults);
         }
 
         private IQueryable<Hotels> Sort(IQueryable<Hotels> query, String SortProperty, String SortType)
         {
+            IQueryable<Hotels> SortQuery = null;
+
             switch(SortProperty)
             {
-                case "name": query = (String.Equals(SortType, "asc")) ? query.OrderBy(h => h.Name): query.OrderByDescending(h => h.Name);
+                
+                case "name" : 
+                default:
+                    SortQuery = (String.Equals(SortType, "asc")) ? query.OrderBy(h => h.Name) : query.OrderByDescending(h => h.Name);
                             break;
 
-                case "stars": query = (String.Equals(SortType, "asc")) ? query.OrderBy(h => h.NbStars) : query.OrderByDescending(h => h.NbStars);
-                            break;
-
-                default: query = (String.Equals(SortType, "asc")) ? query.OrderBy(h => h.Name) : query.OrderByDescending(h => h.Name);
+                case "stars": SortQuery = (String.Equals(SortType, "asc")) ? query.OrderBy(h => h.NbStars) : query.OrderByDescending(h => h.NbStars);
                             break;
             }
 
-            return query;
+            return SortQuery;
         }
 
         /// <summary>
@@ -83,7 +85,7 @@ namespace dzfroct2006.DAL
         public Tuple<List<Hotels>, int> Search(String SearchedTown, String SearchedWilaya, List<String> SearchedFeatures, int SearchedNbPersonnes = 0)
         {
             //seraching for City and NbPersonnes
-            var hotlemmm = context.Hotels.ToList();
+
             IQueryable<Hotels> HotelsQuery = context.Hotels;
             if (!String.IsNullOrEmpty(SearchedTown))
             {

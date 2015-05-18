@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalysisInput>
+  <Settings>
+    <Setting>
+      <Key>sonar.cs.ignoreHeaderComments</Key>
+      <Value>true</Value>
+    </Setting>
+  </Settings>
+  <Rules>
+    <Rule>
+      <Key>S1121</Key>
+    </Rule>
+    <Rule>
+      <Key>S2306</Key>
+    </Rule>
+    <Rule>
+      <Key>S2737</Key>
+    </Rule>
+    <Rule>
+      <Key>S125</Key>
+    </Rule>
+    <Rule>
+      <Key>S1862</Key>
+    </Rule>
+    <Rule>
+      <Key>S1871</Key>
+    </Rule>
+    <Rule>
+      <Key>S2486</Key>
+    </Rule>
+    <Rule>
+      <Key>S1186</Key>
+    </Rule>
+    <Rule>
+      <Key>S108</Key>
+    </Rule>
+    <Rule>
+      <Key>S1116</Key>
+    </Rule>
+    <Rule>
+      <Key>S127</Key>
+    </Rule>
+    <Rule>
+      <Key>S1994</Key>
+    </Rule>
+    <Rule>
+      <Key>S1764</Key>
+    </Rule>
+    <Rule>
+      <Key>S1145</Key>
+    </Rule>
+    <Rule>
+      <Key>S2681</Key>
+    </Rule>
+    <Rule>
+      <Key>S1848</Key>
+    </Rule>
+    <Rule>
+      <Key>S1226</Key>
+    </Rule>
+    <Rule>
+      <Key>S1656</Key>
+    </Rule>
+    <Rule>
+      <Key>S1697</Key>
+    </Rule>
+    <Rule>
+      <Key>S2743</Key>
+    </Rule>
+    <Rule>
+      <Key>S131</Key>
+    </Rule>
+    <Rule>
+      <Key>S1125</Key>
+    </Rule>
+    <Rule>
+      <Key>S1481</Key>
+    </Rule>
+    <Rule>
+      <Key>S101</Key>
+      <Parameters>
+        <Parameter>
+          <Key>format</Key>
+          <Value>^(?:[A-HJ-Z][a-zA-Z0-9]+|I[a-z0-9][a-zA-Z0-9]*)$</Value>
+        </Parameter>
+      </Parameters>
+    </Rule>
+    <Rule>
+      <Key>S1067</Key>
+      <Parameters>
+        <Parameter>
+          <Key>max</Key>
+          <Value>3</Value>
+        </Parameter>
+      </Parameters>
+    </Rule>
+    <Rule>
+      <Key>S104</Key>
+      <Parameters>
+        <Parameter>
+          <Key>maximumFileLocThreshold</Key>
+          <Value>1000</Value>
+        </Parameter>
+      </Parameters>
+    </Rule>
+    <Rule>
+      <Key>S1541</Key>
+      <Parameters>
+        <Parameter>
+          <Key>maximumFunctionComplexityThreshold</Key>
+          <Value>10</Value>
+        </Parameter>
+      </Parameters>
+    </Rule>
+    <Rule>
+      <Key>S103</Key>
+      <Parameters>
+        <Parameter>
+          <Key>maximumLineLength</Key>
+          <Value>200</Value>
+        </Parameter>
+      </Parameters>
+    </Rule>
+    <Rule>
+      <Key>S100</Key>
+      <Parameters>
+        <Parameter>
+          <Key>format</Key>
+          <Value>^[A-Z][a-zA-Z0-9]+$</Value>
+        </Parameter>
+      </Parameters>
+    </Rule>
+    <Rule>
+      <Key>S1479</Key>
+      <Parameters>
+        <Parameter>
+          <Key>maximum</Key>
+          <Value>30</Value>
+        </Parameter>
+      </Parameters>
+    </Rule>
+    <Rule>
+      <Key>S107</Key>
+      <Parameters>
+        <Parameter>
+          <Key>max</Key>
+          <Value>7</Value>
+        </Parameter>
+      </Parameters>
+    </Rule>
+  </Rules>
+  <Files>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\App_GlobalResources\Labels.Designer.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\App_GlobalResources\Labels.en.designer.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\App_Start\AuthConfig.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\App_Start\BundleConfig.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\App_Start\FilterConfig.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\App_Start\RouteConfig.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\App_Start\WebApiConfig.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\BLL\CitiesQuery.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\BLL\HotelsQuery.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\BLL\IHotelsQuery.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\BLL\SearchFeatures.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Controllers\AccountController.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Controllers\CitiesController.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Controllers\HomeController.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Controllers\HotelController.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Controllers\OwnerSpaceController.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Controllers\SearchResultsController.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\DAL\CitiesDAO.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\DAL\HotelDAO.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\DAL\HotelSearcher.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\DAL\HotelsDBContext.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\DAL\HotelsDBInitializer.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\DAL\ICitiesDAO.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\DAL\IHotelDAO.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Filters\InitializeSimpleMembershipAttribute.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Filters\LanguageFilter.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Global.asax.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Models\AccountModels.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Models\City.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Models\Features.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Models\GeoHotel.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Models\HotelFeatures.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Models\HotelImages.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Models\HotelOwners.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Models\HotelRooms.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Models\Hotels.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\Properties\AssemblyInfo.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\ControllerTests\HomeControllerTest.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\ControllerTests\HotelControllerTest.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\DAL\CitiesDAOTests.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\Properties\AssemblyInfo.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</File>
+    <File>C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</File>
+  </Files>
+</AnalysisInput>

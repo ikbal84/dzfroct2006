@@ -12,18 +12,18 @@ namespace dzfroct2006.BLL
     {
 
 
-        public String getListCities(String SearchName)
+        public String GetListCities(String SearchName)
         {
             CitiesDAO cityDAO = new CitiesDAO();
             List<City> Cities = null;
 
             if (String.IsNullOrEmpty(SearchName))
             {
-                Cities = cityDAO.getAllCities();
+                Cities = cityDAO.GetAllCities();
             }
             else
             {
-                Cities = cityDAO.citiesStartWith(SearchName);
+                Cities = cityDAO.CitiesStartWith(SearchName);
             }
 
             return ConvertCitiesListtoString(Cities);

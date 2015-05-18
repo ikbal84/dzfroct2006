@@ -19,18 +19,15 @@ namespace dzfroct2006.DAL
             this.context = _dbContext;
         }
 
-      public void insertCitiesDB() 
+      public void InsertCitiesDB() 
        {
           
-
-            string line;
-
             // Read the file and display it line by line.
             System.IO.StreamReader file =
                 new System.IO.StreamReader(@"C:\Users\Moh\Documents\Visual Studio 2013\Projects\dzfroct2006\dzfroct2006\App_GlobalResources\codes_communes.csv");
-            while ((line = file.ReadLine()) != null)
+            while (!file.EndOfStream)
             {
-                string[] words = line.Split(';');
+                string[] words = file.ReadLine().Split(';');
                 City city = new City() { CodePostal = Int32.Parse(words[1]), Commune = words[2], Wilaya = words[0] };
 
                 context.City.Add(city);
@@ -41,7 +38,7 @@ namespace dzfroct2006.DAL
         }
 
 
-      public List<City> getAllCities()
+      public List<City> GetAllCities()
       {
           if (context.City != null)
               return context.City.OrderBy(c => c.Commune).ToList();
@@ -50,7 +47,7 @@ namespace dzfroct2006.DAL
       }
 
 
-      public List<City> citiesStartWith(string searchedCity)
+      public List<City> CitiesStartWith(string searchedCity)
       {
 
 

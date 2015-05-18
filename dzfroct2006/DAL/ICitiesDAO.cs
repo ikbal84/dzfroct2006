@@ -9,7 +9,7 @@ namespace dzfroct2006.DAL
 {
     interface ICitiesDAO
     {
-        List<City> getAllCities();
-        List<City> citiesStartWith(string searchedCity);
+        List<City> GetAllCities();
+        List<City> CitiesStartWith(string searchedCity);
     }
 }

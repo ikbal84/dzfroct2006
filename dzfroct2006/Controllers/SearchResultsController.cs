@@ -26,7 +26,7 @@ namespace dzfroct2006.Controllers
                 ViewBag.dateFin = SearchQuery.EndDate;
                 ViewBag.ville = SearchQuery.Town + ", " + SearchQuery.Wilaya;
  
-                return View(SearchQuery.getHotelsFromHome());
+                return View(SearchQuery.GetHotelsFromHome());
             }
             else
             {
@@ -39,7 +39,6 @@ namespace dzfroct2006.Controllers
         public ActionResult HotelsSearchResult(FormCollection Filters)
         {
             var SearchQuery = (HotelsQuery)Session["Query"];
-           // SearchQuery.Features = new List<SearchFeatures>();
 
             if (Filters.Count > 0)
             {
@@ -64,7 +63,7 @@ namespace dzfroct2006.Controllers
                 SearchQuery.IntiFeatures();
             }
 
-            Session["Query"] = SearchQuery.makeNewSearch();
+            Session["Query"] = SearchQuery.MakeNewSearch();
             return View((HotelsQuery)Session["Query"]);
         }
 

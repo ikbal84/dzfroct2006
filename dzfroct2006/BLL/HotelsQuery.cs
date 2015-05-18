@@ -43,7 +43,7 @@ namespace dzfroct2006.BLL
         /// 
         /// </summary>
         /// <returns></returns>
-        public HotelsQuery getHotelsFromHome()
+        public HotelsQuery GetHotelsFromHome()
         {
             HotelSearcher HotelSearcher = new HotelSearcher();
 
@@ -60,11 +60,11 @@ namespace dzfroct2006.BLL
         /// 
         /// </summary>
         /// <returns></returns>
-        public HotelsQuery makeNewSearch()
+        public HotelsQuery MakeNewSearch()
         {
             this.ResultHotels = new List<Hotels>();
 
-            var FilteredFeatures = this.getOnlyAskedFeatures();
+            var FilteredFeatures = this.GetOnlyAskedFeatures();
 
             HotelSearcher HotelSearcher = new HotelSearcher();
 
@@ -98,7 +98,7 @@ namespace dzfroct2006.BLL
         /// 
         /// </summary>
         /// <returns></returns>
-        private List<String> getOnlyAskedFeatures()
+        private List<String> GetOnlyAskedFeatures()
         {
             List<String> filteredFeatures = new List<String>();
 
