@@ -583,7 +583,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bienvenu en Algèrie....
+        ///   Looks up a localized string similar to Bienvenue en Algérie....
         /// </summary>
         internal static string WelcomToAlgeria {
             get {
@@ -592,7 +592,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bienvenu en Algèrie....
+        ///   Looks up a localized string similar to Bienvenue en Algérie....
         /// </summary>
         internal static string WelcomToAlgeria1 {
             get {

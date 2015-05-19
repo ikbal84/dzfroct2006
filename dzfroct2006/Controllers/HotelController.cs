@@ -1,4 +1,5 @@
-﻿using dzfroct2006.DAL;
+﻿using dzfroct2006.BLL;
+using dzfroct2006.DAL;
 using dzfroct2006.Models;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace dzfroct2006.Controllers
 
         public ActionResult Hotel()
         {
+            var SearchQuery = (HotelsQuery)Session["Query"];
+            
             ViewBag.dateDebut = new DateTime(2014, 12, 26).Date;
             ViewBag.dateFin = new DateTime(2015, 12, 26).Date;
             ViewBag.ville = "Oran";
@@ -29,7 +32,14 @@ namespace dzfroct2006.Controllers
             HotelRooms room1 = new HotelRooms { RoomType = "Double", Description = "Chambre double Luxe", NbRooms = 5, NbPersonnes = 2, Price = "5000DA" };
             List<HotelRooms> listRoom = new List<HotelRooms>();
             listRoom.Add(room1);
-            var hotel = new Hotels() { Name = "TestHotel", Description = "Un simple hotel de test", PhoneNumber1 = "002130000001", FaxNumber1 = "0021321659878", Address = "01 rue des tests oran", HotelImages = listHotelImages, Rooms = listRoom };
+            var hotel = new Hotels() { Name = "TestHotel", 
+                                       Description = "Un simple hotel de test", 
+                                       PhoneNumber1 = "002130000001", 
+                                       FaxNumber1 = "0021321659878", 
+                                       Address = "01 rue des tests oran", 
+                                       HotelImages = listHotelImages, 
+                                       Rooms = listRoom 
+                                    };
 
             return View(hotel);
         }

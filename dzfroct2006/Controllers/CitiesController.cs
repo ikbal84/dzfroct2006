@@ -1,6 +1,5 @@
 ﻿using dzfroct2006.BLL;
 using dzfroct2006.Models;
-//using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +15,10 @@ namespace dzfroct2006.Controllers
         //
         // GET: /Cities/
         
-        public ActionResult search(string term)
+        public ActionResult Search(string term)
         {
             var citiesQuery = new CitiesQuery();
-            String cyties = citiesQuery.getListCities(term);
+            String cyties = citiesQuery.GetListCities(term);
 
             ViewBag.Cyties = cyties;
             

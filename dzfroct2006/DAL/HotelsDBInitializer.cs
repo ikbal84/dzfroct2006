@@ -13,7 +13,7 @@ namespace dzfroct2006.DAL
         {
             // Initialiser chargement codes communes 
             CitiesDAO cities = new CitiesDAO();
-            cities.insertCitiesDB();
+            cities.InsertCitiesDB();
 
             /*
              *  

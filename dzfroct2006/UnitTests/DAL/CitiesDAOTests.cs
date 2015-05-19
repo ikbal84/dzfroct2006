@@ -20,11 +20,12 @@ namespace UnitTests.DAL
         [SetUp]
         public void init()
         {
+            //add any global init here
               
         }
 
         [TestCase] 
-        public void getAllCities_IfNoCity_ReturnsEmptyList()
+        public void GetAllCities_IfNoCity_ReturnsEmptyList()
         {
             //Arrange
             var data = new List<City>().AsQueryable();
@@ -41,14 +42,14 @@ namespace UnitTests.DAL
             DAO = new CitiesDAO(MockContext.Object);  
 
             //Act
-            var Result = DAO.getAllCities();
+            var Result = DAO.GetAllCities();
 
             //Assert
             Assert.AreEqual(0, Result.Count());
         }
 
          [TestCase]
-        public void getAllCities_ReturnsTheRightCountOfCities()
+        public void GetAllCities_ReturnsTheRightCountOfCities()
         {
             //Arrange
             var data = new List<City> 
@@ -70,7 +71,7 @@ namespace UnitTests.DAL
             DAO = new CitiesDAO(MockContext.Object);        
             
              //Act
-            var Result = DAO.getAllCities();
+            var Result = DAO.GetAllCities();
 
             //Assert
             Assert.AreEqual(3, Result.Count);
@@ -81,7 +82,7 @@ namespace UnitTests.DAL
         }
 
          [TestCase]
-        public void citiesStartWith_ReturnsNullIfNoCityStartingWithString()
+        public void CitiesStartWith_ReturnsNullIfNoCityStartingWithString()
         {
              //Arrange
             var data = new List<City> 
@@ -103,13 +104,13 @@ namespace UnitTests.DAL
             DAO = new CitiesDAO(MockContext.Object);        
             
              //Act
-            var Result = DAO.citiesStartWith("Noo");
+            var Result = DAO.CitiesStartWith("Noo");
              //Assert
             Assert.AreEqual(0, Result.Count);
         }
 
          [TestCase]
-        public void citiesStartWith_ReturnsAllCitiesStartingWithString()
+        public void CitiesStartWith_ReturnsAllCitiesStartingWithString()
         {
              //Arrange
             var data = new List<City> 
@@ -131,7 +132,7 @@ namespace UnitTests.DAL
             DAO = new CitiesDAO(MockContext.Object);        
              
              //Act
-            var Result = DAO.citiesStartWith("AL");
+            var Result = DAO.CitiesStartWith("AL");
              
              //Assert
             Assert.AreEqual(1, Result.Count);
