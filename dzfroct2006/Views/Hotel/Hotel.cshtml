@@ -2,44 +2,9 @@
     Layout = "~/Views/Shared/_Layoutpages.cshtml";
 }
 
-@model dzfroct2006.Models.Hotels
+@model dzfroct2006.Models.Hotel
 
-
-
-    <div class="jumbotron bg-primary">
-            <div class="row">
-                <div class="col-xs-12 col-sm-8 col-md-9">
-                    <ul class="list-inline">
-                        <li>Votre recherche : <strong>@ViewBag.ville</strong> : @ViewBag.dateDebut - @ViewBag.dateFin</li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3">
-                    <a id="togModifSearche" href="#" class="be-toggler pull-right togSearche">@Resources.Labels.Modify<span class="glyphicon glyphicon-chevron-down"></span></a>
-                    <a id="togCloseSearche" style="display:none" href="#" class="be-toggler pull-right togSearche">@Resources.Labels.Close<span class="glyphicon glyphicon-chevron-up"></span></a>
-
-                </div>
-            </div>
-            <div id="infoSearche" style="display:none">
-                <form role="form" class="form-inline">
-                    <div>
-                        <input type="text" value="" placeholder="@ViewBag.ville" class="form-control" />
-                        <input type="text" class="SearchDate form-control" placeholder="@ViewBag.dateDebut">
-                        <input type="text" class="SearchDate form-control" placeholder="@ViewBag.dateFin">
-                        <select name="nbrPersonne" class="form-control" onChange='Choix(this.form)'>
-                            <OPTION>- @Resources.Labels.SelectNumberOfPerson -</OPTION>
-                                <OPTION>1</OPTION>
-                                <OPTION>2</OPTION>
-                                <OPTION>3</OPTION>
-                                <OPTION>4</OPTION>
-                                <OPTION>Plus de 4</OPTION>
-                        </select>
-                        <button class="btn btn-success btn-lg pull-right">@Resources.Labels.Search </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-
+ 
 <div>
     <ul class="list-inline">
         <li><b>@Html.DisplayFor(model => model.Name)</b> : <span class="glyphicon glyphicon-home"></span>@Html.DisplayFor(model => model.Address)</li>

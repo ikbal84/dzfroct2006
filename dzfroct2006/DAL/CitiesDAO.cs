@@ -24,13 +24,9 @@ namespace dzfroct2006.DAL
           
             // Read the file and display it line by line.
             System.IO.StreamReader file =
-<<<<<<< HEAD
+
                 new System.IO.StreamReader(@"D:\projets\2015\HotelOnLineAlgeria\tmp\dzfroct2006\dzfroct2006\App_GlobalResources\codes_communes.csv");
-            while ((line = file.ReadLine()) != null)
-=======
-                new System.IO.StreamReader(@"C:\Users\Moh\Documents\Visual Studio 2013\Projects\dzfroct2006\dzfroct2006\App_GlobalResources\codes_communes.csv");
-            while (!file.EndOfStream)
->>>>>>> f6cb8d17c6b6a4dba80c363e2886690303b327bf
+             while (!file.EndOfStream)
             {
                 string[] words = file.ReadLine().Split(';');
                 City city = new City() { CodePostal = Int32.Parse(words[1]), Commune = words[2], Wilaya = words[0] };

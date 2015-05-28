@@ -25,7 +25,7 @@ namespace dzfroct2006.BLL
         
         public List<SearchFeatures> Features { get; set; }
 
-        public List<Hotels> ResultHotels { get; set; }
+        public List<Hotel> ResultHotels { get; set; }
         
         private HotelsDBContext context;
 
@@ -33,7 +33,7 @@ namespace dzfroct2006.BLL
         {
 
             this.context = new HotelsDBContext();
-            this.ResultHotels = new List<Hotels>();
+            this.ResultHotels = new List<Hotel>();
             this.Features = new List<SearchFeatures>();
             this.PageSize = Int32.Parse(WebConfigurationManager.AppSettings["PageSize"].ToString());
             this.IntiFeatures();
@@ -47,7 +47,7 @@ namespace dzfroct2006.BLL
         {
             HotelSearcher HotelSearcher = new HotelSearcher();
 
-            Tuple<List<Hotels>, int> Result = HotelSearcher.Search(this.Town, this.Wilaya, this.NbPersonnes);
+            Tuple<List<Hotel>, int> Result = HotelSearcher.Search(this.Town, this.Wilaya, this.NbPersonnes);
 
             this.ResultHotels = Result.Item1;
             
@@ -62,13 +62,13 @@ namespace dzfroct2006.BLL
         /// <returns></returns>
         public HotelsQuery MakeNewSearch()
         {
-            this.ResultHotels = new List<Hotels>();
+            this.ResultHotels = new List<Hotel>();
 
             var FilteredFeatures = this.GetOnlyAskedFeatures();
 
             HotelSearcher HotelSearcher = new HotelSearcher();
 
-            Tuple<List<Hotels>, int> Result = HotelSearcher.Search(this.Town, this.Wilaya, FilteredFeatures, this.NbPersonnes);
+            Tuple<List<Hotel>, int> Result = HotelSearcher.Search(this.Town, this.Wilaya, FilteredFeatures, this.NbPersonnes);
 
             this.ResultHotels = Result.Item1;
             
@@ -84,9 +84,9 @@ namespace dzfroct2006.BLL
         /// <returns></returns>
         public HotelsQuery SortResults()
         {
-            this.ResultHotels = new List<Hotels>();
+            this.ResultHotels = new List<Hotel>();
             HotelSearcher HotelSearcher = new HotelSearcher();
-            Tuple<List<Hotels>, int> SortResult =  HotelSearcher.Search(this.Town, this.Wilaya, this.NbPersonnes, this.SortProperty, this.SortType);
+            Tuple<List<Hotel>, int> SortResult =  HotelSearcher.Search(this.Town, this.Wilaya, this.NbPersonnes, this.SortProperty, this.SortType);
 
             this.ResultHotels = SortResult.Item1;
             UpdatePagination(SortResult.Item2);
@@ -138,9 +138,9 @@ namespace dzfroct2006.BLL
         {
             this.Page = PageNumber;
 
-            this.ResultHotels = new List<Hotels>();
+            this.ResultHotels = new List<Hotel>();
             HotelSearcher HotelSearcher = new HotelSearcher();
-            Tuple<List<Hotels>, int> Result = HotelSearcher.Search(this.Town, this.Wilaya, this.NbPersonnes, this.SortProperty, this.SortType, this.Page);
+            Tuple<List<Hotel>, int> Result = HotelSearcher.Search(this.Town, this.Wilaya, this.NbPersonnes, this.SortProperty, this.SortType, this.Page);
 
             this.ResultHotels = Result.Item1;
             

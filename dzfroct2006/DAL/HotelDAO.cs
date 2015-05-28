@@ -9,7 +9,7 @@ namespace dzfroct2006.DAL
 {
     public class HotelDAO : IHotelDAO
     {
-        public bool CreateHotel(Hotels hotel)
+        public bool CreateHotel(Hotel hotel)
         {
             try
             {

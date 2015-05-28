@@ -25,7 +25,7 @@ namespace dzfroct2006.Models
         public String FaxNumber { get; set; }
         public String Email { get; set; }
 
-        public virtual List<Hotels> HotelsList { get; set; }
+        public virtual List<Hotel> HotelsList { get; set; }
 
     }
 }

@@ -14,7 +14,7 @@ namespace dzfroct2006.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long ID { get; set; }
 
-        public virtual Hotels Hotel { get; set; }
+        public virtual Hotel Hotel { get; set; }
 
         public virtual Features Feature { get; set; }
 

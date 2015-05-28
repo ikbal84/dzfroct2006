@@ -18,7 +18,7 @@ namespace dzfroct2006.DAL
            Database.SetInitializer<HotelsDBContext>(new HotelsDBInitializer());
         }
 
-        public virtual DbSet<Hotels> Hotels { get; set; }
+        public virtual DbSet<Hotel> Hotels { get; set; }
         public virtual DbSet<HotelOwners> Owner { get; set; }
         public virtual DbSet<HotelRooms> Rooms { get; set; }
         public virtual DbSet<Features> Features { get; set; }

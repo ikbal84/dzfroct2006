@@ -9,7 +9,7 @@ namespace dzfroct2006.DAL
 {
     interface IHotelDAO
     {
-        bool CreateHotel(Hotels hotel);
+        bool CreateHotel(Hotel hotel);
         bool CreateRoom(String hotelId, HotelRooms room);
         bool CreateImage(String hotelId, HotelImages Image);
 

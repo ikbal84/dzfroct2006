@@ -32,7 +32,7 @@ namespace dzfroct2006.Controllers
             HotelRooms room1 = new HotelRooms { RoomType = "Double", Description = "Chambre double Luxe", NbRooms = 5, NbPersonnes = 2, Price = "5000DA" };
             List<HotelRooms> listRoom = new List<HotelRooms>();
             listRoom.Add(room1);
-            var hotel = new Hotels() { Name = "TestHotel", 
+            var hotel = new Hotel() { Name = "TestHotel", 
                                        Description = "Un simple hotel de test", 
                                        PhoneNumber1 = "002130000001", 
                                        FaxNumber1 = "0021321659878", 
@@ -67,7 +67,7 @@ namespace dzfroct2006.Controllers
   /// <returns></returns>
 
         [HttpPost]
-        public ActionResult Create(Hotels CreatedHotel)
+        public ActionResult Create(Hotel CreatedHotel)
         {
             try
             {
