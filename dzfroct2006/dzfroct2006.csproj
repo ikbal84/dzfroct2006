@@ -186,6 +186,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BLL\CitiesQuery.cs" />
+    <Compile Include="BLL\HotelQuery.cs" />
     <Compile Include="BLL\IHotelsQuery.cs" />
     <Compile Include="BLL\HotelsQuery.cs" />
     <Compile Include="BLL\SearchFeatures.cs" />
@@ -215,7 +216,7 @@
     <Compile Include="Models\HotelImages.cs" />
     <Compile Include="Models\HotelOwners.cs" />
     <Compile Include="Models\HotelRooms.cs" />
-    <Compile Include="Models\Hotels.cs" />
+    <Compile Include="Models\Hotel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -227,7 +228,8 @@
     <Content Include="Content\bootstrapHelpers\dist\img\bootstrap-formhelpers-googlefonts.png" />
     <Content Include="Content\bootstrapHelpers\dist\js\bootstrap-formhelpers.js" />
     <Content Include="Content\bootstrapHelpers\dist\js\bootstrap-formhelpers.min.js" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\glyphicons.css" />
+    <Content Include="Controllers\Site.css" />
     <Content Include="Content\slider\jquery.bxslider.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -294,6 +296,9 @@
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\Backgrounds\oran1.jpg" />
     <Content Include="Images\Backgrounds\setif1.jpg" />
+    <Content Include="Images\HotelsImages\HotelAnissov\img1.jpg" />
+    <Content Include="Images\HotelsImages\HotelAnissov\img2.jpg" />
+    <Content Include="Images\HotelsImages\HotelAnissov\img3.jpg" />
     <Content Include="Images\HotelsImages\HotelTest\hotelTest1.png" />
     <Content Include="Images\HotelsImages\HotelTest\hotelTest2.png" />
     <Content Include="Images\icones\bx_loader.gif" />
@@ -378,7 +383,6 @@
     <Content Include="Views\Hotel\CreateImage.cshtml" />
     <Content Include="Views\Cities\search.cshtml" />
     <Content Include="Views\Shared\SearchPanel.cshtml" />
-    <Content Include="Views\Hotel\MultiModelHotelsDetailHotel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -390,6 +394,7 @@
     <Content Include="App_GlobalResources\Labels.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Labels.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>

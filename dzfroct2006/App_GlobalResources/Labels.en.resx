@@ -294,4 +294,7 @@
   <data name="Expand" xml:space="preserve">
     <value>More filters</value>
   </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>Contact the hotel</value>
+  </data>
 </root>

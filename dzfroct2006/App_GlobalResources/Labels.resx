@@ -124,7 +124,7 @@
     <value>Cafétéria</value>
   </data>
   <data name="ChooseHotelSubTitle" xml:space="preserve">
-    <value>Choisissez votre lieu de séjours</value>
+    <value>Choisissez votre lieu de séjour</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Former</value>
@@ -163,7 +163,7 @@
     <value>Internet-Wifi</value>
   </data>
   <data name="InTheHotel" xml:space="preserve">
-    <value>à l'hotel</value>
+    <value>à l'hôtel</value>
   </data>
   <data name="LeaveDateWaterMark" xml:space="preserve">
     <value>Date de départ</value>
@@ -220,7 +220,7 @@
     <value>Rechercher</value>
   </data>
   <data name="SelectNumberOfPerson" xml:space="preserve">
-    <value>Choisissez le nombre de personne</value>
+    <value>Choisissez le nombre de personnes</value>
   </data>
   <data name="Services" xml:space="preserve">
     <value>Services</value>
@@ -229,7 +229,7 @@
     <value>Créer un compte</value>
   </data>
   <data name="TownWaterMark" xml:space="preserve">
-    <value>Ville de séjous...</value>
+    <value>Ville de séjour...</value>
   </data>
   <data name="WelcomToAlgeria" xml:space="preserve">
     <value>Bienvenue en Algérie...</value>
@@ -299,5 +299,8 @@
   </data>
   <data name="Expand" xml:space="preserve">
     <value>Plus de filtres</value>
+  </data>
+  <data name="ContactEmail" xml:space="preserve">
+    <value>Contactez l’hôtel</value>
   </data>
 </root>

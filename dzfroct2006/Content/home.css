@@ -110,4 +110,11 @@ list-style-image: url(../Images/icones/resto.jpg);
     height: 600px;
     margin-left : 35px;
 
+}
+
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
   }

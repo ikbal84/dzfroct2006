@@ -4,37 +4,83 @@
 
 @model dzfroct2006.Models.Hotel
 
- 
-<div>
-    <ul class="list-inline">
-        <li><b>@Html.DisplayFor(model => model.Name)</b> : <span class="glyphicon glyphicon-home"></span>@Html.DisplayFor(model => model.Address)</li>
-        <br />
-        <li><span class="glyphicon glyphicon-phone-alt"></span>@Html.DisplayFor(model => model.PhoneNumber1) - <span class="glyphicon glyphicon-print"></span>@Html.DisplayFor(model => model.FaxNumber1)
-            <br />
-        </li>
-    </ul>
-    <hr class="thin">
-</div>  
 
-    <ul class="bxslider">
-        <li><img class="img" src="~/Images/HotelsImages/HotelTest/hotelTest2.png" /></li>
-        <li><img class="img" src="~/Images/HotelsImages/HotelTest/hotelTest1.png" /></li>
-    </ul>
+<div class="container-fluid">
+    <h1>
+        <strong>@Html.DisplayFor(model => model.Name)</strong>
+    </h1>
+    <h6 class="col-xs-6 col-sm-4 col-md-2">
+        <span class="icon-large icon-home"></span> &ensp; @Html.DisplayFor(model => model.Address)
+    </h6>
+    <h6 class="col-xs-6 col-sm-4 col-md-2">
+        <span class="icon-large icon-envelope"></span> &ensp;
+        <a href="mailto:@Html.DisplayFor(model => model.Email1)">@Resources.Labels.ContactEmail</a>
+    </h6>
+    <h6 class="col-xs-6 col-sm-4 col-md-2">
+        <span class="icon-large icon-phone"></span> &ensp; @Html.DisplayFor(model => model.PhoneNumber1)
+    </h6>
+    <h6 class="col-xs-6 col-sm-4 col-md-2">
+        <span class="icon-large icon-print"></span> &ensp; @Html.DisplayFor(model => model.FaxNumber1)
+    </h6>
 
 
+    <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            @foreach (var item in Model.HotelImages.Select((value, i) => new { i, value }))
+            {
+                if (@item.i == 0)
+                {
+                    <li data-target="#myCarousel" data-slide-to="@item.i" class="active"></li>
+                }
+                else
+                {
+                    <li data-target="#myCarousel" data-slide-to="@item.i"></li>
+                }
+            }
+        </ol>
 
-<div>
-    <hr class="thin">
-</div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            @foreach (var item in Model.HotelImages.Select((value, i) => new { i, value }))
+            {
+                if (@item.i == 0)
+                {
+                    <div class="item active">
+                        <img src="@item.value.FilePath" alt="Chania" width="460" height="345">
+                        <div class="carousel-caption">
+                            <h3>@item.value.Name</h3>
+                            <p>@item.value.Description</p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="item">
+                        <img src="@item.value.FilePath" alt="Chania" width="460" height="345">
+                        <div class="carousel-caption">
+                            <h3>@item.value.Name</h3>
+                            <p>@item.value.Description</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
 
-<div class="dropdown">
+    <div>
+        <hr class="thin">
+    </div>
 
-    <ul class="nav nav-tabs">
-        <li class="active" ><a data-toggle="tab" href="#ongletDesc">@Resources.Labels.Description</a></li>
-        <li><a data-toggle="tab" href="#ongletSrvices">@Resources.Labels.Services</a></li>
-        <li><a data-toggle="tab" href="#ongletComent">@Resources.Labels.Comments</a></li>
-    </ul>
- </div>
+    <div class="dropdown">
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#ongletDesc">@Resources.Labels.Description</a></li>
+            <li><a data-toggle="tab" href="#ongletSrvices">@Resources.Labels.Services</a></li>
+            <li><a data-toggle="tab" href="#ongletComent">@Resources.Labels.Comments</a></li>
+        </ul>
+    </div>
     <div class="tab-content">
         <div id="ongletDesc" class="tab-pane fade in active">
             <p>@Html.DisplayFor(model => model.Description)…</p>
@@ -52,35 +98,35 @@
                         </thead>
 
                         <tbody>
-                                                    <script type="text/javascript">
-                                                        function constructListHotel(){
-                                                            for(var room in @Html.DisplayFor(model => model.Rooms){
+                            <script type="text/javascript">
+                                function constructListHotel(){
+                                    for(var room in @Html.DisplayFor(model => model.Rooms){
 
-                                                                 <tr>
-                                <td >Chambre double</td>
-                                <td>2</td>
-                                <td >
-                                    <table>
-                                        <tr>
-                                            <td>Wifi gratuit</td>
-                                        </tr>
-                                        <tr>
-                                            <td>petit deje</td>
-                                        </tr>
-                                    </table>
+                                         <tr>
+        <td >Chambre double</td>
+        <td>2</td>
+        <td >
+            <table>
+                <tr>
+                    <td>Wifi gratuit</td>
+                </tr>
+                <tr>
+                    <td>petit deje</td>
+                </tr>
+            </table>
 
-                                </td>
-                                <td class="width150" >5000DA</td>
-                                <td class="width250"><a href="#" class="btn btn-info btn-lg pull-right" 
-                                       style="width:100px;height:10px; text-align:center">Reservé<span class="glyphicon glyphicon-play"></span>
-                                     </a>
-                                </td>
-                            </tr>
-                  
+        </td>
+        <td class="width150" >5000DA</td>
+        <td class="width250"><a href="#" class="btn btn-info btn-lg pull-right"
+               style="width:100px;height:10px; text-align:center">Reservé<span class="glyphicon glyphicon-play"></span>
+             </a>
+        </td>
+    </tr>
 
-                                                            }
-                                                            };
-                          </script>
+
+                                    }
+                                    };
+                            </script>
                         </tbody>
                     </table>
 
@@ -165,8 +211,7 @@
 
         </div>
     </div>
-
-
+</div> 
 
     <script type="text/javascript">
         $('.bxslider').bxSlider({
@@ -176,19 +221,19 @@
     </script>
 
     <script type="text/javascript">
-            $("#togModifSearche").click(function () {
-                $("#infoSearche").show();
-                $("#togCloseSearche").show();
-                $("#togModifSearche").hide();
-            });
-            $("#togCloseSearche").click(function () {
-                $("#infoSearche").hide();
-                $("#togCloseSearche").hide();
-                $("#togModifSearche").show();
-            });
+        $("#togModifSearche").click(function () {
+            $("#infoSearche").show();
+            $("#togCloseSearche").show();
+            $("#togModifSearche").hide();
+        });
+        $("#togCloseSearche").click(function () {
+            $("#infoSearche").hide();
+            $("#togCloseSearche").hide();
+            $("#togModifSearche").show();
+        });
 
-            $('.SearchDate').datepicker({
-                startDate: '-3d'
-                //add more options for language
-            })
+        $('.SearchDate').datepicker({
+            startDate: '-3d'
+            //add more options for language
+        })
     </script>
