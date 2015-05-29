@@ -1,6 +1,6 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="UnitTests">
  <ItemGroup>
- 		<SolutionFile Include="dzfroct2006.sln"/>
+ 		<SolutionFile Include="dzfroct2006\dzfroct2006.sln"/>
  		<TestContainer Include="UnitTests\bin\Debug\UnitTests.dll" />
  </ItemGroup>
 
