@@ -22,23 +22,29 @@ namespace dzfroct2006.Controllers
             ViewBag.dateDebut = new DateTime(2014, 12, 26).Date;
             ViewBag.dateFin = new DateTime(2015, 12, 26).Date;
             ViewBag.ville = "Oran";
-
-
-            HotelImages hotelImages = new HotelImages { IdImage = 11, Name = "hotelTest1", FilePath = "../Images/HotelsImages/HotelTest/hotelTest2.png" };
-
+            string nameHotel = "Hotel Anissov";
+            string pathHotelName = nameHotel.Replace(" ", "");
+            HotelImages hotelImages1 = new HotelImages { IdImage = 11, Description = "Hall de l'hotel", Name = "Hall", FilePath = "../../Images/HotelsImages/" + pathHotelName + "/img1.jpg" };
+            HotelImages hotelImages2 = new HotelImages { IdImage = 12, Description = "Chambre double Luxe", Name = "Hall", FilePath = "../../Images/HotelsImages/" + pathHotelName + "/img2.jpg" };
+            HotelImages hotelImages3 = new HotelImages { IdImage = 13, Description = "Restaurant", Name = "Hall", FilePath = "../../Images/HotelsImages/" + pathHotelName + "/img3.jpg" };
+            
             List<HotelImages> listHotelImages = new List<HotelImages>();
-            listHotelImages.Add(hotelImages);
+            listHotelImages.Add(hotelImages1);
+            listHotelImages.Add(hotelImages2);
+            listHotelImages.Add(hotelImages3);
 
             HotelRooms room1 = new HotelRooms { RoomType = "Double", Description = "Chambre double Luxe", NbRooms = 5, NbPersonnes = 2, Price = "5000DA" };
             List<HotelRooms> listRoom = new List<HotelRooms>();
             listRoom.Add(room1);
-            var hotel = new Hotels() { Name = "TestHotel", 
+            var hotel = new Hotel() { 
+                                       Name = nameHotel, 
                                        Description = "Un simple hotel de test", 
                                        PhoneNumber1 = "002130000001", 
                                        FaxNumber1 = "0021321659878", 
                                        Address = "01 rue des tests oran", 
                                        HotelImages = listHotelImages, 
-                                       Rooms = listRoom 
+                                       Rooms = listRoom,
+                                       Email1 = "hotel.dz@gmail.com"
                                     };
 
             return View(hotel);
@@ -67,7 +73,7 @@ namespace dzfroct2006.Controllers
   /// <returns></returns>
 
         [HttpPost]
-        public ActionResult Create(Hotels CreatedHotel)
+        public ActionResult Create(Hotel CreatedHotel)
         {
             try
             {

@@ -1,5 +1,4 @@
 ﻿
-
 @model dzfroct2006.BLL.HotelsQuery
 
 @{
@@ -192,34 +191,52 @@
 <div id="map" class="col-xs-0 col-sm-10 col-md-5 HotelsMap"></div>
 
 <script type="text/javascript">
+    var geocoder = 0;
+    geocoder = new google.maps.Geocoder();
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
-        center: new google.maps.LatLng(36.709825, 3.210534),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-    var infowindow = new google.maps.InfoWindow();
+    var address = document.getElementById('City').value;
+    geocoder.geocode({ 'address': address }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+            showPointsHotels();
+        } else {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 5,
+                center: new google.maps.LatLng(30.099508, 2.004981),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+            showPointsHotels();
+        }
+    });
 
+    function showPointsHotels(){
+        var infowindow = new google.maps.InfoWindow();
+        for (var i = 0; i < locations.length; i++) {
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(parseFloat(locations[i][1]), parseFloat(locations[i][2])),
+                map: map
+            });
 
-    for (var i = 0; i < locations.length; i++) {
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(parseFloat(locations[i][1]), parseFloat(locations[i][2])),
-            map: map
-        });
-
-        google.maps.event.addListener(marker, 'click', (function (marker, i) {
-            return function () {
-                infowindow.setContent(locations[i][0]);
-                infowindow.open(map, marker);
-            }
-        })(marker, i));
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
     }
-
     $("#expandFeatures").click(function () {
 
-        if ($(this).hasClass("Collapsed"))
-        {
+        if ($(this).hasClass("Collapsed")) {
             $("#nonPrincipaleFeatures").css("display", "");
             $(this).removeClass("Collapsed");
             $(this).addClass("Expended");

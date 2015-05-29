@@ -45,7 +45,7 @@ namespace dzfroct2006.DAL
 
             // Hotel 1 
             #region Hotel_Anissov
-            var hotel = new Hotels()
+            var hotel = new Hotel()
             {
                 Name = "Hotel Anissov",
                 Description = "Un simple hotel de test",
@@ -72,7 +72,7 @@ namespace dzfroct2006.DAL
 
             //Hotel 2
             #region Hotel_Nadirov
-            var hotel2 = new Hotels()
+            var hotel2 = new Hotel()
             {
                 Name = "Hotel Nadirov",
                 Description = "Un simple hotel de test",
@@ -96,7 +96,7 @@ namespace dzfroct2006.DAL
 
             //Hotel3
             #region Hotel_Ikbal
-            var hotel3 = new Hotels()
+            var hotel3 = new Hotel()
             {
                 Name = "Hotel Ikbal",
                 Description = "Un simple hotel de test",

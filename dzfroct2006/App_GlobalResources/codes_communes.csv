@@ -419,51 +419,51 @@ Bechar ;8350;El Ouata
 Bechar ;8360;Ouled Khoudir   
 Bechar ;8370;Timoudi
 Bechar ;8380;Ksabi
-Bechar ;9000;Blida
-Bechar ;9002;Sidi Kebir   
-Bechar ;9003;Blida Derbali Ali  
-Bechar ;9100;Ouled Yaich   
-Bechar ;9101;Ouled Yaich Universiti  
-Bechar ;9110;Chrea
-Bechar ;9120;Bouarfa
-Bechar ;9130;Beni Merad   
-Bechar ;9200;El Affroun   
-Bechar ;9201;Beni Mouimene   
-Bechar ;9210;Mouzaia
-Bechar ;9211;Beni Ghougrane   
-Bechar ;9220;Ain Romana   
-Bechar ;9230;Ouled El Alleug  
-Bechar ;9231;Ben Salah   
-Bechar ;9240;Beni Tamou   
-Bechar ;9250;Chiffa
-Bechar ;9251;Bordj Emir Abdelkader  
-Bechar ;9252;Ahle el Oued   et Henia   
-Bechar ;9253;Sidi Madani   
-Bechar ;9260;Oued Djer   
-Bechar ;9261;Souakhria
-Bechar ;9300;Larbaa
-Bechar ;9310;Souhane
-Bechar ;9320;Meftah
-Bechar ;9330;Djebabra
-Bechar ;9340;Sidi Moussa   
-Bechar ;9350;Bougara
-Bechar ;9351;Beni Missera   
-Bechar ;9360;Hammam Melouane   
-Bechar ;9370;Ouled Selama   
-Bechar ;9400;Boufarik
-Bechar ;9402;Sidi Aid   
-Bechar ;9403;Ben Hamdani   
-Bechar ;9410;Tassala el Merdja  
-Bechar ;9420;Beni Khellil   
-Bechar ;9430;Birtouta
-Bechar ;9440;Ouled Chebel   
-Bechar ;9450;Bouinan
-Bechar ;9451;Amroussa
-Bechar ;9452;Mellaha
-Bechar ;9460;Chebli
-Bechar ;9470;Soumaa
-Bechar ;9471;Hallouya
-Bechar ;9480;Guerrouaou
+Blida;9000;Blida
+Blida;9002;Sidi Kebir   
+Blida;9003;Blida Derbali Ali  
+Blida;9100;Ouled Yaich   
+Blida;9101;Ouled Yaich Universiti  
+Blida;9110;Chrea
+Blida;9120;Bouarfa
+Blida;9130;Beni Merad   
+Blida;9200;El Affroun   
+Blida;9201;Beni Mouimene   
+Blida;9210;Mouzaia
+Blida;9211;Beni Ghougrane   
+Blida;9220;Ain Romana   
+Blida;9230;Ouled El Alleug  
+Blida;9231;Ben Salah   
+Blida;9240;Beni Tamou   
+Blida;9250;Chiffa
+Blida;9251;Bordj Emir Abdelkader  
+Blida;9252;Ahle el Oued   et Henia   
+Blida;9253;Sidi Madani   
+Blida;9260;Oued Djer   
+Blida;9261;Souakhria
+Blida;9300;Larbaa
+Blida;9310;Souhane
+Blida;9320;Meftah
+Blida;9330;Djebabra
+Blida;9340;Sidi Moussa   
+Blida;9350;Bougara
+Blida;9351;Beni Missera   
+Blida;9360;Hammam Melouane   
+Blida;9370;Ouled Selama   
+Blida;9400;Boufarik
+Blida;9402;Sidi Aid   
+Blida;9403;Ben Hamdani   
+Blida;9410;Tassala el Merdja  
+Blida;9420;Beni Khellil   
+Blida;9430;Birtouta
+Blida;9440;Ouled Chebel   
+Blida;9450;Bouinan
+Blida;9451;Amroussa
+Blida;9452;Mellaha
+Blida;9460;Chebli
+Blida;9470;Soumaa
+Blida;9471;Hallouya
+Blida;9480;Guerrouaou
 Bouira ;10000;Bouira
 Bouira ;10002;Said Abid   
 Bouira ;10100;M'chedallah
@@ -836,7 +836,7 @@ Tizi-Ouzou ;15661;Attouche
 Tizi-Ouzou ;15662;Tala Bouzrou   
 Tizi-Ouzou ;15663;Tazrart
 Tizi-Ouzou ;15664;Stita
-Alger ;16000;Alger Gare   
+Alger ;16000;Alger centre   
 Alger ;16001;Alger Port Said  
 Alger ;16002;Alger Colis Postaux  
 Alger ;16002;Cheraga
@@ -1285,7 +1285,7 @@ Sidi Bel Abbis ;22465;Ras el Ma
 Sidi Bel Abbis ;22470;Redjem Demouche   
 Sidi Bel Abbis ;22475;Moulay Slissen   
 Sidi Bel Abbis ;22485;El Haiaiba
-Annaba ;23000;Annaba RP   
+Annaba ;23000;Annaba
 Annaba ;23001;Annaba Amirouche   
 Annaba ;23002;Annaba Menadia   
 Annaba ;23003;Annaba Oued Kouba  
@@ -1363,7 +1363,7 @@ Guelma ;24360;Sellaoua Announa
 Guelma ;24370;Ain Makhlouf   
 Guelma ;24380;Tamlouka
 Guelma ;24381;Ain Arko
-Constantine ;25000;Constantine Gare   
+Constantine ;25000;Constantine   
 Constantine ;25001;Constantine Cite Daksi  
 Constantine ;25002;Constantine Coudiat   
 Constantine ;25003;Constantine Sidi Mabrouk  
@@ -1688,7 +1688,7 @@ Ouargla ;30500;Hassi Messaoud
 Ouargla ;30501;Haoud el Hamra  
 Ouargla ;30502;Irara
 Ouargla ;30510;El Borma
-Oran ;31000;Oran el M'naouer  
+Oran ;31000;Oran  
 Oran ;31001;Oran ben Abderrezak  
 Oran ;31002;Oran Bougueri   
 Oran ;31003;Oran Collis Postaux  
@@ -1856,52 +1856,52 @@ Bordj-Bou-Arreridj ;34275;Bordj Ghidir
 Bordj-Bou-Arreridj ;34276;Telata
 Bordj-Bou-Arreridj ;34285;Ghilassa
 Bordj-Bou-Arreridj ;34295;El Anasser
-Boumerdis ;35000;Boumerdis
-Boumerdis ;35100;Dellys
-Boumerdis ;35100;Dellys
-Boumerdis ;35101;Takdempt
-Boumerdis ;35110;Afir
-Boumerdis ;35120;Benchoud
-Boumerdis ;35130;Baghlia
-Boumerdis ;35131;Ouled Hamida   
-Boumerdis ;35132;Fourar Ain Sebaou  
-Boumerdis ;35140;Taourga
-Boumerdis ;35150;Sidi Daoud   
-Boumerdis ;35151;Tchouchfi Bouberak   
-Boumerdis ;35200;Bordj Menaiel   
-Boumerdis ;35201;Rouafa
-Boumerdis ;35202;Tizi Nali Slimane  
-Boumerdis ;35210;Djinet
-Boumerdis ;35211;Haouche ben Ouali  
-Boumerdis ;35220;Chabet el Ameur  
-Boumerdis ;35230;Isser
-Boumerdis ;35231;Isserville
-Boumerdis ;35232;Kehf el Gharbi  
-Boumerdis ;35250;Naciria
-Boumerdis ;35260;Zemmouri
-Boumerdis ;35261;Koudiat el Arais  
-Boumerdis ;35262;Boudhar
-Boumerdis ;35270;Si Mustapha   
-Boumerdis ;35280;Leghata
-Boumerdis ;35320;Bordj El Bahri  
-Boumerdis ;35321;El Marsa   
-Boumerdis ;35350;Khemis El-Khechna   
-Boumerdis ;35351;Bou Hamedi   
-Boumerdis ;35352;Chebacheb
-Boumerdis ;35353;Khemis el Khechna   17 juin   
-Boumerdis ;35370;Larbatache
-Boumerdis ;35400;Boudouaou
-Boumerdis ;35420;Corso
-Boumerdis ;35425;Beni Amrane   
-Boumerdis ;35426;Bouaidel
-Boumerdis ;35427;Haddada
-Boumerdis ;35428;Zenina
-Boumerdis ;35440;Ouled Moussa   
-Boumerdis ;35450;El Kharrouba   
-Boumerdis ;35470;Thenia
-Boumerdis ;35471;Karma
-Boumerdis ;35480;Souk El-Haad   
-Boumerdis ;35490;Tidjelabine
+Boumerdes ;35000;Boumerdes
+Boumerdes ;35100;Dellys
+Boumerdes ;35100;Dellys
+Boumerdes ;35101;Takdempt
+Boumerdes ;35110;Afir
+Boumerdes ;35120;Benchoud
+Boumerdes ;35130;Baghlia
+Boumerdes ;35131;Ouled Hamida   
+Boumerdes ;35132;Fourar Ain Sebaou  
+Boumerdes ;35140;Taourga
+Boumerdes ;35150;Sidi Daoud   
+Boumerdes ;35151;Tchouchfi Bouberak   
+Boumerdes ;35200;Bordj Menaiel   
+Boumerdes ;35201;Rouafa
+Boumerdes ;35202;Tizi Nali Slimane  
+Boumerdes ;35210;Djinet
+Boumerdes ;35211;Haouche ben Ouali  
+Boumerdes ;35220;Chabet el Ameur  
+Boumerdes ;35230;Isser
+Boumerdes ;35231;Isserville
+Boumerdes ;35232;Kehf el Gharbi  
+Boumerdes ;35250;Naciria
+Boumerdes ;35260;Zemmouri
+Boumerdes ;35261;Koudiat el Arais  
+Boumerdes ;35262;Boudhar
+Boumerdes ;35270;Si Mustapha   
+Boumerdes ;35280;Leghata
+Boumerdes ;35320;Bordj El Bahri  
+Boumerdes ;35321;El Marsa   
+Boumerdes ;35350;Khemis El-Khechna   
+Boumerdes ;35351;Bou Hamedi   
+Boumerdes ;35352;Chebacheb
+Boumerdes ;35353;Khemis el Khechna   17 juin   
+Boumerdes ;35370;Larbatache
+Boumerdes ;35400;Boudouaou
+Boumerdes ;35420;Corso
+Boumerdes ;35425;Beni Amrane   
+Boumerdes ;35426;Bouaidel
+Boumerdes ;35427;Haddada
+Boumerdes ;35428;Zenina
+Boumerdes ;35440;Ouled Moussa   
+Boumerdes ;35450;El Kharrouba   
+Boumerdes ;35470;Thenia
+Boumerdes ;35471;Karma
+Boumerdes ;35480;Souk El-Haad   
+Boumerdes ;35490;Tidjelabine
 El Taraf ;36000;El Tarf   
 El Taraf ;36001;Ain Khiar   
 El Taraf ;36002;Mexna
@@ -2184,54 +2184,54 @@ Mila ;43370;Rouached
 Mila ;43371;Sidi Zerrouk   
 Mila ;43376;Zarza
 Mila ;43380;Tassala
-Ain ;44000;Ain Defla   
-Ain ;44100;Djelida
-Ain ;44101;Baba Driss Aouaidia  
-Ain ;44110;Tarik Ibn Ziad  
-Ain ;44120;Bordj Emir Khaled  
-Ain ;44130;Bourached
-Ain ;44135;El Amra   
-Ain ;44136;El Aneb   
-Ain ;44140;Mekhatria
-Ain ;44150;El Hassania   
-Ain ;44151;Souk el Djemaa  
-Ain ;44160;Djemaa Ouled Cheikh  
-Ain ;44165;Bathia
-Ain ;44170;Arib
-Ain ;44171;Dar el Kaid  
-Ain ;44180;Oued Djemaa   
-Ain ;44190;Bir Ould Khelifa  
-Ain ;44200;Miliana
-Ain ;44201;Zouggala
-Ain ;44210;Ben Allal   
-Ain ;44220;Ain Torki   
-Ain ;44225;Khemis Miliana   
-Ain ;44226;Ouled Belgacem   
-Ain ;44230;Sidi Lakhdar   
-Ain ;44240;Ain Soltane   
-Ain ;44245;Boumedfaa
-Ain ;44246;Oued Zeboudj   
-Ain ;44250;Hammam Righa   
-Ain ;44260;Ain Benian   
-Ain ;44265;Hoceinia
-Ain ;44270;Djendel
-Ain ;44271;Ain Dem   
-Ain ;44280;Ain Lechiekh   
-Ain ;44285;Oued Chorfa   
-Ain ;44286;Amourah
-Ain ;44290;Bir Bouche   
-Ain ;44300;El Attaf   
-Ain ;44301;Moulay Abdelkader   
-Ain ;44302;Ouled Azza   
-Ain ;44303;Cheikh Benyahia   
-Ain ;44304;Sidi Bouabida   
-Ain ;44305;Ouled Moussa Terchi  
-Ain ;44330;Bellaas
-Ain ;44340;El Abaida   
-Ain ;44350;Tacheta Zougara   
-Ain ;44360;Ain Bouyahia   
-Ain ;44370;Rouina
-Ain ;44380;Zeddine
+Ain Defla;44000;Ain Defla   
+Ain Defla;44100;Djelida
+Ain Defla;44101;Baba Driss Aouaidia  
+Ain Defla;44110;Tarik Ibn Ziad  
+Ain Defla;44120;Bordj Emir Khaled  
+Ain Defla;44130;Bourached
+Ain Defla;44135;El Amra   
+Ain Defla;44136;El Aneb   
+Ain Defla;44140;Mekhatria
+Ain Defla;44150;El Hassania   
+Ain Defla;44151;Souk el Djemaa  
+Ain Defla;44160;Djemaa Ouled Cheikh  
+Ain Defla;44165;Bathia
+Ain Defla;44170;Arib
+Ain Defla;44171;Dar el Kaid  
+Ain Defla;44180;Oued Djemaa   
+Ain Defla;44190;Bir Ould Khelifa  
+Ain Defla;44200;Miliana
+Ain Defla;44201;Zouggala
+Ain Defla;44210;Ben Allal   
+Ain Defla;44220;Ain Torki   
+Ain Defla;44225;Khemis Miliana   
+Ain Defla;44226;Ouled Belgacem   
+Ain Defla;44230;Sidi Lakhdar   
+Ain Defla;44240;Ain Soltane   
+Ain Defla;44245;Boumedfaa
+Ain Defla;44246;Oued Zeboudj   
+Ain Defla;44250;Hammam Righa   
+Ain Defla;44260;Ain Benian   
+Ain Defla;44265;Hoceinia
+Ain Defla;44270;Djendel
+Ain Defla;44271;Ain Dem   
+Ain Defla;44280;Ain Lechiekh   
+Ain Defla;44285;Oued Chorfa   
+Ain Defla;44286;Amourah
+Ain Defla;44290;Bir Bouche   
+Ain Defla;44300;El Attaf   
+Ain Defla;44301;Moulay Abdelkader   
+Ain Defla;44302;Ouled Azza   
+Ain Defla;44303;Cheikh Benyahia   
+Ain Defla;44304;Sidi Bouabida   
+Ain Defla;44305;Ouled Moussa Terchi  
+Ain Defla;44330;Bellaas
+Ain Defla;44340;El Abaida   
+Ain Defla;44350;Tacheta Zougara   
+Ain Defla;44360;Ain Bouyahia   
+Ain Defla;44370;Rouina
+Ain Defla;44380;Zeddine
 Naama ;45000;Naama
 Naama ;45001;Touadjeur
 Naama ;45100;Mecheria

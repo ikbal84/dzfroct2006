@@ -25,7 +25,7 @@ namespace dzfroct2006.Models
 
         public String Price { get; set; }
 
-        public virtual Hotels Hotel { get; set; }
+        public virtual Hotel Hotel { get; set; }
 
     }
 }

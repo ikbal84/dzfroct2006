@@ -22,7 +22,7 @@ namespace dzfroct2006.DAL
         /// <param name="SearchedCity"></param>
         /// <param name="SearchedNbPersonnes"></param>
         /// <returns></returns>
-        public Tuple<List<Hotels>, int> Search( String SearchedTown, String SearchedWilaya, int SearchedNbPersonnes = 0, 
+        public Tuple<List<Hotel>, int> Search( String SearchedTown, String SearchedWilaya, int SearchedNbPersonnes = 0, 
                                                 String SortProperty = "name", String SortType = "asc", int PageNumber = 1, 
                                                 int PageSize = -1)
         {
@@ -30,7 +30,7 @@ namespace dzfroct2006.DAL
             int DeterminedPageSize = (PageSize == -1) ? Int32.Parse(WebConfigurationManager.AppSettings["PageSize"].ToString()) : PageSize;
             
             //seraching for City and NbPersonnes
-            IQueryable<Hotels> HotelsQuery = context.Hotels;
+            IQueryable<Hotel> HotelsQuery = context.Hotels;
             if (!String.IsNullOrEmpty(SearchedTown))
             {
                 HotelsQuery = HotelsQuery.Where(h => h.Town.ToLower().Contains(SearchedTown.ToLower())
@@ -56,9 +56,10 @@ namespace dzfroct2006.DAL
             return Tuple.Create(HotelsQuery.ToList(),countAllResults);
         }
 
-        static private IQueryable<Hotels> Sort(IQueryable<Hotels> query, String SortProperty, String SortType)
+        private IQueryable<Hotel> Sort(IQueryable<Hotel> query, String SortProperty, String SortType)
+
         {
-            IQueryable<Hotels> SortQuery = null;
+            IQueryable<Hotel> SortQuery = null;
 
             switch(SortProperty)
             {
@@ -82,11 +83,11 @@ namespace dzfroct2006.DAL
         /// <param name="SearchedFeatures"></param>
         /// <param name="SearchedNbPersonnes"></param>
         /// <returns></returns>
-        public Tuple<List<Hotels>, int> Search(String SearchedTown, String SearchedWilaya, List<String> SearchedFeatures, int SearchedNbPersonnes = 0)
+        public Tuple<List<Hotel>, int> Search(String SearchedTown, String SearchedWilaya, List<String> SearchedFeatures, int SearchedNbPersonnes = 0)
         {
             //seraching for City and NbPersonnes
 
-            IQueryable<Hotels> HotelsQuery = context.Hotels;
+            IQueryable<Hotel> HotelsQuery = context.Hotels;
             if (!String.IsNullOrEmpty(SearchedTown))
             {
                 HotelsQuery = HotelsQuery.Where(h => h.Town.ToLower().Contains(SearchedTown.ToLower())

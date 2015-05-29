@@ -107,7 +107,14 @@ list-style-image: url(../Images/icones/resto.jpg);
 
 .HotelsMap {
     width: 500px;
-    height: 400px;
+    height: 600px;
     margin-left : 35px;
 
+}
+
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
   }

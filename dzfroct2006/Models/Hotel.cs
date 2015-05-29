@@ -9,7 +9,7 @@ using System.Web;
 
 namespace dzfroct2006.Models
 {
-    public class Hotels
+    public class Hotel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

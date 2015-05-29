@@ -26,7 +26,7 @@
                     <tr>
                         <td>
                             <input type="text" name="City" id="City" placeholder="@Resources.Labels.TownWaterMark" class="form-control"
-                                   value="@(String.IsNullOrEmpty(Model.Town) ? "" : Model.Town + "," + Model.Wilaya)" />
+                                   value="@(String.IsNullOrEmpty(Model.Town) ? "" : Model.Town + "," + Model.Wilaya)"/>
                             <ul style="z-index:99; display: none; top: 58px; left: 1px; width: 279px; height: 200px; overflow:scroll" id="AutoCompleteResults" class="ui-autocomplete ui-menu ui-widget ui-widget-content"></ul>
                         </td>
                         <td>
@@ -42,7 +42,7 @@
                             <input type="text" name="NbRooms" class="form-control" placeholder="1" style="width:70px;" value="@Model.NbRooms" />
                         </td>
                         <td>
-                            <button type="submit" class="btn btn-success pull-right"> @Resources.Labels.Search </button>
+                            <button type="submit" class="btn btn-success pull-right" value="Geocode" > @Resources.Labels.Search </button>
                         </td>
                     </tr>
 
