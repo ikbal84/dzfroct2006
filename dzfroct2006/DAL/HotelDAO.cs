@@ -21,7 +21,7 @@ namespace dzfroct2006.DAL
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -47,7 +47,7 @@ namespace dzfroct2006.DAL
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -73,7 +73,7 @@ namespace dzfroct2006.DAL
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

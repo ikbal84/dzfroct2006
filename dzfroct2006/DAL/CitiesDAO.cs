@@ -68,7 +68,7 @@ namespace dzfroct2006.DAL
 
       public void Dispose()
       {
-          this.Dispose();
+          this.context.Dispose();
       }
     }    
 }

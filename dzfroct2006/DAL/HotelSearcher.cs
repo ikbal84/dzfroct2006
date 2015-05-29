@@ -56,7 +56,7 @@ namespace dzfroct2006.DAL
             return Tuple.Create(HotelsQuery.ToList(),countAllResults);
         }
 
-        private IQueryable<Hotels> Sort(IQueryable<Hotels> query, String SortProperty, String SortType)
+        static private IQueryable<Hotels> Sort(IQueryable<Hotels> query, String SortProperty, String SortType)
         {
             IQueryable<Hotels> SortQuery = null;
 
@@ -115,7 +115,7 @@ namespace dzfroct2006.DAL
 
         public void Dispose()
         {
-            this.Dispose();
+            this.context.Dispose();
         }
 
     }

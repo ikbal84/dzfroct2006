@@ -22,7 +22,7 @@ namespace dzfroct2006.BLL
         public int PageSize { get; set; }
         public int TotalResultCount { get; set; }
         public bool PaginationEnabled { get; set; }
-        
+
         public List<SearchFeatures> Features { get; set; }
 
         public List<Hotels> ResultHotels { get; set; }
@@ -33,8 +33,6 @@ namespace dzfroct2006.BLL
         {
 
             this.context = new HotelsDBContext();
-            this.ResultHotels = new List<Hotels>();
-            this.Features = new List<SearchFeatures>();
             this.PageSize = Int32.Parse(WebConfigurationManager.AppSettings["PageSize"].ToString());
             this.IntiFeatures();
         }
@@ -157,7 +155,7 @@ namespace dzfroct2006.BLL
 
         public void Dispose()
         {
-            this.Dispose();
+            this.context.Dispose();
         }
     } 
 }

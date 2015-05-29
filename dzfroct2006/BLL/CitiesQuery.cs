@@ -12,7 +12,7 @@ namespace dzfroct2006.BLL
     {
 
 
-        public String GetListCities(String SearchName)
+        public static String GetListCities(String SearchName)
         {
             CitiesDAO cityDAO = new CitiesDAO();
             List<City> Cities = null;
@@ -30,7 +30,7 @@ namespace dzfroct2006.BLL
         }
 
 
-        private String ConvertCitiesListtoString(List<City> Cities)
+        static String ConvertCitiesListtoString(List<City> Cities)
         {
             StringBuilder Result = new StringBuilder();
 
