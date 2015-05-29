@@ -15,7 +15,10 @@
  </Target>
 
  <Target Name="UnitTests" DependsOnTargets="Compile">
-	<Exec Command="nunit-console @(TestContainer)"/>
+	<Exec Command='nunit-console "@(TestContainer)"'/>
 </Target>
 
+<Target Name="Echo"> 
+	<Exec command='echo "@(NUnitRunner)" /testcontainer:@(TestContainer) /nologo /noisolation' />
+</Target>
 </Project>
