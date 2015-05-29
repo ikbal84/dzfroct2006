@@ -1,6 +1,5 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="UnitTests">
  <ItemGroup>
- 		<BuildArtifactsDir Include="BuildArtifacts\"/>
  		<SolutionFile Include="dzfroct2006.sln"/>
  		<TestContainer Include="UnitTests\bin\Debug\UnitTests.dll" />
  </ItemGroup>
@@ -10,16 +9,8 @@
  		<BuildPlateforme Condition=" '$(BuildPlateforme)' == '' "> Any CPU </BuildPlateforme>
  </PropertyGroup>
 
- <Target Name="Clean">
- 		<RemoveDir Directories="@(BuildArtifactsDir)"/>
- </Target>
 
-
- <Target Name="Init" DependsOnTargets="Clean">
- 		<MakeDir Directories="@(BuildArtifactsDir)"/>
- </Target>
-
-<Target Name="Compile" DependsOnTargets="Init">
+<Target Name="Compile">
  	<MSBuild Projects="@(SolutionFile)" Targets="Rebuild" Properties="Configuration=$(Configuration); Platform=$(BuildPlateforme)" />
  </Target>
 
