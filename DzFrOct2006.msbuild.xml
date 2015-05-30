@@ -17,4 +17,5 @@
  <Target Name="UnitTests" DependsOnTargets="Compile">
 	<Exec Command="nunit-console @(TestContainer)"/>
 </Target>
+
 </Project>
