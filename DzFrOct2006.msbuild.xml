@@ -11,7 +11,7 @@
 
 
 <Target Name="Compile">
- 	<MSBuild Projects="@(SolutionFile)" Targets="Rebuild" Properties="Configuration=$(Configuration); Platform=$(BuildPlateforme)" />
+ 	<MSBuild Projects="@(SolutionFile)" Targets="Rebuild" Properties="FrameworkPathOverride=C:\Windows\Microsoft.NET\Framework64\v4.0.30319; Configuration=$(Configuration); Platform=$(BuildPlateforme)" />
  </Target>
 
  <Target Name="UnitTests" DependsOnTargets="Compile">
