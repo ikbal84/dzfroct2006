@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Web.WebPages.OAuth;
+//using Microsoft.Web.WebPages.OAuth;
 using dzfroct2006.Models;
 
 namespace dzfroct2006
