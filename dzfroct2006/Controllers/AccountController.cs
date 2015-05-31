@@ -26,7 +26,6 @@ namespace dzfroct2006.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
-
         //
         // POST: /Account/Login
 
