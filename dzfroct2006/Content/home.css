@@ -117,4 +117,28 @@ list-style-image: url(../Images/icones/resto.jpg);
   .carousel-inner > .item > a > img {
       width: 70%;
       margin: auto;
-  }
+}
+
+
+body {
+  background: #f4f4f4;
+  box-shadow: none;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+#HEAD .container {
+  position: relative;
+  margin: 0 auto;
+  width: 983px;
+  min-height: 41px;
+}
+
+.page {
+  width: 990px;
+  margin: 0 auto;
+  background: #fff;
+  -webkit-box-shadow: 2px 0 4px rgba(0,0,0,0.2),-2px 0 4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 2px 0 4px rgba(0,0,0,0.2),-2px 0 4px rgba(0,0,0,0.2);
+  box-shadow: 2px 0 4px rgba(0,0,0,0.2),-2px 0 4px rgba(0,0,0,0.2); 
+}

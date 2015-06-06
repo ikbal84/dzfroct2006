@@ -303,4 +303,10 @@
   <data name="ContactEmail" xml:space="preserve">
     <value>Contactez l’hôtel</value>
   </data>
+  <data name="Booking" xml:space="preserve">
+    <value>Réserver</value>
+  </data>
+  <data name="ShowInMap" xml:space="preserve">
+    <value>Afficher sur la carte</value>
+  </data>
 </root>
