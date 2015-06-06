@@ -22,7 +22,7 @@ namespace dzfroct2006.BLL
         public int PageSize { get; set; }
         public int TotalResultCount { get; set; }
         public bool PaginationEnabled { get; set; }
-        
+
         public List<SearchFeatures> Features { get; set; }
 
         public List<Hotel> ResultHotels { get; set; }
@@ -157,7 +157,7 @@ namespace dzfroct2006.BLL
 
         public void Dispose()
         {
-            this.Dispose();
+            this.context.Dispose();
         }
     } 
 }

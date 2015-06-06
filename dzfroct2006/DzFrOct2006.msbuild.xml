@@ -1,0 +1,24 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="UnitTests">
+ <ItemGroup>
+ 		<SolutionFile Include="dzfroct2006\dzfroct2006.sln"/>
+ 		<TestContainer Include="dzfroct2006\UnitTests\bin\Debug\UnitTests.dll" />
+ </ItemGroup>
+
+ <PropertyGroup>
+ 		<Configuration Condition=" '$(Configuration)' == '' "> Debug </Configuration>
+ 		<BuildPlateforme Condition=" '$(BuildPlateforme)' == '' "> Any CPU </BuildPlateforme>
+ </PropertyGroup>
+
+
+<Target Name="Compile">
+ 	<MSBuild Projects="@(SolutionFile)" Targets="Rebuild" Properties="Configuration=$(Configuration); Platform=$(BuildPlateforme)" />
+ </Target>
+
+ <Target Name="UnitTests" DependsOnTargets="Compile">
+	<Exec Command='nunit-console "@(TestContainer)"'/>
+</Target>
+
+<Target Name="Echo"> 
+	<Exec command='echo "@(NUnitRunner)" /testcontainer:@(TestContainer) /nologo /noisolation' />
+</Target>
+</Project>

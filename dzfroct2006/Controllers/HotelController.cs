@@ -121,7 +121,7 @@ namespace dzfroct2006.Controllers
                 else 
                     return RedirectToAction("CreateImage", new { hotelId });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return View();
             }
@@ -153,7 +153,7 @@ namespace dzfroct2006.Controllers
 
                 return RedirectToAction("CreateImage", new { hotelId });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return View();
             }

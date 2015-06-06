@@ -9,7 +9,7 @@ using System.Globalization;
 
 namespace dzfroct2006
 {
-    public class LanguageFilter : ActionFilterAttribute, IActionFilter
+    public sealed class LanguageFilter : ActionFilterAttribute, IActionFilter
     {
 
         void IActionFilter.OnActionExecuting(ActionExecutingContext filterContext)

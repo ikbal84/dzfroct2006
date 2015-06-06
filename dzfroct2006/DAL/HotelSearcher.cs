@@ -57,6 +57,7 @@ namespace dzfroct2006.DAL
         }
 
         private IQueryable<Hotel> Sort(IQueryable<Hotel> query, String SortProperty, String SortType)
+
         {
             IQueryable<Hotel> SortQuery = null;
 
@@ -115,7 +116,7 @@ namespace dzfroct2006.DAL
 
         public void Dispose()
         {
-            this.Dispose();
+            this.context.Dispose();
         }
 
     }
