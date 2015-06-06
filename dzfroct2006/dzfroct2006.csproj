@@ -210,14 +210,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BLL\CitiesQuery.cs" />
+    <Compile Include="BLL\EmailConfirmer.cs" />
     <Compile Include="BLL\HotelQuery.cs" />
     <Compile Include="BLL\IHotelsQuery.cs" />
     <Compile Include="BLL\HotelsQuery.cs" />
     <Compile Include="BLL\SearchFeatures.cs" />
+    <Compile Include="BLL\VisitorHandler.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="Controllers\mailvalidatorController.cs" />
     <Compile Include="Controllers\OwnerSpaceController.cs" />
     <Compile Include="Controllers\SearchResultsController.cs" />
     <Compile Include="DAL\CitiesDAO.cs" />
@@ -227,6 +230,7 @@
     <Compile Include="DAL\HotelSearcher.cs" />
     <Compile Include="DAL\ICitiesDAO.cs" />
     <Compile Include="DAL\IHotelDAO.cs" />
+    <Compile Include="DAL\VisitorDAO.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -241,7 +245,9 @@
     <Compile Include="Models\HotelOwners.cs" />
     <Compile Include="Models\HotelRooms.cs" />
     <Compile Include="Models\Hotel.cs" />
+    <Compile Include="Models\Visitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\EmailChecker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrapHelpers\dist\css\bootstrap-formhelpers.css" />
@@ -407,6 +413,10 @@
     <Content Include="Views\Hotel\CreateImage.cshtml" />
     <Content Include="Views\Cities\search.cshtml" />
     <Content Include="Views\Shared\SearchPanel.cshtml" />
+    <Content Include="Views\mailvalidator\AlreadyConfirmed.cshtml" />
+    <Content Include="Views\mailvalidator\ConfirmationError.cshtml" />
+    <Content Include="Views\mailvalidator\Index.cshtml" />
+    <Content Include="Views\mailvalidator\ValidationSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

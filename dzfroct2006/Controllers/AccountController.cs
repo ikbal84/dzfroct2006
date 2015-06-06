@@ -10,6 +10,10 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using dzfroct2006.Filters;
 using dzfroct2006.Models;
+using dzfroct2006.DAL;
+using dzfroct2006.BLL;
+using dzfroct2006.Security;
+
 
 namespace dzfroct2006.Controllers
 {
@@ -73,12 +77,38 @@ namespace dzfroct2006.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
         {
+            if (EmailChecker.CheckIfEmailExists(model.eMail.ToLower()))
+            {
+                ModelState.AddModelError("EmailExisting", "this e-mail address is already exisitng");
+            }
+
+            if (!EmailChecker.IsEmailValid(model.eMail.ToLower()))
+            {
+                ModelState.AddModelError("InvalidEmail", "Please check your e-mail address");
+            }
+
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.UserName, 
+                                                     model.Password, 
+                                                     propertyValues : new { eMail= model.eMail}
+                                                     );
+
+                    VisitorHandler visitor = new VisitorHandler();
+                    Visitor NewUser = new Visitor {
+                                                    UserName = model.UserName.Trim(), 
+                                                    Email = model.eMail.ToLower(), 
+                                                    LastName = (String.IsNullOrEmpty(model.UserLastName)) ? null: model.UserLastName.ToLower().Trim(),
+                                                    FirstName = (String.IsNullOrEmpty(model.UserFirstName)) ? null: model.UserFirstName.ToLower().Trim(),
+                                                    ValidationToken = visitor.CreateConfirmationToken()
+                                                  };
+                    
+
+                    visitor.CreateUser(NewUser);
+                    //send the mail....
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }

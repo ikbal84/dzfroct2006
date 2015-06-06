@@ -8,23 +8,26 @@ using System.Web.Security;
 
 namespace dzfroct2006.Models
 {
-    public class UsersContext : DbContext
-    {
-        public UsersContext()
-            : base("DefaultConnection")
-        {
-        }
+     public class UsersContext : DbContext
+     {
+         public UsersContext()
+             : base("HotelsDBProfiles")
+         {
+         }
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
-    }
+         public DbSet<UserProfile> UserProfiles { get; set; }
+        
+     }
 
-    [Table("UserProfile")]
+    [Table("UserProfiles")]
     public class UserProfile
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+        [DataType(DataType.EmailAddress)]
+        public string eMail { get; set; }
     }
 
     public class RegisterExternalLoginModel
@@ -76,6 +79,12 @@ namespace dzfroct2006.Models
         [Display(Name = "User name")]
         public string UserName { get; set; }
 
+        [Display(Name = "User last name")]
+        public string UserLastName { get; set; }
+
+        [Display(Name = "User first name")]
+        public string UserFirstName { get; set; }
+
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
@@ -91,7 +100,6 @@ namespace dzfroct2006.Models
         [DataType(DataType.EmailAddress)]
         [Display(Name = "E-mail")]
         public string eMail { get; set; }
-
 
     }
 

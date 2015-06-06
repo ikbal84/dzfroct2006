@@ -30,7 +30,7 @@ namespace dzfroct2006.Filters
 
                 try
                 {
-                    using (var context = new HotelsDBContext())
+                    using (var context = new UsersContext())
                     {
                         if (!context.Database.Exists())
                         {
@@ -39,7 +39,7 @@ namespace dzfroct2006.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("HotelsDB", "UserProfiles", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("HotelsDBProfiles", "UserProfiles", "UserId", "UserName" , autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

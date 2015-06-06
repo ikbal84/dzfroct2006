@@ -26,5 +26,6 @@ namespace dzfroct2006.DAL
         public virtual DbSet<HotelImages> HotelImages { get; set; }
         public virtual DbSet<City> City { get; set; }
         public virtual DbSet<GeoHotel> GeoHotel { get; set; }
+        public virtual DbSet<Visitor> Visitor { get; set; }
     }
 }

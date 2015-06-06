@@ -13,8 +13,8 @@ namespace UnitTests.ControllerTests
         {
             var HomeController = new dzfroct2006.Controllers.HomeController();
             var result = HomeController.Index() as ViewResult;
-            //Assert.AreEqual("Index", result.ViewName);
-            Assert.IsTrue(true);
+            Assert.AreEqual("Index", result.ViewName);
+            //Assert.IsTrue(true);
         }
     }
 }
