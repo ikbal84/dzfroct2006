@@ -16,17 +16,19 @@
         </h1>
         <h6 class="col-xs-6 col-sm-4 col-md-3">
             <span class="icon-large icon-home"></span> &ensp; @Html.DisplayFor(model => model.Address)
+            <br/>
+            <a href="mailto:@Html.DisplayFor(model => model.Email1)"> &ensp; &ensp; &ensp;&ensp; &ensp;  @Resources.Labels.ShowInMap</a>
         </h6>
         <h6 class="col-xs-6 col-sm-4 col-md-3">
-            <span class="icon-large icon-envelope"></span> &ensp;
-            <a href="mailto:@Html.DisplayFor(model => model.Email1)">@Resources.Labels.ContactEmail</a>
+            
+            <a href="mailto:@Html.DisplayFor(model => model.Email1)"> <span class="icon-large icon-envelope"></span> &ensp; @Resources.Labels.ContactEmail</a>
         </h6>
         <h6 class="col-xs-6 col-sm-4 col-md-3">
             <span class="icon-large icon-phone"></span> &ensp; @Html.DisplayFor(model => model.PhoneNumber1)
         </h6>
         <h6 class="col-xs-6 col-sm-4 col-md-3">
             <span class="icon-large icon-print"></span> &ensp; @Html.DisplayFor(model => model.FaxNumber1)
-        </h6>
+        </h6>        
         <br>
     </div>
     <br/>

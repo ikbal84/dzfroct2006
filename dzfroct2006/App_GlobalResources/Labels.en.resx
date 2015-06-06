@@ -300,4 +300,7 @@
   <data name="Booking" xml:space="preserve">
     <value>Booking</value>
   </data>
+  <data name="ShowInMap" xml:space="preserve">
+    <value>Show in map</value>
+  </data>
 </root>
