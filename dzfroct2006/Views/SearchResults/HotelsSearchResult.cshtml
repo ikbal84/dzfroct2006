@@ -1,5 +1,4 @@
-﻿
-@model dzfroct2006.BLL.HotelsQuery
+﻿@model dzfroct2006.BLL.HotelsQuery
 
 @{
     ViewBag.Title = "HotelsSearchResult";
@@ -7,7 +6,7 @@
 }
 
 @{
-    
+
     var DefaultImage = new dzfroct2006.Models.HotelImages()
     {
         Name = @Resources.Labels.DefaultImageNameValue,
@@ -16,14 +15,8 @@
 
 }
 
-<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
-
-<script type="text/javascript">
-    var locations = [];
-</script>
-
 <div class="col-xs-12 col-sm-10 col-md-7">
-    
+
     @Html.Partial("SearchPanel", Model)
 
     <div class="row">
@@ -112,17 +105,6 @@
                         {
                             <img src="@DefaultImage.FilePath" title="@DefaultImage.Name" />
                         }
-
-                        @if (item.GeoHotel != null)
-                        {
-                            <script type="text/javascript">
-                                var hotel = ["@item.GeoHotel.InfoMapHotel", "@item.GeoHotel.LatitudeHotel.ToString(System.Globalization.CultureInfo.InvariantCulture)",
-                                                                            "@item.GeoHotel.LongitudeHotel.ToString(System.Globalization.CultureInfo.InvariantCulture)",
-                                                                            "@item.GeoHotel.AltitudeHotel.ToString(System.Globalization.CultureInfo.InvariantCulture)"];
-                                locations.push(hotel);
-
-                            </script>
-                        }
                     </div>
                     <div class="col-xs-12 col-sm-10 col-md-8">
                         <div class="row">
@@ -131,7 +113,7 @@
                             </div>
                             <div class="col-md-5 HotelStars">
                                 @{
-                var StarsImgPath = "/Images/stars_" + @item.NbStars + ".jpg";
+                                    var StarsImgPath = "/Images/stars_" + @item.NbStars + ".jpg";
                                 }
                                 <img src="@StarsImgPath" />
                             </div>
@@ -151,14 +133,8 @@
 
                 </div>
             }
-
         </div>
-
-
     </div>
-
-
-
 
     @if (Model.PaginationEnabled)
     {
@@ -188,54 +164,10 @@
 
 </div>
 
-<div id="map" class="col-xs-0 col-sm-10 col-md-5 HotelsMap"></div>
+@Html.Partial("_MapHotels", Model)
 
 <script type="text/javascript">
-    var geocoder = 0;
-    geocoder = new google.maps.Geocoder();
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-
-    var address = document.getElementById('City').value;
-    geocoder.geocode({ 'address': address }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            map.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location
-            });
-            showPointsHotels();
-        } else {
-            map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 5,
-                center: new google.maps.LatLng(30.099508, 2.004981),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-            showPointsHotels();
-        }
-    });
-
-    function showPointsHotels(){
-        var infowindow = new google.maps.InfoWindow();
-        for (var i = 0; i < locations.length; i++) {
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(parseFloat(locations[i][1]), parseFloat(locations[i][2])),
-                map: map
-            });
-
-            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                return function () {
-                    infowindow.setContent(locations[i][0]);
-                    infowindow.open(map, marker);
-                }
-            })(marker, i));
-        }
-    }
     $("#expandFeatures").click(function () {
-
         if ($(this).hasClass("Collapsed")) {
             $("#nonPrincipaleFeatures").css("display", "");
             $(this).removeClass("Collapsed");
@@ -247,11 +179,6 @@
             $(this).removeClass("Expended");
             $(this).addClass("Collapsed");
             $(this).html("@Resources.Labels.Expand");
-
         }
-
-
     });
 </script>
-
-

@@ -383,6 +383,7 @@
     <Content Include="Views\Hotel\CreateImage.cshtml" />
     <Content Include="Views\Cities\search.cshtml" />
     <Content Include="Views\Shared\SearchPanel.cshtml" />
+    <Content Include="Views\Shared\_MapHotels.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

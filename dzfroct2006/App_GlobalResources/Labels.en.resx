@@ -297,4 +297,7 @@
   <data name="ContactEmail" xml:space="preserve">
     <value>Contact the hotel</value>
   </data>
+  <data name="Booking" xml:space="preserve">
+    <value>Booking</value>
+  </data>
 </root>

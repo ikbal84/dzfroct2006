@@ -303,4 +303,7 @@
   <data name="ContactEmail" xml:space="preserve">
     <value>Contactez l’hôtel</value>
   </data>
+  <data name="Booking" xml:space="preserve">
+    <value>Réserver</value>
+  </data>
 </root>

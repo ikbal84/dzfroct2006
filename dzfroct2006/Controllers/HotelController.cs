@@ -34,9 +34,14 @@ namespace dzfroct2006.Controllers
             listHotelImages.Add(hotelImages3);
 
             HotelRooms room1 = new HotelRooms { RoomType = "Double", Description = "Chambre double Luxe", NbRooms = 5, NbPersonnes = 2, Price = "5000DA" };
+            HotelRooms room2 = new HotelRooms { RoomType = "Single", Description = "Chambre single", NbRooms = 3, NbPersonnes = 1, Price = "3000DA" };
+            
             List<HotelRooms> listRoom = new List<HotelRooms>();
             listRoom.Add(room1);
-            var hotel = new Hotel() { 
+            listRoom.Add(room2);
+
+            var hotel = new Hotel()
+            { 
                                        Name = nameHotel, 
                                        Description = "Un simple hotel de test", 
                                        PhoneNumber1 = "002130000001", 

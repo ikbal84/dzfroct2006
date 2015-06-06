@@ -88,6 +88,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Réserver.
+        /// </summary>
+        internal static string Booking {
+            get {
+                return ResourceManager.GetString("Booking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cafétéria.
         /// </summary>
         internal static string Cafeteria {

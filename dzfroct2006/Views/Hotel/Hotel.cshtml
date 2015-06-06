@@ -5,26 +5,33 @@
 @model dzfroct2006.Models.Hotel
 
 
-<div class="container-fluid">
-    <h1>
-        <strong>@Html.DisplayFor(model => model.Name)</strong>
-    </h1>
-    <h6 class="col-xs-6 col-sm-4 col-md-2">
-        <span class="icon-large icon-home"></span> &ensp; @Html.DisplayFor(model => model.Address)
-    </h6>
-    <h6 class="col-xs-6 col-sm-4 col-md-2">
-        <span class="icon-large icon-envelope"></span> &ensp;
-        <a href="mailto:@Html.DisplayFor(model => model.Email1)">@Resources.Labels.ContactEmail</a>
-    </h6>
-    <h6 class="col-xs-6 col-sm-4 col-md-2">
-        <span class="icon-large icon-phone"></span> &ensp; @Html.DisplayFor(model => model.PhoneNumber1)
-    </h6>
-    <h6 class="col-xs-6 col-sm-4 col-md-2">
-        <span class="icon-large icon-print"></span> &ensp; @Html.DisplayFor(model => model.FaxNumber1)
-    </h6>
+<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
+ 
 
-    <br>
+<div class="container-fluid page">
+    <div id="entete">
+        <h1>
+            <strong>@Html.DisplayFor(model => model.Name)</strong>
+        </h1>
+        <h6 class="col-xs-6 col-sm-4 col-md-3">
+            <span class="icon-large icon-home"></span> &ensp; @Html.DisplayFor(model => model.Address)
+        </h6>
+        <h6 class="col-xs-6 col-sm-4 col-md-3">
+            <span class="icon-large icon-envelope"></span> &ensp;
+            <a href="mailto:@Html.DisplayFor(model => model.Email1)">@Resources.Labels.ContactEmail</a>
+        </h6>
+        <h6 class="col-xs-6 col-sm-4 col-md-3">
+            <span class="icon-large icon-phone"></span> &ensp; @Html.DisplayFor(model => model.PhoneNumber1)
+        </h6>
+        <h6 class="col-xs-6 col-sm-4 col-md-3">
+            <span class="icon-large icon-print"></span> &ensp; @Html.DisplayFor(model => model.FaxNumber1)
+        </h6>
+        <br>
+    </div>
+    <br/>
+    <br/>
+    <br />
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -67,14 +74,21 @@
                 }
             }
         </div>
+       
     </div>
-
+    <br />
+    <br />
+</div>
+<br />
+<br />
+<div class="container-fluid page">
     <div>
-        <hr class="thin">
+        <h3 id="position_hotel" class="text-primary">
+            Réservation à l'@Html.DisplayFor(model => model.Name)
+        </h3>
     </div>
 
     <div class="dropdown">
-
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#ongletDesc">@Resources.Labels.Description</a></li>
             <li><a data-toggle="tab" href="#ongletSrvices">@Resources.Labels.Services</a></li>
@@ -83,7 +97,6 @@
     </div>
     <div class="tab-content">
         <div id="ongletDesc" class="tab-pane fade in active">
-            <p>@Html.DisplayFor(model => model.Description)…</p>
             <div class="typeChambre">
                 <div class="">
                     <table class="table table-bordered">
@@ -98,40 +111,21 @@
                         </thead>
 
                         <tbody>
-                            <script type="text/javascript">
-                                function constructListHotel(){
-                                    for(var room in @Html.DisplayFor(model => model.Rooms){
-
-                                         <tr>
-        <td >Chambre double</td>
-        <td>2</td>
-        <td >
-            <table>
-                <tr>
-                    <td>Wifi gratuit</td>
-                </tr>
-                <tr>
-                    <td>petit deje</td>
-                </tr>
-            </table>
-
-        </td>
-        <td class="width150" >5000DA</td>
-        <td class="width250"><a href="#" class="btn btn-info btn-lg pull-right"
-               style="width:100px;height:10px; text-align:center">Reservé<span class="glyphicon glyphicon-play"></span>
-             </a>
-        </td>
-    </tr>
-
-
-                                    }
-                                    };
-                            </script>
+                            @foreach (var item in Model.Rooms.Select((value, i) => new { i, value }))
+                            {
+                                <tr>
+                                    <td>@item.value.RoomType</td>
+                                    <td>@item.value.NbPersonnes</td>
+                                    <td>@item.value.Description</td>
+                                    <td>@item.value.Price</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-block">@Resources.Labels.Booking</button>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
-
                 </div>
-
             </div>
         </div>
         <div id="ongletSrvices" class="tab-pane fade">
@@ -211,16 +205,23 @@
 
         </div>
     </div>
-</div> 
+</div>
 
-    <script type="text/javascript">
-        $('.bxslider').bxSlider({
-            auto: true,
-            autoControls: true
-        });
-    </script>
+<br />
+<br />
+  
+<div class="container-fluid page">
+    <div>
+        <h3 id="position_hotel" class="text-primary">
+            Emplacement de l'@Html.DisplayFor(model => model.Name)
+        </h3>
+    </div>
+</div>
 
+<br />
+<br />
     <script type="text/javascript">
+
         $("#togModifSearche").click(function () {
             $("#infoSearche").show();
             $("#togCloseSearche").show();
@@ -236,4 +237,6 @@
             startDate: '-3d'
             //add more options for language
         })
+
+
     </script>
