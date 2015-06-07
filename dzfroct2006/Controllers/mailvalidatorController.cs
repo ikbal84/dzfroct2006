@@ -1,5 +1,5 @@
-﻿using dzfroct2006.BLL;
-using dzfroct2006.Models;
+﻿using Hotels.Data.Model;
+using Hotels.Data.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ namespace dzfroct2006.Controllers
 
         public ActionResult Index(String ConfirmationToken)
         {
-            EmailConfirmer confirmer = new EmailConfirmer();
+            VisitorDAO confirmer = new VisitorDAO();
 
             Visitor ConfirmingVisitor = confirmer.getVisitorByToken(ConfirmationToken);
 
@@ -47,7 +47,7 @@ namespace dzfroct2006.Controllers
             {
                 if (TempData["user"].ToString().Equals(model.UserName.Trim()))
                 {
-                    EmailConfirmer confirmer = new EmailConfirmer();
+                    VisitorDAO confirmer = new VisitorDAO();
 
                     confirmer.ConfirmVisitorEmail(model.UserName);
                     return RedirectToAction("ValidationSuccess");

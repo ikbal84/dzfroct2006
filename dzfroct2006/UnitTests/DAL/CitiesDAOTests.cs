@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using System.Threading.Tasks;
-using dzfroct2006.DAL;
-using dzfroct2006.Models;
+using Hotels.Data.Services;
+using Hotels.Data.Model;
 using Moq;
 using System.Data.Entity;
 

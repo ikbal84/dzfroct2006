@@ -1,5 +1,5 @@
-﻿using dzfroct2006.BLL;
-using dzfroct2006.Models;
+﻿using Hotels.Business;
+using Hotels.Data.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

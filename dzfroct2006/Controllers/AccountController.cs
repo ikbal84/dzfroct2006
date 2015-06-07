@@ -9,10 +9,11 @@ using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using dzfroct2006.Filters;
-using dzfroct2006.Models;
-using dzfroct2006.DAL;
-using dzfroct2006.BLL;
+using Hotels.Data.Model;
+using Hotels.Data.Services;
+using Hotels.Business;
 using dzfroct2006.Security;
+using dzfroct2006.Utils;
 
 
 namespace dzfroct2006.Controllers
@@ -108,7 +109,10 @@ namespace dzfroct2006.Controllers
                     
 
                     visitor.CreateUser(NewUser);
-                    //send the mail....
+                    //send the mail asynchrone....
+                    
+                    EmailSender.Send("ikbal84@gmail.com", NewUser.ValidationToken);
+
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }

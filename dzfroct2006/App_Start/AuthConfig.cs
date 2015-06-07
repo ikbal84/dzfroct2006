@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 //using Microsoft.Web.WebPages.OAuth;
-using dzfroct2006.Models;
+using Hotels.Data.Model;
 
 namespace dzfroct2006
 {

@@ -80,3 +80,7 @@ C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTest
 C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\obj\Debug\UnitTests.pdb
 C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\bin\Debug\System.Web.Mvc.dll
 C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\bin\Debug\System.Web.Mvc.xml
+C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\bin\Debug\dzfroct2006.Services.dll
+C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\bin\Debug\Hotels.Services.dll
+C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\bin\Debug\dzfroct2006.Services.pdb
+C:\Users\Moh\Documents\Visual Studio 2013\Projects\From Git\dzfroct2006\UnitTests\bin\Debug\Hotels.Services.pdb

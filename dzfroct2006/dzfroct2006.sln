@@ -7,18 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dzfroct2006", "dzfroct2006.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{30DDB9E1-AF69-465A-85A6-3DB44F6CDF14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotels.Business", "..\dzfroct2006.Services\Hotels.Business.csproj", "{EF02EC12-3800-4A7E-9D4F-2F6089CFA960}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotels.Data", "Hotels.Services\Hotels.Data.csproj", "{E7E3D005-085C-4A90-ABB5-F505EFAF5919}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://dzhotels.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = dzfroct2006.csproj
-		SccLocalPath1 = .
-		SccProjectUniqueName2 = UnitTests\\UnitTests.csproj
-		SccProjectName2 = UnitTests
-		SccLocalPath2 = UnitTests
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -32,6 +25,14 @@ Global
 		{30DDB9E1-AF69-465A-85A6-3DB44F6CDF14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30DDB9E1-AF69-465A-85A6-3DB44F6CDF14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30DDB9E1-AF69-465A-85A6-3DB44F6CDF14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF02EC12-3800-4A7E-9D4F-2F6089CFA960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF02EC12-3800-4A7E-9D4F-2F6089CFA960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF02EC12-3800-4A7E-9D4F-2F6089CFA960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF02EC12-3800-4A7E-9D4F-2F6089CFA960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7E3D005-085C-4A90-ABB5-F505EFAF5919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7E3D005-085C-4A90-ABB5-F505EFAF5919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7E3D005-085C-4A90-ABB5-F505EFAF5919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7E3D005-085C-4A90-ABB5-F505EFAF5919}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

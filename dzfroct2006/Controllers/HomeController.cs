@@ -6,9 +6,9 @@ using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.Mvc;
-using dzfroct2006.DAL;
-using dzfroct2006.Models;
-using dzfroct2006.BLL;
+using Hotels.Data.Services;
+using Hotels.Data.Model;
+using Hotels.Business;
 using System.Web.Routing;
 
 namespace dzfroct2006.Controllers

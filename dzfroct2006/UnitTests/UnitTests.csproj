@@ -87,9 +87,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\dzfroct2006.Services\Hotels.Business.csproj">
+      <Project>{ef02ec12-3800-4a7e-9d4f-2f6089cfa960}</Project>
+      <Name>Hotels.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\dzfroct2006.csproj">
       <Project>{cb0a1794-5d4f-4d54-9b66-6a596c2a7c2b}</Project>
       <Name>dzfroct2006</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hotels.Services\Hotels.Data.csproj">
+      <Project>{e7e3d005-085c-4a90-abb5-f505efaf5919}</Project>
+      <Name>Hotels.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

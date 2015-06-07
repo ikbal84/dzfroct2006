@@ -4,8 +4,8 @@ using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
-using dzfroct2006.Models;
-using dzfroct2006.DAL;
+using Hotels.Data.Model;
+using Hotels.Data.Services;
 
 namespace dzfroct2006.Filters
 {
