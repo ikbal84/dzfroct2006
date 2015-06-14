@@ -24,19 +24,19 @@ namespace dzfroct2006.Controllers
             ViewBag.ville = "Oran";
             string nameHotel = "Hotel Anissov";
             string pathHotelName = nameHotel.Replace(" ", "");
-            HotelImages hotelImages1 = new HotelImages { IdImage = 11, Description = "Hall de l'hotel", Name = "Hall", FilePath = "../../Images/HotelsImages/" + pathHotelName + "/img1.jpg" };
-            HotelImages hotelImages2 = new HotelImages { IdImage = 12, Description = "Chambre double Luxe", Name = "Hall", FilePath = "../../Images/HotelsImages/" + pathHotelName + "/img2.jpg" };
-            HotelImages hotelImages3 = new HotelImages { IdImage = 13, Description = "Restaurant", Name = "Hall", FilePath = "../../Images/HotelsImages/" + pathHotelName + "/img3.jpg" };
+            HotelImage hotelImages1 = new HotelImage { IdImage = 11, Description = "Hall de l'hotel", Name = "Hall", FilePath = "../../Images/HotelsImages/" + pathHotelName + "/img1.jpg" };
+            HotelImage hotelImages2 = new HotelImage { IdImage = 12, Description = "Chambre double Luxe", Name = "Hall", FilePath = "../../Images/HotelsImages/" + pathHotelName + "/img2.jpg" };
+            HotelImage hotelImages3 = new HotelImage { IdImage = 13, Description = "Restaurant", Name = "Hall", FilePath = "../../Images/HotelsImages/" + pathHotelName + "/img3.jpg" };
             
-            List<HotelImages> listHotelImages = new List<HotelImages>();
+            List<HotelImage> listHotelImages = new List<HotelImage>();
             listHotelImages.Add(hotelImages1);
             listHotelImages.Add(hotelImages2);
             listHotelImages.Add(hotelImages3);
 
-            HotelRooms room1 = new HotelRooms { RoomType = "Double", Description = "Chambre double Luxe", NbRooms = 5, NbPersonnes = 2, Price = "5000DA" };
-            HotelRooms room2 = new HotelRooms { RoomType = "Single", Description = "Chambre single", NbRooms = 3, NbPersonnes = 1, Price = "3000DA" };
+            HotelRoom room1 = new HotelRoom { RoomType = "Double", Description = "Chambre double Luxe", NbRooms = 5, NbPersonnes = 2, Price = "5000DA" };
+            HotelRoom room2 = new HotelRoom { RoomType = "Single", Description = "Chambre single", NbRooms = 3, NbPersonnes = 1, Price = "3000DA" };
             
-            List<HotelRooms> listRoom = new List<HotelRooms>();
+            List<HotelRoom> listRoom = new List<HotelRoom>();
             listRoom.Add(room1);
             listRoom.Add(room2);
 
@@ -66,98 +66,7 @@ namespace dzfroct2006.Controllers
         //
         // GET: /Hotel/Create
 
-        public ActionResult Create()
-        {
-            return View();
-        }
 
-  /// <summary>
-  /// Step 1 of creation
-  /// </summary>
-  /// <param name="CreatedHotel"></param>
-  /// <returns></returns>
-
-        [HttpPost]
-        public ActionResult Create(Hotel CreatedHotel)
-        {
-            try
-            {
-                var HotelDAO = new HotelDAO();
-
-                if (HotelDAO.CreateHotel(CreatedHotel))
-                {
-                    return RedirectToAction("CreateRooms", new { CreatedHotel.HotelID });
-                }
-                else
-                {
-                    //do someting..
-                    return View();
-                }
-
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        public ActionResult CreateRooms(String HotelID)
-        {
-            ViewBag.hotelId = HotelID;
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult CreateRooms(HotelRooms room, String hotelId, String isLast)
-        {
-            try
-            {
-                var HotelDAO = new HotelDAO();
-
-                HotelDAO.CreateRoom(hotelId, room);
-                
-                if (isLast.Equals("0"))
-                    return RedirectToAction("CreateRooms", new { hotelId });
-                else 
-                    return RedirectToAction("CreateImage", new { hotelId });
-            }
-            catch (Exception)
-            {
-                return View();
-            }
-        }
-
-
-        public ActionResult CreateImage(String HotelID)
-        {
-            ViewBag.hotelId = HotelID;
-            return View();
-        }
-        
-        [HttpPost]
-        public ActionResult CreateImage(HotelImages ImageObject, String hotelId, HttpPostedFileBase Image)
-        {
-            try
-            {
-                //Getting the file
-                string pic = System.IO.Path.GetFileName(ImageObject.Name + "_" + hotelId);
-                ImageObject.FilePath = System.IO.Path.Combine(
-                                       Server.MapPath("~/Images"), pic);
-                // file is uploaded
-                Image.SaveAs(ImageObject.FilePath);
-
-                //saving the file on the disk
-
-                var HotelDAO = new HotelDAO();
-                HotelDAO.CreateImage(hotelId, ImageObject);
-
-                return RedirectToAction("CreateImage", new { hotelId });
-            }
-            catch (Exception)
-            {
-                return View();
-            }
-        }
         
     }
 }

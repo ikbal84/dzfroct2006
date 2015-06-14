@@ -39,23 +39,17 @@
         <input type="submit" value="Log in" />
     </fieldset>
     <p>
-        @Html.ActionLink("Register", "Register") if you don't have an account.
+        @Html.ActionLink("Register", "RegisterHotelOwner") if you don't have an account.
     </p>
     
     <p>
-        @Html.ActionLink("Forgot your password!","PasswordForgoten")
+        @Html.ActionLink("Forgot your password!","PasswordForgoten","HotelOwnerAccount")
     </p>
 
-    <p>
-        @Html.ActionLink("Are you a Hotel owner? Login here!", "login","HotelOwnerAccount")
-    </p>
 }
 </section>
 
-<section class="social" id="socialLoginForm">
-    <h2>Use another service to log in.</h2>
-    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-</section>
+
 
 
 

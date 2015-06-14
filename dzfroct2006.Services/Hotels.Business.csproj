@@ -40,9 +40,11 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CitiesQuery.cs" />
+    <Compile Include="HotelOwnerHandler.cs" />
     <Compile Include="HotelQuery.cs" />
     <Compile Include="HotelsQuery.cs" />
     <Compile Include="IHotelsQuery.cs" />
@@ -54,6 +56,10 @@
     <ProjectReference Include="..\dzfroct2006\Hotels.Services\Hotels.Data.csproj">
       <Project>{e7e3d005-085c-4a90-abb5-f505efaf5919}</Project>
       <Name>Hotels.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Hotels.Utils.csproj">
+      <Project>{7fcb1572-d9ef-45e8-ac32-96c295b516de}</Project>
+      <Name>Hotels.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

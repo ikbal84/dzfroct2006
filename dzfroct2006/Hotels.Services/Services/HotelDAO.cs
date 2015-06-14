@@ -29,7 +29,7 @@ namespace Hotels.Data.Services
         }
 
 
-        public bool CreateRoom(String hotelId, HotelRooms room)
+        public bool CreateRoom(String hotelId, HotelRoom room)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace Hotels.Data.Services
 
                 long ParentHotelID = Int32.Parse(hotelId);
 
-                var hotel = context.Hotels.Where(h=> h.HotelID == ParentHotelID).First();
+                var hotel = context.Hotels.Where(h=> h.HotelID == ParentHotelID).FirstOrDefault();
                 hotel.Rooms.Add(room);
 
                 context.Rooms.Add(room);
@@ -55,7 +55,7 @@ namespace Hotels.Data.Services
         }
 
 
-        public bool CreateImage(String hotelId, HotelImages Image)
+        public bool CreateImage(String hotelId, HotelImage Image)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace Hotels.Data.Services
 
                 long ParentHotelID = Int32.Parse(hotelId);
 
-                var hotel = context.Hotels.Where(h=> h.HotelID == ParentHotelID).First();
+                var hotel = context.Hotels.Where(h=> h.HotelID == ParentHotelID).FirstOrDefault();
                 hotel.HotelImages.Add(Image);
 
                 context.HotelImages.Add(Image);

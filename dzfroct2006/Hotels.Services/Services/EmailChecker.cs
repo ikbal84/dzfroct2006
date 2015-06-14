@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace dzfroct2006.Security
+namespace Hotels.Data.Services
 {
     public static class EmailChecker
     {

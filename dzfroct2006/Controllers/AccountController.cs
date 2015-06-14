@@ -12,8 +12,13 @@ using dzfroct2006.Filters;
 using Hotels.Data.Model;
 using Hotels.Data.Services;
 using Hotels.Business;
-using dzfroct2006.Security;
-using dzfroct2006.Utils;
+using Hotels.Utils;
+using System.Threading.Tasks;
+using dzfroct2006.Models;
+
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Utils;
 
 
 namespace dzfroct2006.Controllers
@@ -28,6 +33,15 @@ namespace dzfroct2006.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            if (!Roles.RoleExists("Visitor"))
+            {
+                Roles.CreateRole("Visitor");
+            }
+            if (!Roles.RoleExists("HotelOwner"))
+            {
+                Roles.CreateRole("HotelOwner");
+            }
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -39,13 +53,22 @@ namespace dzfroct2006.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            if (ModelState.IsValid && IsVisitor(model.UserName))
             {
-                return RedirectToLocal(returnUrl);
+                if (WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+                {
+                    return RedirectToLocal(returnUrl);
+                }
+                else
+                {
+                    ModelState.AddModelError("", Resources.LoginErrors.LoginFailed);
+                    
+                }
+                
             }
 
             // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", "The user name or password provided is incorrect.");
+            ModelState.AddModelError("", Resources.LoginErrors.InvalidUserName);
             return View(model);
         }
 
@@ -67,6 +90,7 @@ namespace dzfroct2006.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+
             return View();
         }
 
@@ -76,16 +100,16 @@ namespace dzfroct2006.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
+        public async Task<ActionResult> Register(RegisterModel model)
         {
             if (EmailChecker.CheckIfEmailExists(model.eMail.ToLower()))
             {
-                ModelState.AddModelError("EmailExisting", "this e-mail address is already exisitng");
+                ModelState.AddModelError("EmailExisting", Resources.LoginErrors.EmailExisting);
             }
 
             if (!EmailChecker.IsEmailValid(model.eMail.ToLower()))
             {
-                ModelState.AddModelError("InvalidEmail", "Please check your e-mail address");
+                ModelState.AddModelError("InvalidEmail", Resources.LoginErrors.InvalidEmail);
             }
 
             if (ModelState.IsValid)
@@ -93,32 +117,36 @@ namespace dzfroct2006.Controllers
                 // Attempt to register the user
                 try
                 {
+                    VisitorHandler VisitorHdl = new VisitorHandler();
+                    Visitor NewUser = new Visitor
+                    {
+                        UserName = model.UserName.Trim(),
+                        Email = model.eMail.ToLower(),
+                        LastName = (String.IsNullOrEmpty(model.UserLastName)) ? null : model.UserLastName.ToLower().Trim(),
+                        FirstName = (String.IsNullOrEmpty(model.UserFirstName)) ? null : model.UserFirstName.ToLower().Trim(),
+                        ValidationToken = VisitorHdl.CreateConfirmationToken(),
+                    };
+                    
                     WebSecurity.CreateUserAndAccount(model.UserName, 
                                                      model.Password, 
                                                      propertyValues : new { eMail= model.eMail}
                                                      );
-
-                    VisitorHandler visitor = new VisitorHandler();
-                    Visitor NewUser = new Visitor {
-                                                    UserName = model.UserName.Trim(), 
-                                                    Email = model.eMail.ToLower(), 
-                                                    LastName = (String.IsNullOrEmpty(model.UserLastName)) ? null: model.UserLastName.ToLower().Trim(),
-                                                    FirstName = (String.IsNullOrEmpty(model.UserFirstName)) ? null: model.UserFirstName.ToLower().Trim(),
-                                                    ValidationToken = visitor.CreateConfirmationToken()
-                                                  };
                     
-
-                    visitor.CreateUser(NewUser);
-                    //send the mail asynchrone....
                     
-                    EmailSender.Send("ikbal84@gmail.com", NewUser.ValidationToken);
+                    Roles.AddUsersToRoles(new String[]{NewUser.UserName}, new String[]{"Visitor"});
 
                     WebSecurity.Login(model.UserName, model.Password);
+
+                    VisitorHdl.CreateUser(NewUser);
+
+                    //send the mail asynchrone....
+                    await VisitorHdl.SendEmailConfirmation(NewUser.Email, NewUser.ValidationToken);
+ 
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)
                 {
-                    ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+                    ModelState.AddModelError("", MemberShipErrorCodes.ErrorCodeToString(e.StatusCode));
                 }
             }
 
@@ -126,6 +154,74 @@ namespace dzfroct2006.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
+        public ActionResult PasswordForgoten()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public async Task<ActionResult> PasswordForgoten(FormCollection inputs)
+        {
+            string email = inputs["email"].ToString().ToLower();
+            if (!EmailChecker.IsEmailValid(email))
+            {
+                 ModelState.AddModelError("emailError",Resources.LoginErrors.InvalidEmail);
+            }
+
+            VisitorHandler Visitor = new VisitorHandler();
+
+            if (Visitor.getVisitorByEmail(email) == null || !EmailChecker.CheckIfEmailExists(email))
+            {
+                ModelState.AddModelError("emailError", Resources.LoginErrors.InvalidEmail);
+            }
+            
+            if (ModelState.IsValid)
+            {
+                await Visitor.SendEmailPwdForget(email);
+            }
+            return View();
+        }
+
+        [AllowAnonymous]
+        public ActionResult ResetPassword(string resettoken)
+        {
+            ResetPasswordModel model = new ResetPasswordModel();
+            model.Resettoken = resettoken;
+            return View();
+        }
+
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult ResetPassword(ResetPasswordModel ResetModel)
+        {
+            if (ModelState.IsValid)
+            {
+                int UserIDInProfileDB = WebSecurity.GetUserIdFromPasswordResetToken(ResetModel.Resettoken);
+
+                if (UserIDInProfileDB == WebSecurity.GetUserId(ResetModel.UserName))
+                {
+                    WebSecurity.ResetPassword(ResetModel.Resettoken, ResetModel.NewPassword);
+                    return RedirectToAction("Login", "HotelOwnerAccount");
+                }
+                else
+                {
+                    ModelState.AddModelError("", Resources.LoginErrors.InvalidUserName);
+                }
+
+            }
+  
+            return View();
+        }
+
+
+        private bool IsVisitor(string UserName)
+        {
+            VisitorHandler VisitorHdl = new VisitorHandler();
+            return (VisitorHdl.getVisitorByName(UserName) != null)? true : false;
+        }
         //
         // POST: /Account/Disassociate
 
@@ -398,43 +494,7 @@ namespace dzfroct2006.Controllers
             }
         }
 
-        private static string ErrorCodeToString(MembershipCreateStatus createStatus)
-        {
-            // See http://go.microsoft.com/fwlink/?LinkID=177550 for
-            // a full list of status codes.
-            switch (createStatus)
-            {
-                case MembershipCreateStatus.DuplicateUserName:
-                    return "User name already exists. Please enter a different user name.";
 
-                case MembershipCreateStatus.DuplicateEmail:
-                    return "A user name for that e-mail address already exists. Please enter a different e-mail address.";
-
-                case MembershipCreateStatus.InvalidPassword:
-                    return "The password provided is invalid. Please enter a valid password value.";
-
-                case MembershipCreateStatus.InvalidEmail:
-                    return "The e-mail address provided is invalid. Please check the value and try again.";
-
-                case MembershipCreateStatus.InvalidAnswer:
-                    return "The password retrieval answer provided is invalid. Please check the value and try again.";
-
-                case MembershipCreateStatus.InvalidQuestion:
-                    return "The password retrieval question provided is invalid. Please check the value and try again.";
-
-                case MembershipCreateStatus.InvalidUserName:
-                    return "The user name provided is invalid. Please check the value and try again.";
-
-                case MembershipCreateStatus.ProviderError:
-                    return "The authentication provider returned an error. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
-
-                case MembershipCreateStatus.UserRejected:
-                    return "The user creation request has been canceled. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
-
-                default:
-                    return "An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
-            }
-        }
         #endregion
     }
 }

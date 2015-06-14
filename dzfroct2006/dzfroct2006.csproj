@@ -54,6 +54,12 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
@@ -204,15 +210,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Labels.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\LoginErrors.en.designer.cs">
+      <DependentUpon>LoginErrors.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\LoginErrors.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginErrors.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HotelAdministration\Controllers\HotelAdminController.cs" />
+    <Compile Include="Areas\HotelAdministration\HotelAdministrationAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="Controllers\HotelOwnerAccountController.cs" />
     <Compile Include="Controllers\mailvalidatorController.cs" />
     <Compile Include="Controllers\OwnerSpaceController.cs" />
     <Compile Include="Controllers\SearchResultsController.cs" />
@@ -221,9 +240,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Filters\LanguageFilter.cs" />
+    <Compile Include="Models\ResetPasswordModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\EmailChecker.cs" />
-    <Compile Include="Utils\EmailSender.cs" />
+    <Compile Include="Utils\MemberShipErrorCodes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrapHelpers\dist\css\bootstrap-formhelpers.css" />
@@ -299,6 +318,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="App_GlobalResources\codes_communes.csv" />
+    <Content Include="Areas\HotelAdministration\Views\Web.config" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\Backgrounds\oran1.jpg" />
     <Content Include="Images\Backgrounds\setif1.jpg" />
@@ -384,9 +404,9 @@
     <Content Include="Views\Shared\_NavBarPartial.cshtml" />
     <Content Include="Views\OwnerSpace\CreateHotel.cshtml" />
     <Content Include="Views\OwnerSpace\HotelOwnerSpace.cshtml" />
-    <Content Include="Views\Hotel\Create.cshtml" />
-    <Content Include="Views\Hotel\CreateRooms.cshtml" />
-    <Content Include="Views\Hotel\CreateImage.cshtml" />
+    <Content Include="Areas\HotelAdministration\Views\HotelAdmin\Create.cshtml" />
+    <Content Include="Areas\HotelAdministration\Views\HotelAdmin\CreateRooms.cshtml" />
+    <Content Include="Areas\HotelAdministration\Views\HotelAdmin\CreateImage.cshtml" />
     <Content Include="Views\Cities\search.cshtml" />
     <Content Include="Views\Shared\SearchPanel.cshtml" />
     <Content Include="Views\mailvalidator\AlreadyConfirmed.cshtml" />
@@ -394,10 +414,20 @@
     <Content Include="Views\mailvalidator\Index.cshtml" />
     <Content Include="Views\mailvalidator\ValidationSuccess.cshtml" />
     <Content Include="Views\Shared\_MapHotels.cshtml" />
+    <Content Include="Views\Account\PasswordForgoten.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\RegisterHotelOwner.cshtml" />
+    <Content Include="Views\HotelOwnerAccount\Login.cshtml" />
+    <Content Include="Views\HotelOwnerAccount\RegisterHotelOwner.cshtml" />
+    <Content Include="Views\HotelOwnerAccount\PasswordForgoten.cshtml" />
+    <Content Include="Views\HotelOwnerAccount\ResetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Areas\HotelAdministration\Models\" />
+    <Folder Include="Areas\HotelAdministration\Views\Shared\" />
+    <Folder Include="Exploitation\" />
+    <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -420,10 +450,26 @@
       <Project>{ef02ec12-3800-4a7e-9d4f-2f6089cfa960}</Project>
       <Name>Hotels.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utils\Hotels.Utils.csproj">
+      <Project>{7fcb1572-d9ef-45e8-ac32-96c295b516de}</Project>
+      <Name>Hotels.Utils</Name>
+    </ProjectReference>
     <ProjectReference Include="Hotels.Services\Hotels.Data.csproj">
       <Project>{e7e3d005-085c-4a90-abb5-f505efaf5919}</Project>
       <Name>Hotels.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\LoginErrors.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>LoginErrors.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\LoginErrors.en.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>LoginErrors.en.designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

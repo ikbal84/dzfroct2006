@@ -7,7 +7,7 @@ using Hotels.Data.Model;
 
 namespace Hotels.Data.Services
 {
-    public class HotelsDBInitializer : DropCreateDatabaseAlways<HotelsDBContext> //DropCreateDatabaseIfModelChanges<HotelsDBContext>
+    public class HotelsDBInitializer : DropCreateDatabaseIfModelChanges<HotelsDBContext>
     {
         protected override void Seed(HotelsDBContext context)
         {
@@ -58,10 +58,10 @@ namespace Hotels.Data.Services
             };
 
 
-            var Room = new HotelRooms() { RoomType = "Double", Description = "chambre hayla", Hotel = hotel, NbPersonnes = 2, NbRooms = 5 };
+            var Room = new HotelRoom() { RoomType = "Double", Description = "chambre hayla", Hotel = hotel, NbPersonnes = 2, NbRooms = 5 };
 
-            var HotelFeatures1 = new HotelFeatures() { Feature = Features1, Hotel = hotel, Price = 1 };
-            var HotelFeatures2 = new HotelFeatures() { Feature = Features2, Hotel = hotel, Price = 2 };
+            var HotelFeatures1 = new HotelFeature() { Feature = Features1, Hotel = hotel, Price = 1 };
+            var HotelFeatures2 = new HotelFeature() { Feature = Features2, Hotel = hotel, Price = 2 };
 
             context.Hotels.Add(hotel);
             context.Rooms.Add(Room);
@@ -83,10 +83,10 @@ namespace Hotels.Data.Services
                 GeoHotel = new GeoHotel { InfoMapHotel = "Batna Hotel", LatitudeHotel = 35.551357, LongitudeHotel = 6.178383, AltitudeHotel = 1 },
             };
 
-            var Room2 = new HotelRooms() { RoomType = "GuissGuiss", Description = "chambre hayla", Hotel = hotel2, NbPersonnes = 4, NbRooms = 5 };
+            var Room2 = new HotelRoom() { RoomType = "GuissGuiss", Description = "chambre hayla", Hotel = hotel2, NbPersonnes = 4, NbRooms = 5 };
 
 
-            var HotelFeatures2_1 = new HotelFeatures() { Feature = Features1, Hotel = hotel2, Price = 12 };
+            var HotelFeatures2_1 = new HotelFeature() { Feature = Features1, Hotel = hotel2, Price = 12 };
 
             context.Hotels.Add(hotel2);
             context.Rooms.Add(Room2);
@@ -107,12 +107,12 @@ namespace Hotels.Data.Services
                 GeoHotel = new GeoHotel { InfoMapHotel = "Alger Hotel", LatitudeHotel = 36.709825, LongitudeHotel = 3.210534, AltitudeHotel = 1 },
             };
 
-            var Room3 = new HotelRooms() { RoomType = "Luxe", Description = "chambre Extra", Hotel = hotel3, NbPersonnes = 4, NbRooms = 5 };
+            var Room3 = new HotelRoom() { RoomType = "Luxe", Description = "chambre Extra", Hotel = hotel3, NbPersonnes = 4, NbRooms = 5 };
 
 
-            var HotelFeatures3_1 = new HotelFeatures() { Feature = Features1, Hotel = hotel3, Price = 1 };
-            var HotelFeatures3_2 = new HotelFeatures() { Feature = Features2, Hotel = hotel3, Price = 2 };
-            var HotelFeatures3_3 = new HotelFeatures() { Feature = Features3, Hotel = hotel3, Price = 2 };
+            var HotelFeatures3_1 = new HotelFeature() { Feature = Features1, Hotel = hotel3, Price = 1 };
+            var HotelFeatures3_2 = new HotelFeature() { Feature = Features2, Hotel = hotel3, Price = 2 };
+            var HotelFeatures3_3 = new HotelFeature() { Feature = Features3, Hotel = hotel3, Price = 2 };
 
             context.Hotels.Add(hotel3);
             context.Rooms.Add(Room3);

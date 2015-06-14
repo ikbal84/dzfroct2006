@@ -10,8 +10,8 @@ namespace Hotels.Data.Services
     interface IHotelDAO
     {
         bool CreateHotel(Hotel hotel);
-        bool CreateRoom(String hotelId, HotelRooms room);
-        bool CreateImage(String hotelId, HotelImages Image);
+        bool CreateRoom(String hotelId, HotelRoom room);
+        bool CreateImage(String hotelId, HotelImage Image);
 
     }
 }

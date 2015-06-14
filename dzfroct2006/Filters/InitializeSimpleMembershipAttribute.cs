@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using WebMatrix.WebData;
 using Hotels.Data.Model;
 using Hotels.Data.Services;
+using System.Web.Security;
 
 namespace dzfroct2006.Filters
 {
@@ -20,6 +21,7 @@ namespace dzfroct2006.Filters
         {
             // Ensure ASP.NET Simple Membership is initialized only once per app start
             LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
+
         }
 
         private class SimpleMembershipInitializer
@@ -36,10 +38,14 @@ namespace dzfroct2006.Filters
                         {
                             // Create the SimpleMembership database without Entity Framework migration schema
                             ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
+                           
                         }
                     }
 
+
+
                     WebSecurity.InitializeDatabaseConnection("HotelsDBProfiles", "UserProfiles", "UserId", "UserName" , autoCreateTables: true);
+                    //InitRoles();
                 }
                 catch (Exception ex)
                 {
@@ -47,6 +53,7 @@ namespace dzfroct2006.Filters
                                             "For more information, please see http://go.microsoft.com/fwlink/?LinkId=256588", ex);
                 }
             }
+
         }
     }
 }

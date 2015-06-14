@@ -1,27 +1,26 @@
-﻿using System;
+﻿using Hotels.Data.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using Hotels.Data.Model;
-using Hotels.Data.Services;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Hotels.Data.Services
 {
-    public class VisitorDAO
+    public class HotelOwnerDAO
     {
-
-        public VisitorDAO()
+        public HotelOwnerDAO()
         {
 
         }
 
-        public bool CreateNewVisitor(Visitor NewVisitor)
+        public bool CreateNewOwner(HotelOwner NewVisitor)
         {
             try
             {
                 using (var context = new HotelsDBContext())
                 {
-                    context.Visitor.Add(new Visitor
+                    context.Owner.Add(new HotelOwner
                     {
                         LastName = NewVisitor.LastName,
                         FirstName = NewVisitor.FirstName,
@@ -45,47 +44,47 @@ namespace Hotels.Data.Services
 
         }
 
-        public Visitor getVisitorByIDFromDB(long Id)
+        public HotelOwner getOwnerByIDFromDB(long Id)
         {
             using (var context = new HotelsDBContext())
             {
-                return context.Visitor.Where(v => v.ID.Equals(Id)).FirstOrDefault();
+                return context.Owner.Where(o => o.OwnerID.Equals(Id)).FirstOrDefault();
             }
-            
+
         }
 
-        public Visitor getVisitorByNameFromDB(String UserName)
+        public HotelOwner getOwnerByNameFromDB(String UserName)
         {
             using (var context = new HotelsDBContext())
             {
-                return context.Visitor.Where(v => v.UserName.Equals(UserName)).FirstOrDefault();
+                return context.Owner.Where(o => o.UserName.Equals(UserName)).FirstOrDefault();
             }
         }
 
-        public Visitor getVisitorByEmailFromDB(String Email)
+        public HotelOwner getOwnerByEmailFromDB(String Email)
         {
             using (var context = new HotelsDBContext())
             {
-                return context.Visitor.Where(v => v.Email.Equals(Email)).FirstOrDefault();
+                return context.Owner.Where(o => o.Email.Equals(Email)).FirstOrDefault();
             }
         }
 
-        public Visitor getVisitorByToken(string token)
+        public HotelOwner getOwnerByToken(string token)
         {
             var context = new HotelsDBContext();
-            return context.Visitor.Where(v => v.ValidationToken.Equals(token)).FirstOrDefault();
+            return context.Owner.Where(o => o.ValidationToken.Equals(token)).FirstOrDefault();
         }
 
-        public bool ConfirmVisitorEmail(String UserName)
+        public bool ConfirmOwnerEmail(String UserName)
         {
             try
             {
                 var context = new HotelsDBContext();
 
-                Visitor Visitor = context.Visitor.Where(v => v.UserName.Equals(UserName.Trim())).FirstOrDefault();
-                if (Visitor != null)
+                HotelOwner Owner = context.Owner.Where(o => o.UserName.Equals(UserName.Trim())).FirstOrDefault();
+                if (Owner != null)
                 {
-                    Visitor.Valid = true;
+                    Owner.Valid = true;
                 }
 
                 context.SaveChanges();

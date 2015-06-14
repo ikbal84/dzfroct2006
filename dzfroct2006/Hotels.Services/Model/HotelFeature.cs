@@ -2,21 +2,23 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
 namespace Hotels.Data.Model
 {
-    public class HotelImages
+    public class HotelFeature
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long IdImage { get; set; }
+        public long ID { get; set; }
 
-        public String FilePath { get; set; }
-        public String Name { get; set; }
-        public String Description { get; set; }
-        public bool isMignature { get; set; }
-        public bool isHeader { get; set; }
+        public virtual Hotel Hotel { get; set; }
+
+        public virtual Features Feature { get; set; }
+
+        public double Price { get; set; }
+
     }
 }

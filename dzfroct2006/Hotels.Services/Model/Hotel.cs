@@ -42,13 +42,13 @@ namespace Hotels.Data.Model
         public String Wilaya { get; set; }
         public String AddressDescription { get; set; }
 
-        public virtual HotelOwners Owner { get; set; }
+        public virtual HotelOwner Owner { get; set; }
 
-        public virtual List<HotelRooms> Rooms { get; set; }
+        public virtual List<HotelRoom> Rooms { get; set; }
 
-        public virtual List<HotelFeatures> HotelFeatures { get; set; }
+        public virtual List<HotelFeature> HotelFeatures { get; set; }
 
-        public virtual List<HotelImages> HotelImages { get; set; }
+        public virtual List<HotelImage> HotelImages { get; set; }
 
         public virtual GeoHotel GeoHotel { get; set;}
      }

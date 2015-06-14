@@ -19,11 +19,11 @@ namespace Hotels.Data.Services
         }
 
         public virtual DbSet<Hotel> Hotels { get; set; }
-        public virtual DbSet<HotelOwners> Owner { get; set; }
-        public virtual DbSet<HotelRooms> Rooms { get; set; }
+        public virtual DbSet<HotelOwner> Owner { get; set; }
+        public virtual DbSet<HotelRoom> Rooms { get; set; }
         public virtual DbSet<Features> Features { get; set; }
-        public virtual DbSet<HotelFeatures> HotelFeatures { get; set; }
-        public virtual DbSet<HotelImages> HotelImages { get; set; }
+        public virtual DbSet<HotelFeature> HotelFeatures { get; set; }
+        public virtual DbSet<HotelImage> HotelImages { get; set; }
         public virtual DbSet<City> City { get; set; }
         public virtual DbSet<GeoHotel> GeoHotel { get; set; }
         public virtual DbSet<Visitor> Visitor { get; set; }
